@@ -79,6 +79,12 @@ Jako obsluha jsem měl povinnost seznámit zákazníky s pronajatým systémem a
 
 Protože jsem se ptal na přirozené otázky, abych byl schopen lépe s lidmi pracovat a také jim doporučit správnou hru, vznikla mi tak miniaturní analýza z malého vzorku lidí, kteří ten den do herny dorazili.
 
+Dotazování zákazníků se tak běžně skládalo z otázek:
+  - "Už jste u nás někdy byli?"
+  - "Máte zkušenosti s VR?"
+  - "Hrajete počítačové hry?"
+  - "Jaký žánr her rádi hrajete?"
+
 Za daný den navštívilo hernu **15 zákazníků**, z toho **10 mužů**. Většina -- **12 zákazníků** hraje počítačové hry, ale pouze **2 z nich** v minulosti hernu navštívili, nebo měli s VR zkušenost. Většina z nich byla mládež (v rozmezí 15-30 let), výjimku tvořili **2 děti** (< 15) a **2 dospělí** (> 30). U jednoho z návštěvníků se projevila *kinetóza*.
 
 Pouze **4 z nich** odpověděli, že jim nepřišly ovladače systému HTC Vive obtížné na seznámení, stejně tak tito lidé odpověděli, že by se obešli bez pomoci obsluhy. Dva z těchto čtyř byli ti, kteří již s VR měli zkušenost.
@@ -90,4 +96,20 @@ Občasným jevem bylo několikanásobné vystřídání zákazníků na jednom s
 
 Rychlost seznámení se systémem byla převážně ovlivněna zákazníkovou zkušenosti s počítačovými hrami.
 
-...
+## Požadavky hráčů
+
+Z pozorování v herně a analýzy existujících řešení plynou následující požadavky vztahující se k návštěvníkům herny.
+
+**Uživatel se potřebuje seznámit se základními pravidly systému**  
+Uživatel potřebuje vědět, jak se může v *play area* pohybovat, kam se nesmí vydat a jak je na to upozorněn.
+
+**Uživatel se potřebuje seznámit s ovladači a jejich tlačítky**  
+Uživatel potřebuje vědět, jak vypadají ovladače a jakými tlačítky disponují.
+
+**Uživatel se potřebuje seznámit s funkcemi na tlačítcích pro konkrétní hru**  
+
+**Uživatel si chce vybrat VR aplikaci**  
+
+## Požadavky obsluhy herny
+
+**Obsluha ...**
