@@ -1,6 +1,17 @@
 meta:
-  name: "Výuková aplikace pro systém HTC Vive"
-  author: "Marián Hlaváč"
+  title: Výuková aplikace pro systém HTC Vive
+  author: Marián Hlaváč
   date: 2017-03-19
-  school: "FIT CTU"
   language: cz
+  school: FIT CTU
+  supervisor: Ing. Jiří Chludil
+  keywordsCS: no, keywords
+  keywordsEN: no, keywords
+  department: Katedra softwarového inženýrství
+  declarationOfAuthenticity: variant-b
+  authenticityPlace: V Praze
+  
+build:
+  output: xelatex
+  template: template/FITthesisXE.cls
+  destination: dist/
