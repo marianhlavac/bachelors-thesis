@@ -4,22 +4,22 @@ Jak je zvykem u organizovaného vývoje softwaru -- implementací a prototypová
 
 Následující kapitola se takovou analýzou bude zabývat. Analyzuji existující řešení, co požadují hráči docházející do herny, co požadují zaměstnanci pracující v herně a jaké požadavky jsou prakticky realizovatelné.
 
-# Analýza existujících řešení výuky
+## Analýza existujících řešení výuky
 
 Výukové aplikace pro seznámení s virtuální realitou již existují. Nicméně většina z nich trpí špatnou přístupností. Systémy jsou navrhovány tak, aby po absolvování takové výuky již nebyly výukové aplikace jednoduše dostuné a tudíž spustitelné pro návštěvníky herny. 
 
 Takové aplikace jsou spíše určené pro toho, kdo jako první systém konfiguruje a je jímž prvním uživatelem. Nově příchozí k nakonfigurovanému systému není tutoriál nabídnut a jsou přímo uvedeni do prostředí, ve kterém se již očekává, že uživatel systém důvěrně zná.
 
-## SteamVR Tutorial 
+### SteamVR Tutorial 
 
 Pro totožnou platformu, pro kterou je aplikace této závěrečné práce určena -- **HTC Vive**, existuje oficiální výuková aplikace vytvořená přímo autory samotné platformy -- společnosti Valve. 
 
 ![](http://1u88jj3r4db2x4txp44yqfj1.wpengine.netdna-cdn.com/wp-content/uploads/2016/03/Walkthrough-of-SteamVRs-new-tutorial_17-930x523.jpg)  
-*fig.1 Výuková aplikace SteamVR setup*
+*fig.1 Výuková aplikace SteamVR Tutorial*
+
+#### Průběh výuky
 
 Aplikace se nejprve uvede vizuálně poutavým úvodem, který spočívá v sestavení výukové scény animací obklopující hráče. Hráči je tak názorně ukázana možnost rozhlížet se kolem sebe a prozkoumávat prostředí.
-
-### Průběh výuky
 
 Následně je uživateli představena postava (*Virtual Reality Assistance and Education Core*) ze hry Portal 2, která s hráčem komunikuje a provádí ho výukou -- stává se tak *průvodcem*. Monolog je dabovaný a v místech, kde se nachází průvodce lze číst titulky, které jsou lokalizovány do nepřeberného množství jazyků (je k dispozici i Čeština). 
 
@@ -37,13 +37,24 @@ Ke stisknutí tlačítka *System* je vzápětí požádáno, což vede k otevře
 
 Tím je výuka u konce, uživatel je instruován k otevření *Dashboardu* a výběrem VR hry či aplikace. Stále ovšem může v aplikaci zůstat a dále zkoušet práci s ovladači, nebo zhlédnout závěrečnou animaci, kdy průvodce komicky odvezou pryč ze scény.
 
-### Zhodnocení
+#### Zhodnocení
 
 ![](http://i.imgur.com/dHgOC1S.png)  
 *fig.2 Přístup k aplikaci je skryt ve SteamVR nabídce, která je přístupna jen z monitoru počítače*
 
 > TODO: ^ Nahradit tuten obrázek vlastním
 
-## Oculus Home
+### Oculus Home
 
-# Analýza existujících řešení spouštěčů
+## Kvalitativní porovnání existujících řešení výuky
+
+### Metriky porovnávání
+
+Lorem ipsum dolor sit amet.
+
+| Metrika | Popis |
+| ------- | ----- |
+| Seznámení se s *play area* | dfo kasdp ofkapso kfpaosk fdpoask df |
+| Seznámení se s ovladači | sdmf asndf njf ndsf asdf jasiodj fiosaj |
+
+## Analýza existujících řešení spouštěčů
