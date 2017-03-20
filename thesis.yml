@@ -1,13 +1,14 @@
 meta:
-  title: Výuková aplikace pro systém HTC Vive
-  author: Marián Hlaváč
+  title: Výuková aplikace pro systémy virtuální reality
+  author: Marián Hlaváč
   date: 2017-03-19
   language: cz
   school: FIT CTU
-  supervisor: Ing. Jiří Chludil
-  keywordsCS: no, keywords
-  keywordsEN: no, keywords
-  department: Katedra softwarového inženýrství
+  supervisor: Ing. Jiří Chludil
+  department: Katedra softwarového inženýrství
+  assignmentShort: "Cílem bakalářské práce je vytvořit interaktivní výukovou aplikaci, která seznámí hráče herny virtuální reality se systémem HTC Vive."
+  keywordsCS: výuková aplikace, virtuální realita, výuka, herní průmysl, htc vive
+  keywordsEN: education application, virtual reality, education, game industry, htc vive
   declarationOfAuthenticity: variant-b
   authenticityPlace: V Praze
   
