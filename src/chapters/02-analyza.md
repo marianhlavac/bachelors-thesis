@@ -109,7 +109,7 @@ Z tohoto rozhraní lze procházet knihovnu her, prohlížet elektronický obchod
 
 Pokud budeme hodnotit *SteamVR Dashboard* z pohledu návštěvníka herny, je takové rozhraní naprosto nevyhovující. Pro návštěvníka, který nemá s platformou *Steam* zkušenosti je rozhraní spíše matoucí a může vyžadovat nějakou dobu, než se s ním seznámí. V rozhraní se také nacházejí sociální a komunitní funkce, které pro použití v herně nemají žádný význam a jsou tak dalším matoucím prvkem pro návštěvníka. Zákazník herny má nadále plný přístup k obchodu a mohl by tak na účet herny libovolně nakupovat hry, není mu v tom nikterak zabráněno.
 
-Seznam a výběr her je pro použití v herně taktéž spíše nevhodný. Seznam se skládá z mřížky 3x4 grafických bannerů, které o dané hře vypovídají jen málo. Je totiž spíše na vývojářích, či v takovém banneru zobrazí pouze logo hry, obrázek ze hry či obojí. Lze tak velmi obtížně odhadnout o jaký žánr hry jde, zda je zábavná, zda je subjektivně návštěvníkovi herny vizuálně přitažlivá, či zda způsobuje závratě a kinetózu.
+Seznam a výběr her je pro použití v herně taktéž spíše nevhodný. Seznam se skládá z mřížky 3x4 grafických bannerů, které o dané hře vypovídají jen málo. Je totiž spíše na vývojářích, či v takovém banneru zobrazí pouze logo hry, obrázek ze hry či obojí. Lze tak velmi obtížně odhadnout o jaký žánr hry jde, zda je zábavná, zda je subjektivně návštěvníkovi herny vizuálně přitažlivá, jaké ovládání podporuje, či zda způsobuje závratě a kinetózu.
 
 ### Oculus Home
 
@@ -121,6 +121,10 @@ Rozhraní je vizuálně velmi přitažlivé, zobrazuje se jako výchozí prostor
 
 ![](https://i.ytimg.com/vi/kWJvFR04xyM/maxresdefault.jpg)
 *fig.6 Oculus Home*
+
+Jelikož je rozhraní navržené specificky pro použití s hrami pro virtuální realitu, k hrám lze nalézt informaci o tom, jaké ovládání podporuje a lze je řadit podle míry "komfortu". Nekomfortní hry jsou pak označeny jako takové, které mohou způsobovat kinetózu a lidé, kterým se z intenzivnějších her dělá nevolno, se takovým hrám mohou snadno vyhnout.
+
+Pro hernu je však *Oculus Home* také nevyhovující. Přístup k obchodu a komunitní funkce jsou opět irelevantní a nejsou určeny návštěvníkům herny.
 
 ## Pozorování v herně
 
@@ -151,16 +155,32 @@ Rychlost seznámení se systémem byla převážně ovlivněna zákazníkovou zk
 
 Z pozorování v herně a analýzy existujících řešení plynou následující požadavky vztahující se k návštěvníkům herny.
 
-**Uživatel se potřebuje seznámit se základními pravidly systému**  
-Uživatel potřebuje vědět, jak se může v *play area* pohybovat, kam se nesmí vydat a jak je na to upozorněn.
+**F01 Uživatel se chce seznámit se základními pravidly systému virtuální reality**  
+Uživatel chce vědět, jak se používá headset systému virtuální reality, jak se může v *play area* pohybovat, kam se nesmí vydat a jak je na to upozorněn.
 
-**Uživatel se potřebuje seznámit s ovladači a jejich tlačítky**  
-Uživatel potřebuje vědět, jak vypadají ovladače a jakými tlačítky disponují.
+**F02 Uživatel se chce seznámit s ovladači a jejich tlačítky**  
+Uživatel chce vědět, jak vypadají ovladače, jakými tlačítky disponují a k čemu slouží.
 
-**Uživatel se potřebuje seznámit s funkcemi na tlačítcích pro konkrétní hru**  
+**F03 Uživatel se chce seznámit s funkcemi na tlačítcích pro konkrétní hru**  
+Uživatel chce vědět, jak se ovládá konkrétní hra.
 
-**Uživatel si chce vybrat VR aplikaci**  
+**F04 Uživatel si chce vybrat VR aplikaci podle žánru**  
+Uživatel si chce zvolit VR zážitek takového žánru, který mu vyhovuje.
+
+**F05 Uživatel si chce vybrat VR aplikaci podle intenzity**  
+Uživatel, u kterého se projevuje kinetóza, si chce vybrat takovou aplikaci, aby nebyla příliš intenzivní a jeho zážitek z VR byl pozitivní.
+
+**F06 Uživatel si chce vybrat VR aplikaci podle vizuálního zpracování**  
+Uživatel si chce vybrat takovou aplikaci, která bude pro něj vizuální atraktivní.
 
 ## Požadavky obsluhy herny
 
-**Obsluha ...**
+Požadavky obsluhy se velkou částí kryje s požadavky zákazníka, jen z jiného úhlu pohledu.
+
+**F51 Obsluha chce zákazníka seznámit s pravidly používání systému virtuální reality**
+
+**F52 Obsluha chce zákazníka seznámi s ovladači systému**
+
+**F53 Obsluha chce zákazníkovi vybrat herní titul pro něj vhodný**
+
+
