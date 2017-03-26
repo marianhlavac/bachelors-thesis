@@ -7,8 +7,8 @@ meta:
   supervisor: Ing. Jiří Chludil
   department: Katedra softwarového inženýrství
   assignmentShort: "Cílem bakalářské práce je vytvořit interaktivní výukovou aplikaci, která seznámí hráče herny virtuální reality se systémem HTC Vive."
-  keywordsCS: výuková aplikace, virtuální realita, výuka, herní průmysl, htc vive
-  keywordsEN: education application, virtual reality, education, game industry, htc vive
+  keywordsCS: výuková aplikace, virtuální realita, implementace, výuka, herní průmysl, htc vive
+  keywordsEN: education application, virtual reality, implementation, education, game industry, htc vive
   declarationOfAuthenticity: variant-b
   authenticityPlace: V Praze
   
