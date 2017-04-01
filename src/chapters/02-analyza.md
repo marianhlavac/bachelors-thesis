@@ -151,6 +151,43 @@ Občasným jevem bylo několikanásobné vystřídání zákazníků na jednom s
 
 Rychlost seznámení se systémem byla převážně ovlivněna zákazníkovou zkušenosti s počítačovými hrami.
 
+## Aplikování bodů použitelnosti podle Nielsena
+
+Před stanovením požadavků jsem se pokusil aplikovat body použitelnosti podle *Jakoba Nielsena*, které jsem v minulosti úspěšně použil pro návrh uživatelského rozhraní pro webové aplikace.
+
+*Jakob Nielsen* je významným odborníkem v oblasti tvorby uživatelského rozhraní, specializující se především na webová rozhraní. Jeho klíčovým dílem je kniha *Designing Web Usability* z roku 1999, ve které popisuje veškeré své znalosti a zkušenosti z oboru.
+
+Na základě svých zkušeností sestavil **deset bodů použitelnosti**, které se používají pro heuristickou analýzu uživatelských rozhraní. Jedná se o tyto body:
+
+1. Viditelnost stavu systému
+2. Propojení systému a reálného světa
+3. Uživatelská kontrola a svoboda
+4. Standardizace a konzistence
+5. Prevence chyb
+6. Rozpoznání namísto vzpomínání
+7. Flexibilní a efektivní použití
+8. Estetický a minimalistický
+9. Pomoc uživatelů pochopit, poznat a vzpamatovat se z chyb
+10. Nápověda a návody
+
+Nielsenovy body použitelnosti pravděpodobně nebudou plně vhodné pro jejich použití na aplikaci virtuální reality, jelikož jsou primárně určeny pro analýzu webových rozhraní. V této kapitole jsem vybral ty z nich, které nejsou vhodné a upravil je tak, aby byly aplikovatelné.
+
+Všechny tyto body jsem pak použil pro sestavení dodatečných požadavků na aplikaci, které lze nalézt v následující kapitole.
+
+### Bod č. 2 -- Propojení systému a reálného světa
+
+Druhý z Nielsenových bodů použitelnosti ukazuje na to, jak by mělo uživatelské rozhraní reflektovat známé jevy a souvislosti reálného světa. Typickým příkladem je ikona složky vyzobrazená v rozhraní. Podle tohoto bodu je žádoucí, aby se taková ikona opravdu podobala složce a při přetažení objektů na takovou ikonu se provedla očekávatelná akce -- přesunutí objektu do této složky.
+
+Ve virtuální realitě je nutné tyto vztahy ještě více utvrdit. Z přednášky na americké konferenci GCD 2016 hovoří *Kimberly Voll* ze společnosti *Riot Games* o konceptu takzvaného *fidelity contract* (volně přeloženo -- kontraktu věrnosti) a popisuje jej jako mechanismus splnění očekávání chování virtuálního světa shodným s chováním reálného světa.
+
+> TODO: Dopsat k tomuto tématu více.
+
+### Bod č. 10 -- Nápověda a návody
+
+Vzhledem k tomu, že samotná aplikace slouží k výuce a je ji tak možné považovat jako nápovědu, je tento bod pro daný typ aplikace neaplikovatelný.
+
+> TODO: Tohle zvážit a případně přepsat.
+
 ## Funkční požadavky návštěvníků herny
 
 Z pozorování v herně a analýzy existujících řešení plynou následující požadavky vztahující se k návštěvníkům herny.
