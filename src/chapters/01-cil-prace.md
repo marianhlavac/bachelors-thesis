@@ -7,3 +7,10 @@ Mezi klíčové vlastnosti takové aplikace bych chtěl zařadit efektivitu výu
 ## Rozbor zadání
 
 Ve své práci se budu zabývat analýzou požadavků hráčů a zaměstnanců herny virtuální reality, návrhem a implementací výukové aplikace pro usnadnění 
+
+## Zaměření na ovladače systému HTC Vive
+
+V práci se zaměřím především na představení ovladačů systému virtuální reality HTC Vive...
+
+![](https://upload.wikimedia.org/wikipedia/commons/7/7a/Vive_pre.jpeg)  
+*fig.1 Systém virtuální reality HTC Vive a jeho ovladače*
