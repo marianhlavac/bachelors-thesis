@@ -49,7 +49,7 @@ Tím je výuka u konce, uživatel je instruován k otevření *Dashboardu* a vý
 
 SteamVR Tutorial je relativně dobrým příkladem výukové aplikace. Je kvalitně navržena, s objektivně sic strohým, ale kvalitním vizuálním a zvukovým zpracováním. 
 
-Pro účely herny je však shledán nevhodným, jelikož je návštěvníkům herny takový tutoriál prakticky nepřístupný. Obsluha je nucena takový tutoriál spustit manuálně a také se návštěvníka herny zeptat, jestli už tutoriál absolvoval a zdali jej chce skutečně absolvovat. Návštěvník nemá možnost zopakovat si tutoriál, nebo alespoň získat nějaký závěrečný přehled, pro zopakování toho, co se naučil.
+Pro účely herny je však shledán nevhodným, jelikož je návštěvníkům herny takový tutoriál prakticky nepřístupný. Obsluha je nucena jej spustit manuálně a také se návštěvníka herny zeptat, jestli už tutoriál absolvoval a zdali jej chce skutečně absolvovat. Návštěvník nemá možnost takovou výuku zopakovat, nebo alespoň získat nějaký závěrečný přehled, pro zopakování toho, co se naučil.
 
 ![](http://i.imgur.com/dHgOC1S.png)  
 *fig.2 Přístup k aplikaci je skryt ve SteamVR nabídce, která je přístupna jen z monitoru počítače*
@@ -151,36 +151,73 @@ Občasným jevem bylo několikanásobné vystřídání zákazníků na jednom s
 
 Rychlost seznámení se systémem byla převážně ovlivněna zákazníkovou zkušenosti s počítačovými hrami.
 
-## Požadavky hráčů
+## Funkční požadavky návštěvníků herny
 
 Z pozorování v herně a analýzy existujících řešení plynou následující požadavky vztahující se k návštěvníkům herny.
 
-**F01 Uživatel se chce seznámit se základními pravidly systému virtuální reality**  
-Uživatel chce vědět, jak se používá headset systému virtuální reality, jak se může v *play area* pohybovat, kam se nesmí vydat a jak je na to upozorněn.
+**F-A01 Uživatel se chce seznámit se základními pravidly systému virtuální reality**  
+Uživatel chce vědět, jak se používá headset systému virtuální reality, jak se může v *play area* pohybovat, kam se nesmí vydat a jak je na to upozorněn. Funkční požadavek je klíčový z hlediska bezpečí návštěvníka herny a ochrany majetku herny.
 
-**F02 Uživatel se chce seznámit s ovladači a jejich tlačítky**  
-Uživatel chce vědět, jak vypadají ovladače, jakými tlačítky disponují a k čemu slouží.
+**F-A02 Uživatel se chce seznámit s ovladači a jejich tlačítky**  
+Uživatel chce vědět, jak vypadají ovladače, jakými tlačítky disponují a k čemu slouží. V závislosti na této znalosti je pak uživateli usnadněno pochopení ovládání v konkrétních VR aplikacích.
 
-**F03 Uživatel se chce seznámit s funkcemi na tlačítcích pro konkrétní hru**  
-Uživatel chce vědět, jak se ovládá konkrétní hra.
+**F-A03 Uživatel se chce seznámit s funkcemi na tlačítcích pro konkrétní hru**  
+Uživatel chce vědět, jak se ovládá konkrétní VR aplikace.
 
-**F04 Uživatel si chce vybrat VR aplikaci podle žánru**  
-Uživatel si chce zvolit VR zážitek takového žánru, který mu vyhovuje.
+**F-A04 Uživatel si chce vybrat VR aplikaci podle žánru**  
+Uživatel si chce zvolit VR zážitek takového žánru, který mu vyhovuje. Do herny docházejí různé věkové a zájmové skupiny. Často záleží i na pohlaví. Ženy většinou rády hrají méně intenzivnější zážitky, vyhýbají se hororovým hrám a střílečkám a více ocení vizuálně atraktivní aplikace.
 
-**F05 Uživatel si chce vybrat VR aplikaci podle intenzity**  
-Uživatel, u kterého se projevuje kinetóza, si chce vybrat takovou aplikaci, aby nebyla příliš intenzivní a jeho zážitek z VR byl pozitivní.
+**F-A05 Uživatel si chce vybrat VR aplikaci podle intenzity**  
+Uživatel, u kterého se projevuje kinetóza, si chce vybrat takovou aplikaci, aby nebyla příliš intenzivní a jeho zážitek z VR byl pozitivní. Ač může být toto kritérium velmi subjektivní, lze aplikace rozdělit alespoň do dvou kategorií, jako intenzivní a klidné, kde pod klidné aplikace spadají všechny aplikace, které mají implementovány mechanismy zabraňující kinetóze, nebo nezahrnují pohyb kamery kinetózu způsobující.
 
-**F06 Uživatel si chce vybrat VR aplikaci podle vizuálního zpracování**  
-Uživatel si chce vybrat takovou aplikaci, která bude pro něj vizuální atraktivní.
+**F-A06 Uživatel si chce vybrat VR aplikaci podle vizuálního zpracování**  
+Uživatel si chce vybrat takovou aplikaci, která bude pro něj vizuálně atraktivní. Spousta uživatelů upřednostňuje určité aplikace z jednoduchého důvodu -- líbí se jim.
 
-## Požadavky obsluhy herny
+**F-A07 Uživatel chce výuku kdykoliv přeskočit, nebo informace zopakovat znova**
+Pokud uživatel shledá výuku subjektivně příliš jednoduchou, či zdlouhavou, měl by mít možnost její průběh minimálně urychlit. Naopak, pokud je pro něj výuka příliš rychlá, měl by mít na konci výuky možnost si informace zopakovat, či zopakovat celou výuku znova.
+
+## Funkční požadavky obsluhy herny
 
 Požadavky obsluhy se velkou částí kryje s požadavky zákazníka, jen z jiného úhlu pohledu.
 
-**F51 Obsluha chce zákazníka seznámit s pravidly používání systému virtuální reality**
+**F-B01 Obsluha chce zákazníka seznámit s pravidly používání systému virtuální reality**  
+Aby uživatel používal systém správně, obsluha se potřebuje ujistit, že zákazník ví, jak se systém používá, aby nedošlo k jeho poškození nesprávným použitím a zákazník nebyl vystaven nebezpečí.
 
-**F52 Obsluha chce zákazníka seznámi s ovladači systému**
+**F-B02 Obsluha chce zákazníka seznámi s ovladači systému**  
+Aby uživatel byl se zážitkem spokojený, obsluha potřebuje, aby zákazník byl schopen používat ovladače systému. Taková znalost pak zákazníkovi usnadní pochopení ovládání konkrétních aplikací a je tak logicky více spokojený.
 
-**F53 Obsluha chce zákazníkovi vybrat herní titul pro něj vhodný**
+**F-B03 Obsluha chce zákazníkovi vybrat VR aplikaci pro něj vhodnou**  
+Zákazníci velmi často přicházejí do herny pouze za účele vyzkoušení virtuální reality. Zřídkakdy se stává, že by zákazník věděl o jakou konkrétní VR aplikaci má zájem a chce si ji vyzkoušet. Obsluha je tak povinna zjistit, co bude zákazníkovi vyhovovat a vybrat mu tak nějakou aplikaci či herní titul pro něj vhodný.
 
+**F-B04 Obsluha chce zákazníka upozornit na blížící se konec vypůjčení systému**  
+Přibližně pět minut před koncem doby zápůjčky obsluha žádá zákazníka, aby si na moment sundal sluchátka a mohla jej upozornit na blížící se konec.
 
+## Funkční požadavky obecné
+
+Požadavky nekategorizovatelné jako požadavek návštěvníka či obsluhy herny. Valná většina z nich se týká fukncionality spouštěče.
+
+**F-C01 Aplikace chce zobrazit uživateli seznam VR aplikací a umožnit mu výběr**  
+Základní funkce spouštěče je zobrazení seznamu VR aplikací, ze kterých může uživatel provést výběr. Takový seznam by měl poskytovat možnost vyhledávat přímo podle názvu, dále podle žánru, intenzity i podle vizuálu.
+
+**F-C02 Aplikace chce stáhnout data o VR aplikaci**  
+Aby mohla aplikace splnit požadavek *F-C01*, je nutné taková data o hrách získat. Většina požadavkem zmíněných dat je dostupná přes veřejná API. Více se získáním dat bude zabývat návrh.
+
+**F-C03 Aplikace spustí uživatelem vybranou VR aplikaci**  
+Poté, co uživatel provede výběr aplikace, je tato aplikace spuštěna a funkce spouštěče jsou pozastaveny či ukončeny.
+
+**F-C04 Po ukončení VR aplikace je uživateli znovu nabídnut přehled her**  
+Po ukončení práce s VR aplikací, kterou uživatel spustil, je mu opět nabídnut výběr spouštěče (pokračováním v činnosti či opětovým spuštěním).
+
+## Nefunkční požadavky
+
+**N-01 Aplikace je navržena pro systém HTC Vive**  
+Ze zadání plyne soustředění aplikace na jednu platformu a její konkrétní ovladače.
+
+**N-02 Aplikace je vizuálně atraktivní**  
+Aby byl uživatelův dojem z aplikace pozitivní a příjemný, měla by aplikace splňovat alespoň nějakou základní úroveň kvality vizuálního zpracování.
+
+**N-03 Výukou je uživatel prováděn mluvenou řečí**  
+Jelikož je kvůli disperzi krajů obrazu, omezenému rozlišení a obtížně proveditelnému umístění psaného textu ve virtuální realitě, je nutné kromě titulků ve formě takového textu, uživatele navigovat i prostřednictvím mluveného slova. Požadavek na primární jazyk mluveného slvoa je Čeština.
+
+**N-04 Výuka je časově efektivní**  
+Protože je návštěvník herny časově omezen dobou zapůjčení systému, je nutné, aby taková výuka trvala co nejkratší možnou dobu.
