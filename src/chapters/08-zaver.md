@@ -6,3 +6,4 @@ V práci jsem se zabýval analýzou existujících řešení, pozorování chov�
 
 Výsledky analýzy pak nabízejí přehled o chování zákazníků a jejich potřebách. Vytvořená aplikace ...
 
+> TODO: Napsat něco o OpenVR API a možnosti replacnout celej SteamVR Dashboard vlastním
