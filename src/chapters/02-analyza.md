@@ -258,3 +258,5 @@ Jelikož je kvůli disperzi krajů obrazu, omezenému rozlišení a obtížně p
 
 **N-04 Výuka je časově efektivní**  
 Protože je návštěvník herny časově omezen dobou zapůjčení systému, je nutné, aby taková výuka trvala co nejkratší možnou dobu.
+
+**N-05 Aplikace bude jednoduchá na použití**

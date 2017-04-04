@@ -43,7 +43,7 @@ Jelikož bezpečnost zákazníka a majetku herny je prioritní, jsou uživateli 
 Uživateli se na podlaze zobrazí ohraničení odpovídající velikosti a pozici nastavené play area. Je mu vysvětleno, k čemu play area slouží. Následně jsou mu představeny chaperone bounds. Uživatel je požádán, aby k nim přistoupil, aby si jejich funkcionalitu vyzkoušel.
 
 ![](http://icdn9.digitaltrends.com/image/chaperone-beginner-1500x1000.png)
-*fig.1 Chaperone bounds a jejich možnosti v nastavení OpenVR*
+*fig. 1 Chaperone bounds a jejich možnosti v nastavení OpenVR*
 
 Tento přístup je tak inspirován výukou v aplikaci *SteamVR Tutorial*, nicméně je zkrácena o jedno opakování, aby tato část nebyla příliš dlouhá. Ač jsem výše poznamenal, že je žádoucí, aby byl na tuto část kladen důraz, domnívám se, že jedno přistoupení k mřížce uživateli stačí k tomu, aby intuitivně funkci pochopil a na zobrazení mřížky v budoucnu reagoval.
 
@@ -71,7 +71,7 @@ Každé tlačítko je uživateli postupně představeno, zvýrazněno se zobraze
 Po každém požádání o stisk tlačítka je uživatel jen přibližně seznámen s tím, k čemu se tlačítko běžně používá. Je však nutné u návrhu scénáře dát pozor, aby takové informace nebyly zavádějící, protože jak jsem již v analýze zmínil, tlačítka si VR aplikace mapují podle vlastního uvážení a každá aplikace tak tlačítka používá k různě jiným činnostem.
 
 ![](http://i.imgur.com/5rTX05h.png)
-*fig.2 Náčrt ovladače HTC Vive*
+*fig. 2 Náčrt ovladače HTC Vive*
 
 > TODO: Nahradit tento obrázek jiným, pravděpodobně nejsou práva na použití!
 
@@ -94,6 +94,10 @@ Po skončení výuky je uživateli oznámeno, že je to vše, co o systému pot�
 Krátce je mu představeno, co před sebou vidí, k čemu je spouštěč určen a jak může spustit svůj první VR zážitek.
 
 ## Návrh scénáře výuky
+
+Poté, co jsem specifikoval hrubý návrh scénáře výuky a její momenty, lze z těchto momentů sestavit konkrétní podobu scénáře výuky, který pak lze velmi efektivně využít pro skriptování průběhu, zobrazení přepisu a samotnému dabování mluveného slova.
+
+---
 
 *[M1] Zobrazí se logo herny.*
 
@@ -139,5 +143,36 @@ Krátce je mu představeno, co před sebou vidí, k čemu je spouštěč určen 
 
 *[M7] Průvodce:* Nyní jste připraveni spustit svůj první zážitek ve virtuální realitě. Před sebou vidíte knihovnu dostupných aplikací naší herny. Vyberte si, o který zážitek máte zájem, namiřte na něj a stiskněte spoušť.
 
+---
+
 ## Návrh spouštěče
 
+Spouštěč je funkcionalita aplikace navazující po výuce. Je určen k tomu, aby nahradil stávající řešení výběru VR aplikací skrze *SteamVR Dashboard*, které se ukázalo být nevhodné pro použití v prostředí herny.
+
+Podle funkčních požadavků a v kontrastu s existujícími řešení v podobě *SteamVR Dashboard* a *Oculus Home* chceme vytvořit takový spouštěč, který bude pro uživatele jednoduchý, bude brát v potaz fakt, že uživatel může být v systému virtuální reality stále nováček a že nemusí znát tituly podle jejich názvu. Nechceme uživatele zatěžovat v herně nerelevantními komunitními funkcemi a nechceme uživateli jednoduše dovolit prohlížet obchod a nakupovat tituly na účtu herny.
+
+Pro rozhraní lze využít celý prostor kolem uživatele. Nebude se jednat o rozhraní, které můžeme vidět u *SteamVR Dashboard* -- ploché dvourozměrné rozhraní vykreslované na malou plochu před uživatelem.
+
+Základní myšlenka rozhraní je přímý přístup k výběru VR aplikací jako hlavní primární obrazovka spouštěče. Oba zkoumané existující řešení zmíněné výše mají výběr VR aplikací ukrytý pod tlačíkem "Library". 
+
+Jako první bude uvádět rozhraní velký nadpis vyzývající uživatele k činnosti: "Vyberte si VR aplikaci". Pod ním bude zobrazen název aktuálně otevřené kategorie s šipkou evokující známý dropdown prvek, kterým může uživatel změnit aktuálně zobrazenou kategorii. Pod výběřem kategorií se nachází již samotná mřížka s aplikacemi. Mřížka má na výšku čtyři prvky a na šířku počet sloupců dynamický, podle velikosti místnosti takový, že vyplní bannery pokud možno kruh okolo uživatele.
+
+![](http://i.imgur.com/EEyrMmf.png)  
+*fig. 3 Rozložení prvků rozhraní kolem uživatele*
+
+VR aplikace budou v mřížce zobrazovány velmi podobně, jako jsou zobrazovány v existujících spouštěčích -- vizuální obdélníkový banner s vizuálem hry. Velký rozdíl se však bude projevovat při ukázání ukazatelem na takový banner. Hra zobrazí svůj rychlý detail. Místo vizuálního banneru zaujme krátké video pořízené ze hry (tzv. in-game gameplay), které se bude opakovat. Nepůjde tedy o vizuál autorů aplikace, ani o trailer, ale čistě realistický záznam přímo ze hry. Uživatel tak bude schopen velmi přesně odhadnout, o čem aplikace je, jaká je její vizuální úroveň a přibližně i hratelnost a celkový dojem z aplikace, ještě dřív, než ji spustí. Napravo od videa bude pak doplněno celým názvem titulu, krátkým popisem a kategorizací podle žánru a intenzity. Pokud se bude jednat o často spouštěnou aplikaci, bude automaticky označena jako oblíbená. Celý tento blok detailu hry bude k uživateli mírně přiblížen a ostatní prvky se stanou částečně průhledné a budou mírně potlačeny do pozadí. 
+
+![](http://i.imgur.com/W7i1O7H.png)  
+*fig. 4 Základní stav aplikace spouštěče*
+
+Mřížka těchto bannerů se bude zobrazovat v kruhu okolo uživatele. Hlavní mřížka aplikací bude zarovnána k pravému "virtuálnímu okraji", za kterým budou dva sloupce dalších bannerů, označených jako "Naše herna doporučuje". Tyto bannery bude volit herna jako doporučené hry pro své zákazníky a bude obsahovat maximální počet 8 aplikací. Pravý "virtuální okraj" se bude nacházet po pravé ruce uživatele a hlavní mřížka aplikace se bude podle počtu zobrazených aplikací rozšiřovat proti směru hodinových ručiček o obvodu kruhu, na kterém se mřížka zobrazuje. Pokud počet aplikací bude větší, než prostor k zobrazení bannerů na mřížce, zobrazí se pod mřížkou přepínač stránek.
+
+![](http://i.imgur.com/K37enUq.png)  
+*fig. 5 Detail hry po ukázání na jeho položku v mřížce*
+
+Po výběru prvku pro změnu kategorie se potlačí pozadí stejným způsobem, jako při práci s detailem hry. Do popředí se pak zobrazí velmi jednoduchá nabídka v podobě seznamu dostupných kategorií, ze kterých může uživatel vybírat. První oddělená položka této nabídky bude tlačítko pro návrat nazvané "Zpět".
+
+![](http://i.imgur.com/49YOKw4.png)  
+*fig. 6 Výběr kategorie po kliknutí na prvek výběru kategorie*
+
+Rozhraní by tak mělo být velmi přehledné a především jednoduché. Uživatel se v rozhraní nemá kde ztratit, rozhraní nemá přechod na jiné obrazovky či stavy s vyjímkou možnosti třídění her.
