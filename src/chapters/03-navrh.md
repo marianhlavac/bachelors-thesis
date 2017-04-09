@@ -93,9 +93,15 @@ Po skončení výuky je uživateli oznámeno, že je to vše, co o systému pot�
 
 Krátce je mu představeno, co před sebou vidí, k čemu je spouštěč určen a jak může spustit svůj první VR zážitek.
 
-## Návrh scénáře výuky
+## Návrh výuky
 
-Poté, co jsem specifikoval hrubý návrh scénáře výuky a její momenty, lze z těchto momentů sestavit konkrétní podobu scénáře výuky, který pak lze velmi efektivně využít pro skriptování průběhu, zobrazení přepisu a samotnému dabování mluveného slova.
+Poté, co jsem specifikoval hrubý návrh scénáře výuky a její momenty, lze z těchto momentů sestavit konkrétní podobu výuky.
+
+### Návrh scénáře
+
+První část návrhu výuky je sestavení scénáře, který pak lze velmi efektivně využít pro skriptování průběhu, zobrazení přepisu a samotnému dabování mluveného slova.
+
+Ve scénáři jsou specifikovány identifikátory momentů. Ty označují části, které vycházejí ze zmíněných momentů.
 
 ---
 
@@ -145,11 +151,17 @@ Poté, co jsem specifikoval hrubý návrh scénáře výuky a její momenty, lze
 
 ---
 
+### Storyboards
+
+Pro lepší vizualizaci je k podrobnému konkrétnímu scénáři i ilustrován průběh výuky ve formě storyboards.
+
 ## Návrh spouštěče
 
 Spouštěč je funkcionalita aplikace navazující po výuce. Je určen k tomu, aby nahradil stávající řešení výběru VR aplikací skrze *SteamVR Dashboard*, které se ukázalo být nevhodné pro použití v prostředí herny.
 
 Podle funkčních požadavků a v kontrastu s existujícími řešení v podobě *SteamVR Dashboard* a *Oculus Home* chceme vytvořit takový spouštěč, který bude pro uživatele jednoduchý, bude brát v potaz fakt, že uživatel může být v systému virtuální reality stále nováček a že nemusí znát tituly podle jejich názvu. Nechceme uživatele zatěžovat v herně nerelevantními komunitními funkcemi a nechceme uživateli jednoduše dovolit prohlížet obchod a nakupovat tituly na účtu herny.
+
+### Návrh rozhraní
 
 Pro rozhraní lze využít celý prostor kolem uživatele. Nebude se jednat o rozhraní, které můžeme vidět u *SteamVR Dashboard* -- ploché dvourozměrné rozhraní vykreslované na malou plochu před uživatelem.
 
@@ -176,3 +188,4 @@ Po výběru prvku pro změnu kategorie se potlačí pozadí stejným způsobem, 
 *fig. 6 Výběr kategorie po kliknutí na prvek výběru kategorie*
 
 Rozhraní by tak mělo být velmi přehledné a především jednoduché. Uživatel se v rozhraní nemá kde ztratit, rozhraní nemá přechod na jiné obrazovky či stavy s vyjímkou možnosti třídění her.
+
