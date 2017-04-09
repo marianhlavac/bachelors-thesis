@@ -6,3 +6,5 @@ https://steamcommunity.com/app/358720/discussions/0/485623406959710519/
 http://www.dictionary.com/browse/virtual--reality
 https://en.wikipedia.org/wiki/Virtual_reality
 https://github.com/ValveSoftware/openvr
+https://en.wikipedia.org/wiki/Proof_of_concept
+http://answers.unity3d.com/questions/7528/how-should-i-decide-if-i-should-use-c-javascript-u.html // mozna ne, muselo by tu tech linku bejt vic
