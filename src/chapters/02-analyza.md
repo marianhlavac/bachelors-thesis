@@ -213,6 +213,9 @@ Uživatel si chce vybrat takovou aplikaci, která bude pro něj vizuálně atrak
 **F-A07 Uživatel chce výuku kdykoliv přeskočit, nebo informace zopakovat znova**
 Pokud uživatel shledá výuku subjektivně příliš jednoduchou, či zdlouhavou, měl by mít možnost její průběh minimálně urychlit. Naopak, pokud je pro něj výuka příliš rychlá, měl by mít na konci výuky možnost si informace zopakovat, či zopakovat celou výuku znova.
 
+**F-A08 Uživatel chce, aby byla výuka časově efektivní**  
+Protože má návštěvník herny omezený čas, po který je mu zapůjčen systém virtuální reality, je pro něj důležité, aby ho výuka o tento čas připravila v co nejmenší míře.
+
 ## Funkční požadavky obsluhy herny
 
 Požadavky obsluhy se velkou částí kryje s požadavky zákazníka, jen z jiného úhlu pohledu.
