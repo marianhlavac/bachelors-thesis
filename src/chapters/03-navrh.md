@@ -155,6 +155,8 @@ Ve scénáři jsou specifikovány identifikátory momentů. Ty označují část
 
 Pro lepší vizualizaci je k podrobnému konkrétnímu scénáři i ilustrován průběh výuky ve formě storyboards.
 
+> TODO: Storyboards
+
 ## Návrh spouštěče
 
 Spouštěč je funkcionalita aplikace navazující po výuce. Je určen k tomu, aby nahradil stávající řešení výběru VR aplikací skrze *SteamVR Dashboard*, které se ukázalo být nevhodné pro použití v prostředí herny.
