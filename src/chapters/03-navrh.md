@@ -1,6 +1,6 @@
 # Návrh
 
-## Návrh průběhu výuky
+## Průběh výuky
 
 Před konkrétním návrhem přesného scénáře výuky se v této kapitole budu nejdříve zabývat hrubým a obecnějším návrhem průběhu celé výuky. Samotnou výuku rozdělím do tzv. momentů, které si i označím identifikátory, pro snazší pozdější referenci v textu. Výsledný průběh pak dále zpracuji ve formě storyboards.
 
