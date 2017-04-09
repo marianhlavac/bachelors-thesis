@@ -3,3 +3,6 @@ http://www.inflow.cz/heuristicka-analyza
 http://blog.vojtasvoboda.cz/nielsens-heuristic-evaluation
 https://www.youtube.com/watch?v=-owQfn-iYQw&t=2056s
 https://steamcommunity.com/app/358720/discussions/0/485623406959710519/
+http://www.dictionary.com/browse/virtual--reality
+https://en.wikipedia.org/wiki/Virtual_reality
+https://github.com/ValveSoftware/openvr

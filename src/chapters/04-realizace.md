@@ -7,3 +7,6 @@ Na základě takové implementace jsem pak schopen potvrdit, zda-li je návrh im
 Jednou z takových funkcí je zobrazení her, které vlastní herna na svém Steam účtu.
 
 Pro stažení informací o hrách bude použito Steam Web API, které…
+
+
+> TODO: target 2600w
