@@ -3,8 +3,24 @@ http://www.inflow.cz/heuristicka-analyza
 http://blog.vojtasvoboda.cz/nielsens-heuristic-evaluation
 https://www.youtube.com/watch?v=-owQfn-iYQw&t=2056s
 https://steamcommunity.com/app/358720/discussions/0/485623406959710519/
+
+co je vr
 http://www.dictionary.com/browse/virtual--reality
 https://en.wikipedia.org/wiki/Virtual_reality
+
 https://github.com/ValveSoftware/openvr
 https://en.wikipedia.org/wiki/Proof_of_concept
-http://answers.unity3d.com/questions/7528/how-should-i-decide-if-i-should-use-c-javascript-u.html // mozna ne, muselo by tu tech linku bejt vic
+
+unity vs js
+http://answers.unity3d.com/questions/7528/how-should-i-decide-if-i-should-use-c-javascript-u.html
+http://indelve.com/article/125
+http://embracing-unity.blogspot.com/2013/05/unityscript-vs-c.html
+
+list her
+http://stackoverflow.com/questions/33662175/retrieve-a-list-of-installed-games-from-the-steam-api
+https://developer.valvesoftware.com/wiki/Steam_Web_API
+https://steamcommunity.com/dev?l=czech
+https://steamcommunity.com/dev/apikey
+
+spouštěč
+https://developer.valvesoftware.com/wiki/Steam_browser_protocol
