@@ -4,6 +4,8 @@
 
 Před konkrétním návrhem přesného scénáře výuky se v této kapitole budu nejdříve zabývat hrubým a obecnějším návrhem průběhu celé výuky. Samotnou výuku rozdělím do tzv. momentů, které si i označím identifikátory, pro snazší pozdější referenci v textu. Výsledný průběh pak dále zpracuji ve formě storyboards.
 
+Celá výuka bude v češtině, jelikož se prozatím počítá pouze s nasazením v české herně. Do herny však chodí i zahraniční návštěvníci a s nimi je nutné počítat taky. Rámec této závěrečné práce nebude zahrnovat překlad do jiného jazyka, ovšem aplikace bude na lokalizaci připravena.
+
 ## Momenty výuky
 
 Seznam klíčových momentů průběhu výuky v chronologickém pořadí:
