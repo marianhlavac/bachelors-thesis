@@ -15,10 +15,10 @@ Seznam klíčových momentů průběhu výuky v chronologickém pořadí:
  - M5 Uživatel je požádán, aby prozkoumal ovladače systému.
  - M6 Uživateli je představeno každé tlačítko na ovladači a je požádán aby je stiskl.
  - M7 Uživateli je vysvětleno, k čemu je určen spouštěč, který je mu zobrazen po skončení výuky.
- 
+
 ### M1 Uvítání herny
 
-Jako první moment je herně posktynut velmi krátký prostor na její prezentaci. Návštěvník herny je uvítán jménem herny do virtuální reality. Zároveň je mu na krátký moment zobrazeno logo herny. Díky tomuto prvku je aplikace blíže svázána s hernou a jedná se tak i o jistou formu brandingu. 
+Jako první moment je herně posktynut velmi krátký prostor na její prezentaci. Návštěvník herny je uvítán jménem herny do virtuální reality. Zároveň je mu na krátký moment zobrazeno logo herny. Díky tomuto prvku je aplikace blíže svázána s hernou a jedná se tak i o jistou formu brandingu.
 
 Díky tomuto prvku mohou mít o aplikaci zájem i jiné firmy provozující herny virtuální reality, jelikož prozatím neexistuje žádná jednoduše dostupná aplikace pro virtuální realitu, která by vhodným způsobem prezentovala hernu, kterou uživatel právě navštívil.
 
@@ -161,20 +161,20 @@ Pro lepší vizualizaci je k podrobnému konkrétnímu scénáři i ilustrován 
 
 Spouštěč je funkcionalita aplikace navazující po výuce. Je určen k tomu, aby nahradil stávající řešení výběru VR aplikací skrze *SteamVR Dashboard*, které se ukázalo být nevhodné pro použití v prostředí herny.
 
-Podle funkčních požadavků a v kontrastu s existujícími řešení v podobě *SteamVR Dashboard* a *Oculus Home* chceme vytvořit takový spouštěč, který bude pro uživatele jednoduchý, bude brát v potaz fakt, že uživatel může být v systému virtuální reality stále nováček a že nemusí znát tituly podle jejich názvu. Nechceme uživatele zatěžovat v herně nerelevantními komunitními funkcemi a nechceme uživateli jednoduše dovolit prohlížet obchod a nakupovat tituly na účtu herny.
+Podle funkčních požadavků a v kontrastu s existujícími řešení v podobě *SteamVR Dashboard* a *Oculus Home* chceme vytvořit takový spouštěč, který bude pro uživatele jednoduchý, bude brát v potaz fakt, že uživatel může být v systému virtuální reality stále nováček a že nemusí znát tituly podle jejich názvu. Nechceme uživatele zatěžovat v herně nerelevantními komunitními funkcemi a nechceme uživateli jednoduše dovolit prohlížet obchod a nakupovat tituly na účtu herny. Zároveň tato funkce nahrazuje nutnost obsluhy dotazovat se návštěvníků, co mají rádi a odhadovat tak o jaký typ zážitku by tak mohli mít návštěvníci zájem.
 
 ### Návrh rozhraní
 
 Pro rozhraní lze využít celý prostor kolem uživatele. Nebude se jednat o rozhraní, které můžeme vidět u *SteamVR Dashboard* -- ploché dvourozměrné rozhraní vykreslované na malou plochu před uživatelem.
 
-Základní myšlenka rozhraní je přímý přístup k výběru VR aplikací jako hlavní primární obrazovka spouštěče. Oba zkoumané existující řešení zmíněné výše mají výběr VR aplikací ukrytý pod tlačíkem "Library". 
+Základní myšlenka rozhraní je přímý přístup k výběru VR aplikací jako hlavní primární obrazovka spouštěče. Oba zkoumané existující řešení zmíněné výše mají výběr VR aplikací ukrytý pod tlačíkem "Library".
 
 Jako první bude uvádět rozhraní velký nadpis vyzývající uživatele k činnosti: "Vyberte si VR aplikaci". Pod ním bude zobrazen název aktuálně otevřené kategorie s šipkou evokující známý dropdown prvek, kterým může uživatel změnit aktuálně zobrazenou kategorii. Pod výběřem kategorií se nachází již samotná mřížka s aplikacemi. Mřížka má na výšku čtyři prvky a na šířku počet sloupců dynamický, podle velikosti místnosti takový, že vyplní bannery pokud možno kruh okolo uživatele.
 
 ![](http://i.imgur.com/EEyrMmf.png)  
 *fig. 3 Rozložení prvků rozhraní kolem uživatele*
 
-VR aplikace budou v mřížce zobrazovány velmi podobně, jako jsou zobrazovány v existujících spouštěčích -- vizuální obdélníkový banner s vizuálem hry. Velký rozdíl se však bude projevovat při ukázání ukazatelem na takový banner. Hra zobrazí svůj rychlý detail. Místo vizuálního banneru zaujme krátké video pořízené ze hry (tzv. in-game gameplay), které se bude opakovat. Nepůjde tedy o vizuál autorů aplikace, ani o trailer, ale čistě realistický záznam přímo ze hry. Uživatel tak bude schopen velmi přesně odhadnout, o čem aplikace je, jaká je její vizuální úroveň a přibližně i hratelnost a celkový dojem z aplikace, ještě dřív, než ji spustí. Napravo od videa bude pak doplněno celým názvem titulu, krátkým popisem a kategorizací podle žánru a intenzity. Pokud se bude jednat o často spouštěnou aplikaci, bude automaticky označena jako oblíbená. Celý tento blok detailu hry bude k uživateli mírně přiblížen a ostatní prvky se stanou částečně průhledné a budou mírně potlačeny do pozadí. 
+VR aplikace budou v mřížce zobrazovány velmi podobně, jako jsou zobrazovány v existujících spouštěčích -- vizuální obdélníkový banner s vizuálem hry. Velký rozdíl se však bude projevovat při ukázání ukazatelem na takový banner. Hra zobrazí svůj rychlý detail. Místo vizuálního banneru zaujme krátké video pořízené ze hry (tzv. in-game gameplay), které se bude opakovat. Nepůjde tedy o vizuál autorů aplikace, ani o trailer, ale čistě realistický záznam přímo ze hry. Uživatel tak bude schopen velmi přesně odhadnout, o čem aplikace je, jaká je její vizuální úroveň a přibližně i hratelnost a celkový dojem z aplikace, ještě dřív, než ji spustí. Napravo od videa bude pak doplněno celým názvem titulu, krátkým popisem a kategorizací podle žánru a intenzity. Pokud se bude jednat o často spouštěnou aplikaci, bude automaticky označena jako oblíbená. Celý tento blok detailu hry bude k uživateli mírně přiblížen a ostatní prvky se stanou částečně průhledné a budou mírně potlačeny do pozadí.
 
 ![](http://i.imgur.com/W7i1O7H.png)  
 *fig. 4 Základní stav aplikace spouštěče*
@@ -190,4 +190,3 @@ Po výběru prvku pro změnu kategorie se potlačí pozadí stejným způsobem, 
 *fig. 6 Výběr kategorie po kliknutí na prvek výběru kategorie*
 
 Rozhraní by tak mělo být velmi přehledné a především jednoduché. Uživatel se v rozhraní nemá kde ztratit, rozhraní nemá přechod na jiné obrazovky či stavy s vyjímkou možnosti třídění her.
-

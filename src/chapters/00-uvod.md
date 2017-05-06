@@ -36,9 +36,9 @@ Velkou roli v této technologii hrají kvalitní a rychlé gyroskopy a počíta�
 
 ### Systém HTC Vive
 
-V této práci se zaměřím především na systém *HTC Vive*, pro který bude aplikace navržena. Systém *Vive* vyvinutý společností *HTC* ve spolupráci se společností *Valve* je jedním z nejoblíbenějších systémů virtuální reality v současnosti. Koncovým zákazníkům se stal dostupným v dubnu roku 2016.
+Systém *Vive* vyvinutý společností *HTC* je jedním z nejoblíbenějších systémů virtuální reality v současnosti. Současně s *HTC* se na vývoji podílela společnost *Valve*. Tato společnost stojí za jednou z největších platforem pro digitální distribuci počítačových her -- službou *Steam*. S touto službou je úzce spjatá technologie *SteamVR*, založená na open-source knihovně *OpenVR*. O těchto technologiích více pojednávají kapitoly níže.
 
-Skládá se z náhlavní soupravy s OLED displejem o rozlišení 2160x1200 a dvou ovladačů do ruky s gyroskopem, pěti tlačítky a haptickou odezvou. Díky laserovému snímání je možné velmi přesně snímat velký prostor v místnosti, ve kterém se může uživatel volně pohybovat. V České republice je k aktuálnímu datu systém dostupný za přibližně 24 tisíc korun.
+Systé *HTC Vive* se Skládá z náhlavní soupravy s OLED displejem o rozlišení 2160x1200 a dvou ovladačů do ruky s gyroskopem, pěti tlačítky a haptickou odezvou. Díky laserovému snímání je možné velmi přesně snímat velký prostor v místnosti, ve kterém se může uživatel volně pohybovat. V České republice je k aktuálnímu datu systém dostupný za přibližně 24 tisíc korun. Koncovým zákazníkům se stal dostupným v dubnu roku 2016. Pro tento systém je aplikace této práce navržena.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/7/7a/Vive_pre.jpeg)  
 *fig.3 Systém virtuální reality HTC Vive a jeho ovladače*
@@ -53,6 +53,6 @@ Platforma *SteamVR* má na starosti spojení všech ovladačů a jejich rozpozn�
 
 ## OpenVR
 
-OpenVR je API rozhraní vyvíjené společností Steam, které umožňuje snadný a rychlý přístup k hardware systémů virtuální reality různých výrobců. Poskytuje určitou míru abstrakce k tomu, aby vývojáři měli přístup k jednotnému rozhraní bez závilosti na tom, jaký konkrétní systém jakého výrobce právě používají.
+OpenVR je API rozhraní vyvíjené společností Steam, které umožňuje snadný, multi-platformní a rychlý přístup k hardware systémů virtuální reality různých výrobců. Poskytuje určitou míru abstrakce k tomu, aby vývojáři měli přístup k jednotnému rozhraní bez závilosti na tom, jaký konkrétní systém jakého výrobce právě používají.
 
 > TODO: target 7kC

@@ -2,13 +2,13 @@
 
 Jak je zvykem u organizovaného vývoje softwaru -- implementací a prototypování předchází analýza, pro stanovení požadavků uživatelů softwaru a upřesnění funkcionalit aplikace.
 
-Následující kapitola se takovou analýzou bude zabývat. Analyzuji existující řešení, co požadují hráči docházející do herny, co požadují zaměstnanci pracující v herně a jaké požadavky jsou prakticky realizovatelné.
+Následující kapitola se takovou analýzou bude zabývat. Analyzuji existující řešení, co požadují hráči navštěvující hernu, co požadují zaměstnanci pracující v herně a jaké požadavky jsou realizovatelné.
 
 ## Analýza a porovnání existujících řešení výuky
 
-Výukové aplikace pro seznámení s virtuální realitou již existují. Nicméně většina z nich trpí špatnou přístupností. Systémy jsou navrhovány tak, aby po absolvování takové výuky již nebyly výukové aplikace jednoduše dostupné. V našem případě jsou tak obtížně spustitelné pro návštěvníky herny. 
+Výukové aplikace pro seznámení s virtuální realitou již existují. Nicméně většina z nich trpí špatnou přístupností. Systémy jsou navrhovány tak, aby po absolvování takové výuky již nebyly výukové aplikace jednoduše dostupné. V našem případě jsou tak obtížně spustitelné pro návštěvníky herny.
 
-Takové aplikace jsou spíše určené pro toho, kdo jako první systém konfiguruje a je jímž prvním uživatelem. Nově příchozímu k nakonfigurovanému systému není tutoriál nabídnut a jsou přímo uvedeni do prostředí, ve kterém se již očekává, že uživatel systém důvěrně zná. 
+Takové aplikace jsou spíše určené pro toho, kdo jako první systém konfiguruje a je jímž prvním uživatelem. Nově příchozímu k nakonfigurovanému systému není tutoriál nabídnut a jsou přímo uvedeni do prostředí, ve kterém se již očekává, že uživatel systém důvěrně zná.
 
 Součásti analýzy je i porovnání jednotlivých existujících řešení, pro které jsem si stanovil následující metriky k porovnání:
 
@@ -18,15 +18,15 @@ Součásti analýzy je i porovnání jednotlivých existujících řešení, pro
   - výstižnost
   - srozumitelnost
 
-### SteamVR Tutorial 
+### SteamVR Tutorial
 
-Pro totožnou platformu, pro kterou je aplikace této závěrečné práce určena -- **HTC Vive**, existuje oficiální výuková aplikace vytvořená přímo autory samotné platformy -- společnosti Valve. 
+Pro totožnou platformu, pro kterou je aplikace této závěrečné práce určena -- **HTC Vive**, existuje oficiální výuková aplikace vytvořená přímo autory samotné platformy -- společnosti Valve.
 
 #### Průběh výuky
 
 Aplikace se nejprve uvede vizuálně poutavým úvodem, který spočívá v sestavení výukové scény animací obklopující hráče. Hráči je tak názorně ukázana možnost rozhlížet se kolem sebe a prozkoumávat prostředí.
 
-Následně je uživateli představena postava (*Virtual Reality Assistance and Education Core*) ze hry Portal 2, která s hráčem komunikuje a provádí ho výukou -- stává se tak *průvodcem*. Monolog je dabovaný a v místech, kde se nachází průvodce lze číst titulky, které jsou lokalizovány do nepřeberného množství jazyků (je k dispozici i Čeština). 
+Následně je uživateli představena postava (*Virtual Reality Assistance and Education Core*) ze hry Portal 2, která s hráčem komunikuje a provádí ho výukou -- stává se tak *průvodcem*. Monolog je dabovaný a v místech, kde se nachází průvodce lze číst titulky, které jsou lokalizovány do nepřeberného množství jazyků (je k dispozici i Čeština).
 
 Příjemným bonusem je pro hráče hry Portal 2 familiarita postavy, která může zvýšit hráčovu pozornost a pro hráče, kteří si hru Portal 2 v minulosti oblíbili tak tutoriál navozuje na obličejích úsměv.
 
@@ -47,7 +47,7 @@ Tím je výuka u konce, uživatel je instruován k otevření *Dashboardu* a vý
 
 #### Zhodnocení
 
-SteamVR Tutorial je relativně dobrým příkladem výukové aplikace. Je kvalitně navržena, s objektivně sic strohým, ale kvalitním vizuálním a zvukovým zpracováním. 
+SteamVR Tutorial je relativně dobrým příkladem výukové aplikace. Je kvalitně navržena, s objektivně sic strohým, ale kvalitním vizuálním a zvukovým zpracováním.
 
 Pro účely herny je však shledán nevhodným, jelikož je návštěvníkům herny takový tutoriál prakticky nepřístupný. Obsluha je nucena jej spustit manuálně a také se návštěvníka herny zeptat, jestli už tutoriál absolvoval a zdali jej chce skutečně absolvovat. Návštěvník nemá možnost takovou výuku zopakovat, nebo alespoň získat nějaký závěrečný přehled, pro zopakování toho, co se naučil.
 
@@ -96,7 +96,7 @@ Dvě v předchozí kapitole zmíněné platformy (SteamVR a Oculus) mají vlastn
 
 ### SteamVR Dashboard
 
-*SteamVR Dashboard* je pouze malou modifikací již existujícího rozhraní *Steam Big Picture*, který je určen k použití *Steam* platformy z pohodlí gauče s použitím herního ovladače. 
+*SteamVR Dashboard* je pouze malou modifikací již existujícího rozhraní *Steam Big Picture*, který je určen k použití *Steam* platformy z pohodlí gauče s použitím herního ovladače.
 
 Díky tomu má *SteamVR Dashboard* nespornou výhodu v tom, že většina hráčů počítačových her se s platformou *Steam* již setkala a setkala se dokonce i s rozhraním *Big Picture*, které část hráčů dokonce používá jako primární rozhraní pro práci s platformou *Steam*.
 
@@ -105,7 +105,7 @@ Na druhou stranu lze však považovat jako nevýhodu ten fakt, že fakticky *Ste
 ![](https://cdn0.vox-cdn.com/thumbor/Lei26JXsB0zMdW_jkshawf3t29o=/0x205:839x677/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/49240909/ViveTheaterModeTop.0.0.jpg)
 *fig.5 SteamVR Dashboard*
 
-Z tohoto rozhraní lze procházet knihovnu her, prohlížet elektronický obchod s hrami a hry také nakupovat, prohlížet komunitní profily, stránky her, sledovat průběh aktuální ho stahování, používat webový prohlížeč a přistupovat k omezenému nastavení. 
+Z tohoto rozhraní lze procházet knihovnu her, prohlížet elektronický obchod s hrami a hry také nakupovat, prohlížet komunitní profily, stránky her, sledovat průběh aktuální ho stahování, používat webový prohlížeč a přistupovat k omezenému nastavení.
 
 Pokud budeme hodnotit *SteamVR Dashboard* z pohledu návštěvníka herny, je takové rozhraní naprosto nevyhovující. Pro návštěvníka, který nemá s platformou *Steam* zkušenosti je rozhraní spíše matoucí a může vyžadovat nějakou dobu, než se s ním seznámí. V rozhraní se také nacházejí sociální a komunitní funkce, které pro použití v herně nemají žádný význam a jsou tak dalším matoucím prvkem pro návštěvníka. Zákazník herny má nadále plný přístup k obchodu a mohl by tak na účet herny libovolně nakupovat hry, není mu v tom nikterak zabráněno.
 

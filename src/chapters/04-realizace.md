@@ -2,7 +2,7 @@
 
 Pro realizaci aplikace bude použit herní engine *Unity*. *Unity* je multi-platformní herní engine napsaný v C a C++ určený k vývoji her pro PC, konzole a mobilní zařízení. Je to v současnosti jeden z nejvhodnějších a nejpopulárnějších nástrojů na vývoj her pro virtuální realitu.
 
-Ač jde o nástroj pro tvorbu her, je vhodným nástrojem i pro tvorbu aplikace určené pro virtuální realitu, jelikož aplikace pro virtuální realitu jsou vykreslovány stereoskopicky a trojrozměrně. Předmětem tvorby této aplikace by neměla být tvorba takového vykreslovacího jádra, ale spíše samotné aplikace. Proto je využito herního enginu, abych čas strávený tvorbou vykreslovacího jádra byl využit spíše pro tvorbu samotné aplikace.
+Ač jde o nástroj pro tvorbu her, je vhodným nástrojem i pro tvorbu aplikace určené pro virtuální realitu, jelikož aplikace pro virtuální realitu jsou vykreslovány stereoskopicky a trojrozměrně. Předmětem tvorby této aplikace by neměla být tvorba takového vykreslovacího jádra, ale spíše samotné aplikace. Proto je využito herního enginu, aby čas strávený tvorbou vykreslovacího jádra byl využit spíše pro tvorbu samotné aplikace.
 
 ## Jazyk implementace
 
@@ -10,7 +10,7 @@ Herní engine *Unity* podporuje několik programovacích jazyků, ve kterých m�
 
 Výběr jazyku budou ovlivňovat i mé předchozí zkušenosti. V *Unity* jsem doposud napsal několik skriptů pouze v jazyce *C#*. Na druhou stranu mám s jazykem *JavaScript* mnohem hlubší zkušenosti a znalosti, ovšem mimo herní vývoj -- především ve webovém prostředí.
 
-Po rešerši jsem z různorodých názorů vývojářů vyderivoval následující doporučení, týkající se výběru jazyka pro *Unity*:
+Po rešerši z různorodých názorů vývojářů bylo možné vyderivovat následující doporučení, týkající se výběru jazyka pro *Unity*:
 
  - Záleží na předchozích zkušenostech s jazykem.
  - JavaScript, resp. UnityScript není totožný s webovým JavaScriptem. Jde spíše o JavaScript-like syntaxi.
