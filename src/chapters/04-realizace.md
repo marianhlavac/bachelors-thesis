@@ -10,7 +10,7 @@ Herní engine *Unity* podporuje několik programovacích jazyků, ve kterých m�
 
 Výběr jazyku budou ovlivňovat i mé předchozí zkušenosti. V *Unity* jsem doposud napsal několik skriptů pouze v jazyce *C#*. Na druhou stranu mám s jazykem *JavaScript* mnohem hlubší zkušenosti a znalosti, ovšem mimo herní vývoj -- především ve webovém prostředí.
 
-Po rešerši na nepřeberném množství internetových diskuzních fór jsem z různorodých názorů vývojářů vyderivoval následující doporučení, týkající se výběru jazyka pro *Unity*:
+Po rešerši jsem z různorodých názorů vývojářů vyderivoval následující doporučení, týkající se výběru jazyka pro *Unity*:
 
  - Záleží na předchozích zkušenostech s jazykem.
  - JavaScript, resp. UnityScript není totožný s webovým JavaScriptem. Jde spíše o JavaScript-like syntaxi.
@@ -20,18 +20,18 @@ Po rešerši na nepřeberném množství internetových diskuzních fór jsem z 
  - C# má kvalitní MSDN dokumentaci.
  - C# je rychlejší, než JavaScript ale ne znatelně.
  - Boo se nedoporučuje, používá jej pouze malý zlomek vývojářů.
- 
+
 Jako jazyk implementace tak byl zvolen jazyk *C#*, z důvodu mých předchozích zkušeností, majority komunity, která může poskytnout pomoc v případě problémů a z důvodu existence kvalitní dokumentace.
 
 ## Proof of Concept
 
-V aplikaci lze rozlišit klíčové funkce, které jsou poněkud specifické a charakteristické pro danou aplikaci. Ač je snadné navrhnout způsob řešení implementace takových funkcí, je nutné tyto funkce podrobit principem **Proof of Concept** — rychlou implementací konkrétních funkcí nezávisle na zasazení do koncové aplikace.
+V aplikaci lze rozlišit klíčové funkce, které jsou poněkud specifické a charakteristické pro danou aplikaci. Ač je snadné navrhnout způsob řešení implementace takových funkcí, je vhodné tyto funkce podrobit principem **Proof of Concept** — důkaz existence původně jen teoreticky předpokládané funkcionality, tedy rychlou implementací konkrétních funkcí nezávisle na zasazení do koncové aplikace.
 
 Na základě takové implementace je pak možné potvrdit, zda-li je návrh implementace klíčových funkcí, na kterých aplikace stojí, realizovatelný.
 
-Jednou z takových funkcí je zobrazení her, které vlastní herna na svém účtu platformy *Steam*. Aby bylo možné zobrazení provést, je nutné o hrách stáhnout informace, podle požadavku *F-C02*. Taková data jsou přístupná pomocí některého z API rozhraní služby *Steam*. Předmětem POC bude takový zdroj dat nalézt a implementovat práci s takovým zdrojem do enginu *Unity*.
+Jednou z takových funkcí je zobrazení her, které vlastní herna na svém účtu platformy *Steam*. Aby bylo možné zobrazení provést, je nutné o hrách stáhnout informace, podle požadavku *F-C02* -- stažení dat o VR aplikacích. Taková data jsou přístupná pomocí některého z API rozhraní služby *Steam*. Předmětem POC bude takový zdroj dat nalézt a implementovat práci s takovým zdrojem do enginu *Unity*.
 
-Další funkcí, kterou je nutné podrobit POC je samotný spouštěč her a to konkrétně funkci spuštění a opouštění VR aplikací, podle požadavků *F-C03* a *F-C04*. Je nutné vyzkoušet, jak z aplikace vytvořené v *Unity* spouštět aplikace nainstalované skrz platformu *Steam* a jak detekovat jejich ukončení a vyvolání spouštěče opět do popředí.
+Další funkcí, kterou je nutné podrobit POC je samotný spouštěč her a to konkrétně funkci spuštění a opouštění VR aplikací, podle požadavků *F-C03* a *F-C04* -- spuštění a ukončení uživatelem vybrané VR aplikace. Je nutné vyzkoušet, jak z aplikace vytvořené v *Unity* spouštět aplikace nainstalované skrz platformu *Steam* a jak detekovat jejich ukončení a vyvolání spouštěče opět do popředí.
 
 ### Stahování informací o aplikacích
 
@@ -39,17 +39,17 @@ Aby došlo ke splnění požadavku *F-C02*, je nutné získat následující inf
 
  - Jaké aplikace jsou zakoupené na účtě herny platformy Steam
  - Které z nich jsou nainstalovány na konkrétním počítači
- - Název aplikace, její krátký oficiální popis od výrobce, obrázek aplikace 
- 
+ - Název aplikace, její krátký oficiální popis od výrobce, obrázek aplikace
+
 Mezi informace nepatří navržené krátké video ze hry, či popis úrovně intenzity, jelikož platforma Steam není zdrojem takových dat. Předmětem zíkáním těchto dat se bude zabývat jedna z následujících kapitol.
 
-Steam nabízí více API rozhraní pro komunikaci, specifická pro různá použití, jako je např. přístup k různorodým API v rámci partnerského progrmu *Steamworks*, které by dávalo smysl použít, jelikož je běžně používáno pro aplikace a hry distribuované skrz platformu Steam, které jsou s platformou integrovány a pracují s ní, což se velmi podobá aplikací této závěrečné práce (minimálně splňuje podmínku práce s platformou Steam). *Steamworks SDK* je ovšem dostupné pouze pro partnery společnosti, což nejeví problém, partnerství je možné získat, jde však o mírně zdlouhavý proces a pro účely stažení informací by šlo o neefektivní postup.
+Steam nabízí více API rozhraní pro komunikaci, specifická pro různá použití, jako je např. přístup k různorodým API v rámci partnerského progrmu *Steamworks*, které by dávalo smysl použít, jelikož je běžně používáno pro aplikace a hry distribuované skrz platformu Steam, které jsou s platformou integrovány a pracují s ní, což se velmi podobá aplikací této závěrečné práce (minimálně splňuje podmínku práce s platformou Steam). *Steamworks SDK* je ovšem dostupné pouze pro partnery společnosti, což nejeví problém, partnerství je možné získat. Jde však o mírně zdlouhavý proces a pro účely stažení informací by šlo o neefektivní postup. Komplikaci by mohly představovat i licenční podmínky platformy, při použití pro účely závěrečné práce.
 
-Ideálním API rozhraním se tak ukázalo *Steam Web API*, které ač, jak je z názvu patrné, je určeno pro použití webovými službami, je ideálním a snadno přístupným zdrojem informací, které jsou nutné pro splnění požadavku. Rozhraní disponuje několika endpointy, nabízejícími různá data, pro nás zajímavým endpointem je však *GetOwnedGames-v0001*, který vrací seznam všech her, které vlastní specifikovaný účet platformy Steam.
+Ideálním API rozhraním se tak ukázalo veřejné *Steam Web API*, které ač, jak je z názvu patrné, je určeno pro použití webovými službami, je ideálním a snadno přístupným zdrojem informací, které jsou nutné pro splnění požadavku. Rozhraní disponuje několika endpointy, nabízejícími různá data, pro nás zajímavým endpointem je však *GetOwnedGames-v0001*, který vrací seznam všech her, které vlastní určitý účet platformy Steam.
 
 Situace se však komplikuje ve dvou bodech -- viditelností dat a autentizací:
 
-Pro stažení takových dat z účtu pomocí tohoto API, je nutné, aby daný účet měl v nastavení účtu platformy Steam povolen veřejný přístup k datům, jako je např. seznam her, který přesně potřebujeme. V naší situaci by to neměl být problém za předpokladu, že herna nemá důvod chtít skrývat seznam her, který vlastní na svých účtech. V případě, že herna z libovolného důvodu nebude chtít zveřejnit svůj seznam her na platformě Steam, tento postup tak selhává a není možné herně nabídnout takovou aplikaci bez toho, aniž by se využilo jiného API rozhraní služby Steam.
+Pro stažení takových dat z účtu pomocí tohoto API, je nutné, aby daný účet měl v nastavení účtu platformy Steam povolen veřejný přístup k datům, jako je např. seznam her, který potřebujeme. V naší situaci by to neměl být problém za předpokladu, že herna nemá důvod chtít skrývat seznam her, který vlastní na svých účtech. V případě, že herna z libovolného důvodu nebude chtít zveřejnit svůj seznam her na platformě Steam, tento postup tak selhává a není možné herně nabídnout takovou aplikaci bez toho, aniž by se využilo jiného API rozhraní služby Steam. Tomuto problému však nepřikládám vážnost, protože se obecně dá předpokládat, že herna svůj účet zveřejní. Lze totiž vycházet z faktu, že seznam her většina heren již zveřejnila na svých webových stránkách.
 
 Další, tentokrát už mnohem méně závažnější komplikací, je způsob autentizace pro použití *Steam Web API*. Steam nabízí dva způsoby -- vygenerováním statického klíče na jejich stránkách a jeho použitím při vytváření požadavků na API, nebo implementací OpenID přihlašování. Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití (resp. konfiguraci) jedním subjektem (či malým počtem subjektů), vygenerování klíče je velmi jednoduché a v ideálním případě je nutné takový proces provést jen jednou, je z důvodu časové efektivity a jednoduchosti implementace použita autorizace pomocí klíče.
 
@@ -71,6 +71,20 @@ Spouštění aplikace se díky systémového protokolu `steam://` stává velmi 
 > Runs an application. It will be installed if necessary.
 
 Z popsaného chování v dokumentaci plyne, že se tímto příkazem spustí hra, a pokud je to nutné, tak se spustí instalační proces.
+
+Problémová situace nastává ve chvíli, kdy chceme spustit opět náš spouštěč ve chvíli, kdy uživatel ukončí jím spuštěnou VR aplikaci. OpenVR, které má na starosti komunikaci se systémem virtuální reality, je koncipovaná takový způsobem, aby vykreslovala pouze jednu hlavní scénu
+
+Jako řešení se ukázala nutnost napsat malý jednoduchý program -- agenta, který bude detekovat spuštěnou aplikaci a pokud dojde k ukončení aplikace, spustí znovu náš spouštěč.
+
+Agent je psán taktéž v jazyce C#, poskytuje jednoduché uživatelské rozhraní, určené pro obsluhu, které je psáno pomocí knihovny WPF.
+
+> TODO: Here goes agent screenshot
+
+Program úzce pracuje s knihovnou OpenVR, díky které může výhodně detekovat spuštěnou hru.
+
+OpenGL knihovna nabízí rozhraní událostí, které lze odchytávat a zjistit tak, která aplikace právě běží. Ideální k tomuto účelu se ukázala událost `VREvent_SceneApplicationChanged`, kterou lze odchytit ve chvíli, kdy se změnila aplikace, která je právě na popředí systému OpenVR ve virtuální realitě.
+
+
 
 ## Postup implementace
 
