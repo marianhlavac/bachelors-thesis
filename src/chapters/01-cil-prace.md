@@ -6,4 +6,6 @@ Mezi klíčové vlastnosti takové aplikace bych chtěl zařadit efektivitu výu
 
 ## Rozbor zadání
 
-Ve své práci se budu zabývat analýzou požadavků hráčů a zaměstnanců herny virtuální reality, návrhem a implementací výukové aplikace pro usnadnění 
+Ve své práci se budu zabývat analýzou požadavků hráčů a zaměstnanců herny virtuální reality, návrhem a implementací výukové aplikace pro usnadnění
+
+> TODO: target 1kC

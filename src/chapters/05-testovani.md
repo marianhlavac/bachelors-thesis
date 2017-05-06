@@ -1,3 +1,3 @@
 # Testování
 
-> todo: target 600w
+> todo: target 2kC

@@ -77,4 +77,4 @@ Z popsaného chování v dokumentaci plyne, že se tímto příkazem spustí hra
 ...
 
 
-> TODO: target 2600w
+> TODO: target 19kC

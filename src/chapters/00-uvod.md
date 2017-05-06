@@ -55,4 +55,4 @@ Platforma *SteamVR* má na starosti spojení všech ovladačů a jejich rozpozn�
 
 OpenVR je API rozhraní vyvíjené společností Steam, které umožňuje snadný a rychlý přístup k hardware systémů virtuální reality různých výrobců. Poskytuje určitou míru abstrakce k tomu, aby vývojáři měli přístup k jednotnému rozhraní bez závilosti na tom, jaký konkrétní systém jakého výrobce právě používají.
 
-> TODO: target 1200w
+> TODO: target 7kC

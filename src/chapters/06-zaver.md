@@ -8,4 +8,6 @@ Výsledky analýzy pak nabízejí přehled o chování zákazníků a jejich pot
 
 > TODO: Napsat něco o OpenVR API a možnosti replacnout celej SteamVR Dashboard vlastním
 
-> TODO: Napsat, jak by bylo možné na práci navázat, i v souvislosti s ^ 
+> TODO: Napsat, jak by bylo možné na práci navázat, i v souvislosti s ^
+
+> TODO: target 2kC
