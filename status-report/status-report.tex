@@ -1,134 +1,149 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{graphicx}
-\geometry{margin=2.5cm}
 \usepackage[czech]{babel}
+\usepackage[unicode]{hyperref}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{multicol}
 
 \tolerance=1
 \emergencystretch=\maxdimen
 \hyphenpenalty=10000
 \hbadness=10000
 
-\usepackage[
-  backend=biber,
-  style=iso-authoryear,
-  autolang=other,
-  bibencoding=UTF8,
-]{biblatex}
-\addbibresource{cite.bib}
-
 \title{Výuková aplikace pro systémy virtuální reality}
 \author{Marián Hlaváč}
 \date{6. května 2017}
 
+
 \begin{document}
+    \begin{titlepage}
 
-\begin{center}
-České vysoké učení technické v Praze\\
-Fakulta informačních technologií
-\end{center}
+        \begin{center}
+        České vysoké učení technické v~Praze\\
+        Fakulta informačních technologií
+        \end{center}
 
-\vspace{1cm}
+        \vspace{1cm}
 
-\begin{center}
-\includegraphics[height=3cm]{cvut-logo-bw}
-\end{center}
+        \begin{center}
+        \includegraphics[height=3cm]{cvut-logo-bw}
+        \end{center}
 
-\vspace{3cm}
+        \vspace{3cm}
+        {\let\newpage\relax\maketitle}
+        \thispagestyle{empty}
 
-{\let\newpage\relax\maketitle}
+        \begin{center}
+        \textbf{Poziční zpráva}\\
+        BI-PPR, letní semestr 2016/17\\
+        \end{center}
 
-\begin{center}
-\textbf{Poziční zpráva}\\
-BI-PPR, letní semestr 2016/17\\
-\end{center}
-
-\begin{center}
-Vedoucí práce: Ing. Jiří Chludil\\
-Obor: Web a multimédia\\
-\end{center}
-\clearpage
+        \begin{center}
+        Vedoucí práce: Ing. Jiří Chludil\\
+        Obor: Web a multimédia\\
+        \end{center}
+    \end{titlepage}
 
 \section{Klíčová slova}
 
 výuková aplikace, virtuální realita, HTC Vive, OpenVR, implementace, výuka, herní průmysl
 
-\section{Úvod k problematice}
+\section{Úvod k~problematice}
 
-Virtuální realita (často zkracováno na VR) je bezesporu novým trendem v oblasti informačních technologií. Protože je tato technologie běžným lidem méně dostupná, vznikly ve~větších městech nové podniky, které zprostředkovávají zážitky ve~virtuální realitě za zlomek ceny celého systému, bez nutnosti znalosti systémů virtuální reality, zajištění dostatečného výpočetního výkonu pro~takové systémy, nutnosti výběru, nákupu her pro~virtuální realitu kompatibilní s~konkrétním systémem a~konfigurace virtuální reality.
+Virtuální realita (často zkracováno na VR) je bezesporu novým trendem v~oblasti informačních technologií. Protože je tato technologie běžným lidem méně dostupná, vznikly ve~větších městech nové podniky, které zprostředkovávají zážitky ve~virtuální realitě za zlomek ceny celého systému bez nutnosti znalosti systémů virtuální reality, zajištění dostatečného výpočetního výkonu pro~takové systémy, nutnosti výběru, nákupu her pro~virtuální realitu kompatibilní s~konkrétním systémem a~konfigurace virtuální reality.\cite{herny}
 
-Takovým podnikům a~jejich návštěvníkům však vznikají určité požadavky, na~které systémy virtuální reality nejsou v~současné době příliš připraveny. Uživatelské rozhraní softwaru je~spíše soustředěno na~jednoho dlouhodobého uživatele, který měl prostor systému porozumět, což je nevhodné v prostředí, kde se uživatel s~virtuální realitou setkává poprvé a~v~omezeném čase, po který mu byl systém zapůjčen.
+Takovým podnikům a~jejich návštěvníkům však vznikají určité požadavky, na~které systémy virtuální reality nejsou v~současné době příliš připraveny. Uživatelské rozhraní softwaru je~spíše soustředěno na~jednoho dlouhodobého uživatele, který měl prostor systému porozumět, což je nevhodné v~prostředí, kde se uživatel s~virtuální realitou setkává poprvé a~v~omezeném čase, po který mu byl systém zapůjčen.
 
 \section{Cíle závěrečné práce}
 
-Cílem závěrečné práce je vytvořit aplikaci usnadňující návštěvníkům herny seznámení s~virtuální realitou a usnadní práci obsluze herny. Výsledná práce by tak měla nahrazovat klíčové nedostatky systému, na které lze narazit při použití v prostředí herny.
+Cílem závěrečné práce je vytvořit aplikaci, která usnadní návštěvníkům herny seznámení s~virtuální realitou a usnadní práci obsluze herny. Výsledná práce by tak měla nahrazovat klíčové nedostatky systému, na které lze narazit při použití v~prostředí herny.
 
 Aplikace bude rozdělena na dvě části -- výukovou a spouštěč.
 
-Výuková část provede uživatele vstupem do virtuální reality. Bude mu představeno prostředí, ve kterém se bude pohybovat a budou mu představeny ovladače systému \textit{HTC Vive}, pro který je tato aplikace primárně určena. Návštěvník herny tak bude v~co~nejkratším čase zaučen a zefektivní se i práce obsluhy herny. Zatímco návštěvník prochází výukou, obsluha se může začít věnovat dalším zákazníkům herny.
+Výuková část provede uživatele vstupem do virtuální reality. Bude mu představeno prostředí, ve kterém se bude pohybovat, a budou mu představeny ovladače systému \textit{HTC Vive}, pro který je tato aplikace primárně určena. Návštěvník herny tak bude v~co~nejkratším čase zaučen a zefektivní se i práce obsluhy herny. Zatímco návštěvník prochází výukou, obsluha se může začít věnovat dalším zákazníkům herny.
 
-Po ukončení výuky bude pomocí vlastního spouštěče představena nabídka titulů, které si může uživatel v herně vyzkoušet. Knihovna her a~aplikací bude taktéž kategorizována a bude zobrazovat oblíbené tituly, které herna dopouručuje, či ty tituly, které jsou v herně oblíbené. Tato funkce tak nahrazuje nutnost obsluhy dotazovat se návštěvníků, co mají rádi a odhadovat o jaký typ zážitku by tak mohli mít zájem.
+Po ukončení výuky bude pomocí vlastního spouštěče představena nabídka titulů, které si může uživatel v~herně vyzkoušet. Knihovna her a~aplikací bude taktéž kategorizována a bude zobrazovat oblíbené tituly, které herna dopouručuje, či tituly, které jsou v~herně oblíbené. Tato funkce tak nahrazuje nutnost obsluhy dotazovat se návštěvníků, co mají rádi, a odhadovat, o~jaký typ zážitku by tak mohli mít zájem.
 
-Výstupem bude analýza současného stavu, návrh aplikace pro výuku a doplňkové aplikace spouštěče a následně samotná realizace takové aplikace.
+Výstupem bude analýza současného stavu, návrh aplikace pro výuku a doplňkové aplikace spouštěče, následně samotná realizace takové aplikace.
 
-Mezi plánované klíčové vlastnosti aplikace je zařazena efektivita výuky, kvalitní vizuální zpracování a nízká obtruzivnost\footnote{vtíravost, nápadnost, vnucující se -- z anglického pojmu obtrusiveness} aplikace. Je nutné myslet na to, že aplikace bude nasazena v prostředí, kde uživatelé disponují limitovaným časem. Zakoupili si omezený čas zápůjčky systému a aplikace by je neměla o jejich zakoupený čas připravit.
+Mezi plánované klíčové vlastnosti aplikace je zařazena efektivita výuky, kvalitní vizuální zpracování a nízká obtruzivnost\footnote{vtíravost, nápadnost, vnucující se -- z~anglického pojmu obtrusiveness} aplikace. Je nutné myslet na to, že aplikace bude nasazena v~prostředí, kde uživatelé disponují limitovaným časem. Zakoupili si omezený čas zápůjčky systému a aplikace by je neměla o~jejich zakoupený čas připravit.
 
 \newpage
 
-\section{Proběhlá analýza}
+\section{Analýza}
 
-Neodlučitelnou součástí práce je analýza. Byly analyzovány v současnosti nejpoužívanější a nejrozšířenější řešení podobné mé práci. Výsledky analýzy lze shrnout do tvrzení, že současná řešení jsou velmi atraktivní a kvalitně zpracovaná, jelikož za nimi stojí velká studia, ale kriticky selhávají na přístupnosti a délce, především v prostředí herny.
+Neodlučitelnou součástí práce je analýza. Byly analyzovány v~současnosti nejpoužívanější a nejrozšířenější řešení podobné mé práci. Výsledky analýzy lze shrnout do tvrzení, že současná řešení jsou velmi atraktivní a kvalitně zpracovaná, jelikož za nimi stojí velká studia, ale kriticky selhávají na přístupnosti a délce, především v~prostředí herny.
 
-Návštěvník herny se o žádné možnosti výuky nemusí dozvědět, protože je systém již nakonfigurován a možnost spustit výuku je skrytá do nabídky nedostupné návštěvníkovi herny, pouze obsluze. Pokud se i přesto o výuce dozví a spustí ji, bude s největší pravděpodobností iritován délkou takové výuky, protože se pohybuje v rozmezí 7--12 minut.
+Návštěvník herny se o~žádné možnosti výuky nemusí dozvědět, protože je systém již nakonfigurován a možnost spustit výuku je skrytá do nabídky nedostupné návštěvníkovi herny, pouze obsluze. Pokud se i přesto o~výuce dozví a spustí ji, bude s~největší pravděpodobností iritován délkou takové výuky, protože se pohybuje v~rozmezí 7--12 minut.
 
-Analyzoval jsem výuku určenou pro systém \textit{HTC Vive}, ale i výuku určenou pro konkurenční systém virtuální reality -- \textit{Oculus Rift}. Výuka pro \textit{Oculus Rift} byla lépe strukturizovaná, zatímco výuka pro \textit{HTC Vive} byla více atraktivní a zábavná. Analýza obou těchto výukových aplikací sloužila jako klíčový podnět pro návrh výukové aplikace této závěrečné práce.
+V závěrečné práci je analyzována výuka pro systém \textit{HTC Vive}, ale i výuka určená pro konkurenční systém virtuální reality -- \textit{Oculus Rift}. Výuka pro \textit{Oculus Rift} byla lépe strukturizovaná, zatímco výuka pro \textit{HTC Vive} je více atraktivní a zábavná. Analýza obou těchto výukových aplikací sloužila jako klíčový podnět pro návrh výukové aplikace této závěrečné práce.
 
-\section{Práce s technologiemi v rámci práce}
+\section{Využití technologií v~rámci práce}
 
-Závěrečná práce se týká zajímavých a moderních technologií, jako je virtuální realita, jeho hardware i software v podobě knihoven pro práci s ním, či s platformou pro digitální distribuci počítačových her. Jak již bylo zmíněno, výsledná aplikace je určena pro systém virtuální reality Vive od společnosti HTC, na jehož vývoji se podílela společnost \textit{Valve}. Tato společnost stojí za jednou z největších platforem pro digitální distribuci počítačových her -- službou \textit{Steam}. S touto službou je spjatá technologie \textit{SteamVR}, založená na open-source knihovně \textit{OpenVR}, která je určená pro jednoduchou multi-platformní práci s virtuální realitou, systémy, hardwarem a softwarem.
+Závěrečná práce se týká zajímavých a moderních technologií, jako je virtuální realita, jeho hardware i software v~podobě knihoven pro práci s~ním, či s~platformou pro digitální distribuci počítačových her. Jak již bylo zmíněno, výsledná aplikace je určena pro systém virtuální reality \textit{Vive} od společnosti \textit{HTC}, na jehož vývoji se podílela společnost \textit{Valve}. Tato společnost stojí za jednou z~největších platforem pro digitální distribuci počítačových her -- službou \textit{Steam}. S~touto službou je spjatá technologie \textit{SteamVR}, založená na open-source knihovně \textit{OpenVR}, která je určená pro jednoduchou multi-platformní práci s~virtuální realitou, systémy, hardwarem a softwarem.\cite{openvr}
 
 \section{Současný stav řešení}
 
-V současné chvíli je z větší části napsán text závěrečné práce. Rozhodl jsem se, na~doporučení svého vedoucího práce, zvolit postup opačný k běžně viděnému u mých spolužáků. Implementaci předcházelo rozepsání počáteční části textu, provedení návrhu a napsání všech kapitol týkajících se návrhu a fází před implementací.
+V~současné chvíli je z~větší části napsán text závěrečné práce. Na~doporučení svého vedoucího práce byl zvolen postup opačný k~běžně viděnému u~spolužáků. Implementaci předcházelo rozepsání počáteční části textu, provedení návrhu a napsání všech kapitol týkajících se návrhu a fází před implementací.
 
-V průběhu návrhu jsem uplatnil princip Proof of Concept\footnote{důkaz existence původně jen teoreticky předpokládané vlastnosti nějakého systému}. Proběhla tak rychlá implementace dvou funkcí, které jsem subjektivně pokládal za problémové. Šlo o funkce spouštění titulů ze spouštěče a o funkci stahování dat o titulech pro účely zobrazení ve spouštěči. Výsledky Proof of Concept uvedu dále v kapitole \textit{Problémy při řešení}.
+V~průběhu návrhu byl uplatněn princip Proof of Concept\footnote{důkaz existence původně jen teoreticky předpokládané vlastnosti nějakého systému\cite{slov}}. Proběhla tak rychlá implementace dvou funkcí, které byly subjektivně položeny za problémové. Šlo o~funkci spouštění titulů ze spouštěče a o~funkci stahování dat o~titulech pro účely zobrazení ve spouštěči. Výsledky Proof of Concept jsou uvedeny dále v~kapitole \hyperref[problemy]{\textit{Problémy při řešení}}.
 
-Až poté, co je hotová většina textu probíhá samotná implementace aplikace. Dávám tak přiznaně lehce vyšší prioritu textu závěrečné práce, před implementací. Pro implementaci byl zvolen jazyk C\# a aplikace bude postavena nad herním enginem\footnote{Herní engine je software sloužící k vývoji videoher} \textit{Unity}.
+Až poté, co je hotová většina textu, probíhá samotná implementace aplikace. Byla tak dána lehce vyšší priorita textu závěrečné práce před implementací. Pro implementaci byl zvolen jazyk C\# a aplikace bude postavena nad herním enginem\footnote{Herní engine je software sloužící k~vývoji videoher\cite{hernieng}} \textit{Unity}.
 
-Implementačně se závěrečná práce nachází spíše před hranicí poloviny, ovšem odhad délky implementace je nepříliš vysoký, tudíž do termínu odevzdání práce by měla být většina práce na implementaci již odvedena. Je však předpokládáno, že všechny funkce implementovány nebudou. Půjde o estetické úpravy, jako jsou vizuální efekty, dodatečné zkvalitňování výuky či reakce na výsledky testování.
+Implementačně se závěrečná práce nachází spíše před hranicí poloviny, ovšem odhad délky implementace není příliš vysoký, tudíž do termínu odevzdání by měla být většina práce na implementaci již odvedena. Je však předpokládáno, že všechny funkce implementovány nebudou. Půjde o~estetické úpravy, jako jsou vizuální efekty, dodatečné zkvalitňování výuky či reakce na výsledky testování.
 
 \section{Problémy při řešení}
+\label{problemy}
 
-Po rychlé implementaci dvou problémových funkcí v rámci Proof of Concept se ukázalo, že jedna z nich je skutečně problémová.
+Po rychlé implementaci dvou problémových funkcí v~rámci Proof of Concept se ukázalo, že jedna z~nich je skutečně problémová.
 
-Stahování dat ze služby \textit{Steam} se jeví jako bezproblémové. Jsou dostupná všechna potřebná data, která jsou běžně dostupná v oficiální aplikaci \textit{Steam}, prostřednictvím veřejného API rozhraní. Jako drobnou komplikaci je možné považovat zjištění, že herna, která bude chtít aplikaci nasadit, bude muset zveřejnit svůj profil na zmíněné službě. Tomuto problému však nepřikládám takovou vážnost, jelikož se obecně dá předpokládat, že herna svůj účet zveřejní, aby její zákazníci mohli vidět, jaké tituly nabízí. Tuto informaci již herny běžně zveřejňují na svých webových stránkách, neměl by existovat důvod, proč by herna nechtěla stejnou informaci zveřejnit i na profilu služby \textit{Steam}.
+Stahování dat ze služby \textit{Steam} se jeví jako bezproblémové. Jsou dostupná všechna potřebná data, která jsou běžně dostupná v~oficiální aplikaci \textit{Steam}, prostřednictvím veřejného API rozhraní. Jako drobnou komplikaci je možné považovat zjištění, že herna, která bude chtít aplikaci nasadit, bude muset zveřejnit svůj profil na zmíněné službě.
 
-Jako větší problém se však ukázal proces spouštění a ukončování VR aplikací skrze vlastní spouštěč. Spouštění aplikací je jednoduchou záležitostí. Služba \textit{Steam} exponuje veřejný systémový protokol \texttt{steam://}, který lze výhodně použít pro spuštění uživatelem vybraného titulu.
-Komplikace nastává ve chvíli, kdy uživatel VR aplikaci, kterou si vybral, ukončí. Záměrem je, aby se po ukončení uživateli znova zobrazil vlastní spouštěč aplikace této závěrečné práce. Detekce takového stavu je o něco složitější.
+Zmíněnému problému však nebyla přiložena taková vážnost, jelikož se obecně dá předpokládat, že herna svůj účet zveřejní, aby její zákazníci mohli vidět, jaké tituly nabízí. Tuto informaci již herny běžně zveřejňují na svých webových stránkách, neměl by existovat důvod, proč by herna nechtěla stejnou informaci zveřejnit i na profilu služby \textit{Steam}.
 
-Výborným pomocníkem pro řešení tohoto problému se ukázala knihovna \textit{OpenVR}, kterou je možné jednoduše použít a pracovat s událostmi, kterým lze naslouchat. Z~dokumentace je~patrné, že přesně k tomuto účelu slouží událost s názvem \texttt{VREvent\_SceneApplicationChanged}.
-Tím ovšem není zcela vyřešen problém výchozího chování systému \textit{SteamVR}, potažmo knihovny \textit{OpenVR}. Po spuštění jiné VR aplikace je ta původní ukončena. Současně může běžet pouze jedna aplikace v popředí, původní proces aplikace je ukončen. Je tak nutné vytvořit malý pomocný program, tzv. agent, který bude mít pouze jediný úkol -- naslouchat událostem a při detekci ukončené aplikace ihned spustí spouštěč aplikace této závěrečné práce.
+Jako větší problém se však ukázal proces spouštění a ukončování VR aplikací skrze vlastní spouštěč. Spouštění aplikací je jednoduchou záležitostí. Služba \textit{Steam} exponuje veřejný systémový protokol \texttt{steam://}, který lze výhodně použít pro spuštění uživatelem vybraného titulu.\cite{protocl}
+Komplikace nastává ve chvíli, kdy uživatel VR aplikaci, kterou si vybral, ukončí. Záměrem je, aby se po ukončení uživateli znova zobrazil vlastní spouštěč aplikace této závěrečné práce. Detekce takového stavu je o~něco složitější.
+
+Výborným pomocníkem pro řešení tohoto problému se ukázala knihovna \textit{OpenVR}, kterou je možné jednoduše použít, a pracovat s~událostmi, kterým lze naslouchat. Z~dokumentace je~patrné, že přesně k~tomuto účelu slouží událost s~názvem \texttt{VREvent\_SceneApplicationChanged}.\cite{openvrapi}
+
+Tím ovšem není zcela vyřešen problém výchozího chování systému \textit{SteamVR}, potažmo knihovny \textit{OpenVR}. Po spuštění jiné VR aplikace je ta původní ukončena. Současně může běžet pouze jedna aplikace v~popředí, původní proces aplikace je ukončen. Je tak nutné vytvořit malý pomocný program, tzv. agent, který bude mít pouze jediný úkol -- naslouchat událostem a při detekci ukončené aplikace ihned vnese do popředí spouštěč aplikace této závěrečné práce.
 
 Ač minimálně, tak tvorba tohoto programu komplikovala časový plán práce na závěrečné práci.
 
 \section{Závěr}
 
-Lze předpokládat, že v době dokončení závěrečné práce bude aplikace splňovat definované cíle a po další nepříliš dlouhé práci bude i nasazena produkčně do herny \textit{Virtualnirealita.cz}, se kterou v rámci práce spolupracuji a která poskytuje přístup k hardware potřebnému ke splnění této práce. Proof of Concept dokazuje ještě před samotným dokončením implementace, že náročné momenty implementace lze splnit a díky tomu míru úspěšnosti dokončení aplikace lze předpokládat za vyšší.
+Lze předpokládat, že v~době dokončení závěrečné práce bude aplikace splňovat definované cíle a po další nepříliš dlouhé práci bude i nasazena produkčně do herny \textit{Virtualnirealita.cz}, se kterou v~rámci práce spolupracuji a která poskytuje přístup k~hardware potřebnému ke splnění této práce. Proof of Concept dokazuje ještě před samotným dokončením implementace, že náročné momenty implementace lze splnit a díky tomu míru úspěšnosti dokončení aplikace lze předpokládat za vyšší.
 
-Text závěrečné práce vyžaduje pouze dokončení dvou kapitol a finalizaci. Implementace vyžaduje dokončení klíčových funkcí a jejich otestování na samotných systémech virtuální reality.
+V~textu závěrečné práce je nutné pouze dokončit dvě kapitol a provést finalizaci. Implementace vyžaduje dokončení klíčových funkcí a jejich otestování na samotných systémech virtuální reality.
 
 \newpage
 
+\renewcommand\refname{Zdroje}
+
 \begingroup
 \raggedright
+\begin{thebibliography}{}
+    \bibitem{slov}
+    		RNDr. ŘÍHA Petr, Ing. KLAŠKA Luboš. \emph{Slovník počítačové informatiky a sítí} [online] [cit. 2017-05-06].\\ Dostupné z: \url{http://www.svetsiti.cz/slovnik.asp?hid=Proof-of-Concept}
 
-\nocite{*}
-\printbibliography[title={Zdroje}]
+    \bibitem{herny}
+    		VODRÁŽKA Prokop, PLÍHAL Jakub. \emph{Vrací se fenomén 90. let. Herny virtuální reality nahradily ty počítačové, ukazují budoucnost zábavy} [online] [cit. 2017-05-06].\\ Dostupné z: \url{https://magazin.aktualne.cz/vraci-se-fenomen-90-let-herny-virtualni-reality-nahradily-ty/r~238ce914a0e211e6bcb60025900fea04/}
+
+    \bibitem{openvr}
+    		WAWRO Alex. \emph{Valve launches new OpenVR SDK to expand SteamVR development} [online] [cit. 2017-05-06].\\ Dostupné z: \url{http://www.gamasutra.com/view/news/242401/Valve_launches_new_OpenVR_SDK_to_expand_SteamVR_development.php}
+
+    \bibitem{hernieng}
+    		\emph{Co je to herní engine} [online]. Ceskemody.cz [cit. 2017-05-06].\\ Dostupné z: \url{http://www.ceskemody.cz/clanky.php?clanek=56}
+
+    \bibitem{protocl}
+    		\emph{Valve Developer Community -- Steam browser protocol documentation} [online]. Valve Corporation [cit. 2017-05-06].\\ Dostupné z: \url{https://developer.valvesoftware.com/wiki/Steam_browser_protocol}
+
+    \bibitem{openvrapi}
+    		\emph{OpenVR API Documentation} [online]. Valve Corporation [cit. 2017-05-06].\\ Dostupné z: \url{https://github.com/ValveSoftware/openvr/wiki/API-Documentation}
+\end{thebibliography}
 \endgroup
-
-\section*{Poznámka k poziční zprávě}
-
-Jednotlivé citace nejsou očíslované a přiřazené k místům citace, jelikož se mi nepodařilo správně nakonfigurovat LaTeXový balíček \textit{biblatex-iso690}. Jsem si tak vědom, že citace neodpovídají přesně normě ČSN ISO 690.
 
 \end{document}
