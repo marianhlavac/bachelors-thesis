@@ -111,61 +111,61 @@ Tento konkrétní přepis scénáře je lokalizován do češtiny a je určen pr
 
 *Zobrazí se logo herny. [M1]*
 
-*Průvodce:* Vítejte v herně Virtualnirealita.cz! Tato krátká výuka vás provede vstupem do virtuální reality. *[M2]*
+**Průvodce:** Vítejte v herně Virtualnirealita.cz! Tato krátká výuka vás provede vstupem do virtuální reality. *[M2]*
 
 *Zobrazí se instrukce pro přeskočení výuky na obrazovce.*
 
-*Průvodce:* Pokud s virtuální realitou již máte zkušenosti a výuku chcete přeskočit, stiskněte kombinaci tlačítek menu a spouště. *[M3]*
+**Průvodce:** Pokud s virtuální realitou již máte zkušenosti a výuku chcete přeskočit, stiskněte kombinaci tlačítek menu a spouště. *[M3]*
 
 *- krátká pauza -*
 
-*Průvodce:* Rozhlédněte se kolem sebe a na podlahu. Ohraničení, které můžete vidět na zemi je místo, ve kterém se lze volně pohybovat v průběhu vašich zážitků ve virtuální realitě. *[M4]*
+**Průvodce:** Rozhlédněte se kolem sebe a na podlahu. Ohraničení, které můžete vidět na zemi je místo, ve kterém se lze volně pohybovat v průběhu vašich zážitků ve virtuální realitě. *[M4]*
 
-*Průvodce:* Toto ohraničení však není vidět vždy, proto se zobrazuje pomocná mřížka, která vás na tyto hranice upozorní, pokud se je pokusíte překročit.
+**Průvodce:** Toto ohraničení však není vidět vždy, proto se zobrazuje pomocná mřížka, která vás na tyto hranice upozorní, pokud se je pokusíte překročit.
 
-*Průvodce:* Nyní se zkuste pomalu k hranici přiblížit, abyste si vyzkoušeli, jak to funguje. Za tuto hranici dále nechoďte.
+**Průvodce:** Nyní se zkuste pomalu k hranici přiblížit, abyste si vyzkoušeli, jak to funguje. Za tuto hranici dále nechoďte.
 
 *- krátká pauza -*
 
-*Průvodce:* Až dokončíte prozkoumávání ohraničení, vraťte se doprostřed místnosti a zvedněte obě ruce před sebe. Řekneme si něco k ovladačům, které máte v ruce. *[M5]*
+**Průvodce:** Až dokončíte prozkoumávání ohraničení, vraťte se doprostřed místnosti a zvedněte obě ruce před sebe. Řekneme si něco k ovladačům, které máte v ruce. *[M5]*
 
 *Čekání na reakci uživatele: zvednutí rukou před sebe...*
 
-*Průvodce:* Toto jsou ovladače systému HTC Vive. Nyní vám představíme tlačítka těchto ovladačů. *[M6]*
+**Průvodce:** Toto jsou ovladače systému HTC Vive. Nyní vám představíme tlačítka těchto ovladačů. *[M6]*
 
 *Zvýrazní se tlačítko spouště.*
 
-*Průvodce:* Toto je tlačítko spouště. Slouží ve hrách většinou jako tlačítko pro výstřel, nebo výběr položky v menu.
+**Průvodce:** Toto je tlačítko spouště. Slouží ve hrách většinou jako tlačítko pro výstřel, nebo výběr položky v menu.
 
 *Uživateli začne z pravého ovladače vyzařovat slabý laserový paprsek.*
 
-*Průvodce:* Namiřte laserové ukazovátko na terč a stiskněte spoušť.
+**Průvodce:** Namiřte laserové ukazovátko na terč a stiskněte spoušť.
 
 *Čekání na reakci uživatele: namíření na terč a stisk spouště...*
 
 *Zvýrazní se boční tlačítko.*
 
-*Průvodce:* Perfektní! Toto je boční tlačítko, které lze stisknout z libovolné strany. Slouží jako alternativní funkce, například pro přebíjení zbraně. Stiskněte jej.
+**Průvodce:** Perfektní! Toto je boční tlačítko, které lze stisknout z libovolné strany. Slouží jako alternativní funkce, například pro přebíjení zbraně. Stiskněte jej.
 
 *Čekání na reakci uživatele: stisk bočního tlačítka...*
 
 *Zvýrazní se dotyková plocha.*
 
-*Průvodce:* Dobře. Toto je dotyková část ovladače. Můžete po ní přejíždět prstem a také ji stisknout. Přejížděním prstu vyberte barvu a stisknutím dotykové plochy vyberte barvu svého laserového ukazovátka.
+**Průvodce:** Dobře. Toto je dotyková část ovladače. Můžete po ní přejíždět prstem a také ji stisknout. Přejížděním prstu vyberte barvu a stisknutím dotykové plochy vyberte barvu svého laserového ukazovátka.
 
 *Čekání na reakci uživatele: stisk dotykové plochy...*
 
-*Průvodce:* Skvěle! Zbývají nám dvě tlačítka. Menu tlačítko a systémové tlačítko.
+**Průvodce:** Skvěle! Zbývají nám dvě tlačítka. Menu tlačítko a systémové tlačítko.
 
 *Zvýrazní se menu tlačítko.*
 
-*Průvodce:* Menu tlačítko slouží většinou k vyvolání nabídky ve hře. Často můžete tímto tlačítkem také pozastavit hru.
+**Průvodce:** Menu tlačítko slouží většinou k vyvolání nabídky ve hře. Často můžete tímto tlačítkem také pozastavit hru.
 
 *Zvýrazní se systémové tlačítko.*
 
-*Průvodce:* Systémové tlačítko pak otevírá rozhraní systému Steam. Pokud jste s platformou Steam seznámeni, můžete toto tlačítko používat pro procházení knihovnou. Stejným tlačítkem toto rozhraní i můžete zavřít.
+**Průvodce:** Systémové tlačítko pak otevírá rozhraní systému Steam. Pokud jste s platformou Steam seznámeni, můžete toto tlačítko používat pro procházení knihovnou. Stejným tlačítkem toto rozhraní i můžete zavřít.
 
-*Průvodce:* Nyní jste připraveni spustit svůj první zážitek ve virtuální realitě. Před sebou vidíte knihovnu dostupných aplikací naší herny. Vyberte si, o který zážitek máte zájem, namiřte na něj a stiskněte spoušť. *[M7]*
+**Průvodce:** Nyní jste připraveni spustit svůj první zážitek ve virtuální realitě. Před sebou vidíte knihovnu dostupných aplikací naší herny. Vyberte si, o který zážitek máte zájem, namiřte na něj a stiskněte spoušť. *[M7]*
 
 ---
 
