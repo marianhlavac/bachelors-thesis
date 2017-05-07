@@ -86,7 +86,31 @@ V kapitole jsou uvedeny konkrétnější detaily implementační fáze práce. J
 
 ### Struktura scény
 
+Herní engine Unity podporuje strukturizaci aplikace do scén. Scény mohou obsahovat herní objekty (třída `GameObject`) na které jsou "zavěšeny" komponenty. Může jít o komponenty pracující s herním světem, fyzikálními vlastnostmi objektů a nebo o nejobecnější a nejmocnější komponentu -- komponentu skriptu. Ta umožňuje k objektu připojit vlastní skript v jazyce C#, JavaScript či Boo, a naprogramovat tak logiku daného herního objektu.
 
+Aplikace je strukturována pouze do jedné scény. Ač by na první pohled dávalo smysl oddělit výuku a spouštěč do samostatných scén, je nutné brát v potaz, že přechod z jedné scény na jinou provází kratší či delší načítání a implicitně jsou nahrazeny všechny objekty staré scény za objekty nové scény. I přesto, že toto chování se dá do určité míry změnit, je i přesto nežádoucí, aby v přechodu mezi výukou a spouštěčem byla prodleva. Je tak jednodušší obě části strukturovat do jedné scény a důkladněji pak strukturovat jednu danou hlavní scénu.
+
+Herní objekty v enginu Unity disponují velmi důležitou a užitečnou funkcí -- mohou být do sebe zanořovány a může jít o prázdné objekty pouze s komponentou `Transform`, která se stará o pozicování v herním světě. Objekty tak lze sestavovat z jiných objektů, nebo je jen používat pro seskupování objektů.
+
+![Imgur](http://i.imgur.com/nkWHyOO.png)
+
+Ve scéně aplikace hrají velkou roli dva druhy objektů - tzv. **Rigs** (skupiny objektů) a **Managers** (manažeři). Rigs slouží k seskupení objektů se společným účelem. Managers jsou pak objekty se skripty, které řídí určitou část aplikace.
+
+#### EnvironmentRig
+
+Jedná se o seskupení všech objektů prostředí, vizuálních efektů a statických zvuků. Patří sem objekt vykreslující hory na pozadí, částicový efekt hvězd na obloze či objekt obstarávající přehrávání hudby na pozadí.
+
+#### SteamVRRig
+
+`SteamVRRig` je předpřipravený díky Steam VR Pluginu pro *Unity*. Obsahuje objekty reprezentující oba ovladače a headset. Steam VR Plugin pak zařídí synchronizaci těchto objektů se snímáním systému virtuální reality. Tyto objekty jsou aktualizovány o svou přesnou polohu a rotaci ve fyzickém světě a díky tomu jsou velmi přesně promítány do herního světa.
+
+#### TutorialRig
+
+Skupina všech objektů určených pro výuku. Nachází se zde `TutorialManager`, objekt zobrazující textový přepis scénáře a další pomocné objekty výuky, jako je objekt s modelem terče, či objekt s modelem loga herny.
+
+#### LauncherRig
+
+Obdobně jako `TutorialRig`, je tento určen k seskupení všech objektů spouštěče. Patří sem `LauncherManager`, prvky uživatelského rozhraní a objekt knihovny, který má na starosti vykreslení mřížky dostupných her.
 
 ### Formát ukládání dat scénáře
 
@@ -137,27 +161,24 @@ Název bloku | Funkce bloku
 `<text>` | Text úseku (přepis zvukového úseku)
 `<action>` | Činnost, která se má v úseku provést
 
-Pro lepší představu je přiložen krátký úryvek *STXT* souboru z aplikace, na kterém lze snadněji vidět jeho praktické použití.
+Pro lepší představu je níže uveden krátký úryvek *STXT* souboru z aplikace, na kterém lze snadněji vidět jeho praktické použití.
 
 ```
 #intro
-0;0;0:%showlogo
-0;2.5;0:Vítejte v herně Virtualnirealita.cz!
-0;3.2;0:Tato krátká výuka vás provede vstupem do virtuální reality.
+1;0;0:%showlogo
+2;2.4;0:Vítejte v herně Virtualnirealita.cz!
+0;3.6;0:Tato krátká výuka vás provede vstupem do virtuální reality.
 0;0;0:%hidelogo
 
 #skippable
 0;0;1:%showskiptxt
-0.5;6.9;1:Pokud s virtuální realitou již máte zkušenosti a výuku\nchcete..
+0;6.5;1:Pokud s virtuální realitou již máte zkušenosti a výuku\nchcete ...
 0;0;1:%hideskiptxt
 
-#playarea1
-2;2;2:Rozhlédněte se kolem sebe a na podlahu.
-0;7.5;2:Ohraničení, které můžete vidět na zemi je místo, ve kterém se ...
+...
+```
 
-...```
-
-Činnosti jsou již však narozdíl od textů a časování pevně určené, protože jsou daleko komplexnější a mnohem méně parametrizovatelné. Pro referenci je tak uvedena kompletní tabulka všech použitelných činností.
+Činnosti jsou narozdíl od textů a časování pevně určené, protože jsou daleko komplexnější a mnohem méně parametrizovatelné. Pro referenci je tak uvedena kompletní tabulka všech použitelných činností.
 
 Název činnosti | Popis činnosti
 --- | ---
@@ -178,8 +199,20 @@ Název činnosti | Popis činnosti
 `%gotolibrary` | Zobrazí spouštěč.
 `%skip` | Přeskočí výuku.
 
-### Generování uživatelského rozhraní
+Stále je ale pružnost výuky do určité míry dodržena a je dostatečně přizpůsobitelná. Tyto akce lze přeskládat jinak, spouštět v jiné časy, případně je i vynechat.
 
-### Voice-over
+### Mluvený text průvodce výuky
 
-> TODO: target 19kC
+Dokončená implementace postupování výuky a zobrazení přepisu si žádala přidání mluveného textu do aplikace. Součástí práce bylo nadabování mluvy, jeho post-produkce a import do projektu.
+
+Při dabování byl dbán důraz na rychlost mluvy, aby výuka nebyla zdlouhavá, ale zároveň byla kontrolována srozumitelnost projevu a pauzy na vhodných místech.
+
+Výsledná délka pouze mluveného textu je 116 vteřin. Práce se zvukovými soubory dělá výslednou délku výuky odlišnou od délky samotného mluveného textu. Jsou mezi jednotlivé části vloženy mezery, nebo některé části mohou být uživatelem přeskočeny. Délka výuky s vloženými mezerami a bez čekání na vstup uživatele je 124 vteřin. Právě vstup uživatele dělá tuto hodnotu velmi kolísavou. Předběžným odhadem bude výuka **100s až 160s** dlouhá. Reálné délky výuky však odhalí až testování.
+
+![Imgur](http://i.imgur.com/9kTxlkl.png)
+
+> TODO: cheesus this chart sucks
+
+Z pozdní analýzy mluvy plyne, že jsou užitečné a neužitečné části mluvy rozděleny (subjektivně) správně -- přibližně tři čtvrtiny jsou věnovány tomu nejdůležitějšímu -- vysvětlování, a jedna čtvrtina je zaplněna meta-vysvětlováním a pauzami, kde pauzy konkrétně zaujímají pouze přes 7 % celého času.
+
+Lze tak tvrdit, že výuka je efektivní a splní požadavek *N-04* na časovou efektivitu.

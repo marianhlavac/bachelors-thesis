@@ -54,7 +54,7 @@ Pro účely herny je však shledán nevhodným, jelikož je návštěvníkům he
 ![](http://i.imgur.com/dHgOC1S.png)  
 *fig.2 Přístup k aplikaci je skryt ve SteamVR nabídce, která je přístupna jen z monitoru počítače*
 
-Další nevýhodou je délka tutoriálu, která se běžně pohybuje kolem 7-12 minut. To představuje v prostředí, kde se běžně systém zapůjčuje na jednu hodinu, velkou část takového času.
+Další nevýhodou je délka tutoriálu, která se běžně pohybuje kolem 6-11 minut. To představuje v prostředí, kde se běžně systém zapůjčuje na jednu hodinu, velkou část takového času.
 
 ### Oculus Touch Tutorial & Oculus First Contact
 
