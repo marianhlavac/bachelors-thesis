@@ -24,3 +24,7 @@ https://steamcommunity.com/dev/apikey
 
 spouštěč
 https://developer.valvesoftware.com/wiki/Steam_browser_protocol
+
+videa
+https://www.youtube.com/watch?v=pfnFjfeglG0
+https://www.youtube.com/watch?v=Kg7gPiz8-SU
