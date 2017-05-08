@@ -1,0 +1,8 @@
+mkdir -p ../dist/chapters
+find ../src/ -iname "*.md" -type f -exec sh -c '
+
+  output=`echo "${0%.md}.tex" | sed "s/src/dist/"`; 
+  echo "Converting $0..."; 
+  pandoc "${0}" -o $output
+  
+' {} \;

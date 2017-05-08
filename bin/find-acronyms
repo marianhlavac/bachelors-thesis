@@ -1,0 +1,6 @@
+find ../src/ -iname "*.md" -type f -exec sh -c '
+  
+  echo " -- In $0: ";
+  cat "$0" | grep -hEo "[[:upper:]]{3,}" | sort | uniq
+
+' {} \;
