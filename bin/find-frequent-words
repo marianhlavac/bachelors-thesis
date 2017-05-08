@@ -1,0 +1,8 @@
+echo "" > .freqtmp
+
+find ../src/ -iname "*.md" -type f -exec sh -c '
+  cat "$0" >> .freqtmp
+' {} \;
+
+cat .freqtmp | grep -hEo "\w{3,}" | sort | uniq -c | sort -r | head -n 48
+rm .freqtmp
