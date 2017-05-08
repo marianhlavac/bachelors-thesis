@@ -3,6 +3,7 @@ dist
 
 /thesis.*
 !/thesis.tex
+!/thesis.yml
 
 _minted-thesis
 *_.bib
