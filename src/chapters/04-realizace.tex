@@ -1,0 +1,551 @@
+\section{Realizace}\label{realizace}
+
+Pro realizaci aplikace bude použit herní engine \emph{Unity}.
+\emph{Unity} je multi-platformní herní engine napsaný v C a C++ určený k
+vývoji her pro PC, konzole a mobilní zařízení. Je to v současnosti jeden
+z nejvhodnějších a nejpopulárnějších nástrojů na vývoj her pro virtuální
+realitu.
+
+Ač jde o nástroj pro tvorbu her, je vhodným nástrojem i pro tvorbu
+aplikace určené pro virtuální realitu, jelikož aplikace pro virtuální
+realitu jsou vykreslovány stereoskopicky a trojrozměrně. Předmětem
+tvorby této aplikace by neměla být tvorba takového vykreslovacího jádra,
+ale spíše samotné aplikace. Proto je využito herního enginu, aby čas
+strávený tvorbou vykreslovacího jádra byl využit spíše pro tvorbu
+samotné aplikace.
+
+Jako název aplikace jsem zvolil sousloví \textbf{Immersion VR}, které
+slouží k jednoznačné identifikaci produktu. Slovo ``immersion'' lze
+přeložit jako ``ponoření'' a symbolicky tak vyjadřuje uživatelův proces
+``ponoření'' do virtuální reality.
+
+\subsection{Jazyk implementace}\label{jazyk-implementace}
+
+Herní engine \emph{Unity} podporuje několik programovacích jazyků, ve
+kterých můžou být vytvořeny skripty pro ovládání logiky aplikace. Jsou
+to jazyky \emph{C\#}, \emph{JavaScript} a \emph{Boo}. Tato kapitola se
+bude zabývat volbou jednoho z těchto jazyků, ovšem výhradně v
+souvislosti s použitím v enginu \emph{Unity}.
+
+Výběr jazyku budou ovlivňovat i mé předchozí zkušenosti. V \emph{Unity}
+jsem doposud napsal několik skriptů pouze v jazyce \emph{C\#}. Na druhou
+stranu mám s jazykem \emph{JavaScript} mnohem hlubší zkušenosti a
+znalosti, ovšem mimo herní vývoj -- především ve webovém prostředí.
+
+Po rešerši z různorodých názorů vývojářů bylo možné vyderivovat
+následující doporučení, týkající se výběru jazyka pro \emph{Unity}:
+
+\begin{itemize}
+\tightlist
+\item
+  Záleží na předchozích zkušenostech s jazykem.
+\item
+  JavaScript, resp. UnityScript není totožný s webovým JavaScriptem. Jde
+  spíše o JavaScript-like syntaxi.
+\item
+  JavaScript je ve srovnání s C\# méně upovídaný.
+\item
+  JavaScript za vývojáře řeší na pozadí více věcí, než C\#. Jde tak o
+  jednodušší jazyk.
+\item
+  C\# používá majorita Unity vývojářů. Je tak snazší vyhledat pomoc při
+  problémech.
+\item
+  C\# má kvalitní MSDN dokumentaci.
+\item
+  C\# je rychlejší, než JavaScript ale ne znatelně.
+\item
+  Boo se nedoporučuje, používá jej pouze malý zlomek vývojářů.
+\end{itemize}
+
+Jako jazyk implementace tak byl zvolen jazyk \emph{C\#}, z důvodu mých
+předchozích zkušeností, majority komunity, která může poskytnout pomoc v
+případě problémů a z důvodu existence kvalitní dokumentace.
+
+\subsection{Proof of Concept}\label{proof-of-concept}
+
+V aplikaci lze rozlišit klíčové funkce, které jsou poněkud specifické a
+charakteristické pro danou aplikaci. Ač je snadné navrhnout způsob
+řešení implementace takových funkcí, je vhodné tyto funkce podrobit
+principem \textbf{Proof of Concept} --- důkaz existence původně jen
+teoreticky předpokládané funkcionality, tedy rychlou implementací
+konkrétních funkcí nezávisle na zasazení do koncové aplikace.
+
+Na základě takové implementace je pak možné potvrdit, zda-li je návrh
+implementace klíčových funkcí, na kterých aplikace stojí,
+realizovatelný.
+
+Jednou z takových funkcí je zobrazení her, které vlastní herna na svém
+účtu platformy \emph{Steam}. Aby bylo možné zobrazení provést, je nutné
+o hrách stáhnout informace, podle požadavku \emph{F-C02} -- stažení dat
+o VR aplikacích. Taková data jsou přístupná pomocí některého z API
+rozhraní služby \emph{Steam}. Předmětem POC bude takový zdroj dat nalézt
+a implementovat práci s takovým zdrojem do enginu \emph{Unity}.
+
+Další funkcí, kterou je nutné podrobit POC je samotný spouštěč her a to
+konkrétně funkci spuštění a opouštění VR aplikací, podle požadavků
+\emph{F-C03} a \emph{F-C04} -- spuštění a ukončení uživatelem vybrané VR
+aplikace. Je nutné vyzkoušet, jak z aplikace vytvořené v \emph{Unity}
+spouštět aplikace nainstalované skrz platformu \emph{Steam} a jak
+detekovat jejich ukončení a vyvolání spouštěče opět do popředí.
+
+\subsubsection{Stahování informací o
+aplikacích}\label{stahovuxe1nuxed-informacuxed-o-aplikacuxedch}
+
+Aby došlo ke splnění požadavku \emph{F-C02}, je nutné získat následující
+informace:
+
+\begin{itemize}
+\tightlist
+\item
+  Jaké aplikace jsou zakoupené na účtě herny platformy Steam
+\item
+  Které z nich jsou nainstalovány na konkrétním počítači
+\item
+  Název aplikace, její krátký oficiální popis od výrobce, obrázek
+  aplikace
+\end{itemize}
+
+Mezi informace nepatří navržené krátké video ze hry, či popis úrovně
+intenzity, jelikož platforma Steam není zdrojem takových dat. Předmětem
+zíkáním těchto dat se bude zabývat jedna z následujících kapitol.
+
+Steam nabízí více API rozhraní pro komunikaci, specifická pro různá
+použití, jako je např. přístup k různorodým API v rámci partnerského
+progrmu \emph{Steamworks}, které by dávalo smysl použít, jelikož je
+běžně používáno pro aplikace a hry distribuované skrz platformu Steam,
+které jsou s platformou integrovány a pracují s ní, což se velmi podobá
+aplikací této závěrečné práce (minimálně splňuje podmínku práce s
+platformou Steam). \emph{Steamworks SDK} je ovšem dostupné pouze pro
+partnery společnosti, což nejeví problém, partnerství je možné získat.
+Jde však o mírně zdlouhavý proces a pro účely stažení informací by šlo o
+neefektivní postup. Komplikaci by mohly představovat i licenční podmínky
+platformy, při použití pro účely závěrečné práce.
+
+Ideálním API rozhraním se tak ukázalo veřejné \emph{Steam Web API},
+které ač, jak je z názvu patrné, je určeno pro použití webovými
+službami, je ideálním a snadno přístupným zdrojem informací, které jsou
+nutné pro splnění požadavku. Rozhraní disponuje několika endpointy,
+nabízejícími různá data, pro nás zajímavým endpointem je však
+\emph{GetOwnedGames-v0001}, který vrací seznam všech her, které vlastní
+určitý účet platformy Steam.
+
+Situace se však komplikuje ve dvou bodech -- viditelností dat a
+autentizací:
+
+Pro stažení takových dat z účtu pomocí tohoto API, je nutné, aby daný
+účet měl v nastavení účtu platformy Steam povolen veřejný přístup k
+datům, jako je např. seznam her, který potřebujeme. V naší situaci by to
+neměl být problém za předpokladu, že herna nemá důvod chtít skrývat
+seznam her, který vlastní na svých účtech. V případě, že herna z
+libovolného důvodu nebude chtít zveřejnit svůj seznam her na platformě
+Steam, tento postup tak selhává a není možné herně nabídnout takovou
+aplikaci bez toho, aniž by se využilo jiného API rozhraní služby Steam.
+Tomuto problému však nepřikládám vážnost, protože se obecně dá
+předpokládat, že herna svůj účet zveřejní. Lze totiž vycházet z faktu,
+že seznam her většina heren již zveřejnila na svých webových stránkách,
+aby zákazníci mohli vidět, jaké tituly herna nabízí.
+
+Další, tentokrát už mnohem méně závažnější komplikací, je způsob
+autentizace pro použití \emph{Steam Web API}. Steam nabízí dva způsoby
+-- vygenerováním statického klíče na jejich stránkách a jeho použitím
+při vytváření požadavků na API, nebo implementací OpenID přihlašování.
+Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití
+(resp. konfiguraci) jedním subjektem (či malým počtem subjektů),
+vygenerování klíče je velmi jednoduché a v ideálním případě je nutné
+takový proces provést jen jednou, je z důvodu časové efektivity a
+jednoduchosti implementace použita autorizace pomocí klíče.
+
+Získáním takových dat z tohoto API rozhraní jsou však splněny pouze dva
+z tří výše zmíněných bodů -- jaké aplikace jsou zakoupené a jaké jsou
+jejich názvy, krátké popisy a obrázky aplikací. Chybí informace o tom,
+zda-li jsou na systému nainstalovány a připraveny ke spuštění.
+
+Pokud na chvíli odběhneme do následující kapitoly zabývající se
+spouštěním aplikací, zjistíme, že lze aplikace výhodně a jednoduše
+spouštět pomocí systémového protokolu \texttt{steam://} a jeho akce
+\texttt{steam://run/\textless{}appid\textgreater{}}. Tato akce se chová
+tak, že pokud je v systému aplikace nainstalovaná, provede její
+spuštění. V opačném případě se zahájí proces instalace a provede
+uživatele procesem stažení a nainstalování takové aplikace. Z pohledu
+návštěvníka herny je však takové chování nežádoucí. Potřebujeme tedy
+vědět, které aplikace jsou nainstalovány a ty, které nainstalovány
+nejsou je nutné ze spouštěče vyřadit, aby nebyly uživatelům nabízeny,
+pokud nejsou připraveny ke spuštění.
+
+Detekce připravenosti aplikace se však ukázala jako potenciálně
+problémová. Podle dostupných zdrojů v současné chvíli Steam neexponuje
+žádné rozhraní pro detekci instalovaných aplikacích na konkrétním
+systému. Takovou detekci je tak nutné provádět ručně. Ze zkušeností
+ostatních vývojářů, kteří se o detekci nainstalovaných her pokusili
+plyne, že ruční sken složek není tak jednoduchý. Většina her splňuje tu
+podmínku, že se v jejich složkách nachází soubor
+\texttt{steam\_appid.txt}, který jednoznačně složku se hrou
+identifikuje, ovšem to není pravidlem a ve vyjímečných případech může
+dojít k tomu, že se tam soubor nebude nacházet a tím pádem ruční detekce
+označí takovou hru jako nenainstalovanou i přesto, že nainstalovaná je.
+To může způsobovat problémy se spouštěčem.
+
+Jiné řešení však podle dostupných zdrojů neexistuje. Nabízí se tak
+motivace přidat do konfigurace aplikace možnost zobrazení všech titulů
+ve spouštěči a obsluha herny pak bude zodpovědná za udržení všech her
+nainstalovaých a připravených ke spuštění. Což dává v herně smysl --
+herna bude chtít svým návštěvníkům nabídnout všechny hry, které
+zakoupila. Neměl by z toho tak plynout žádný zásadní problém.
+
+\subsubsection{Spouštění
+aplikací}\label{spouux161tux11bnuxed-aplikacuxed}
+
+Požadavky \emph{F-C03} a \emph{F-C04} jsou nezbytnou součástí spouštěče
+aplikací. Hry je nutné na uživatelův pokyn spouštět a po jeho ukončení
+práce se spuštěnou aplikací je nutné uživateli znova zobrazit předešlý
+výběr aplikací.
+
+Spouštění aplikace se díky systémového protokolu \texttt{steam://} stává
+velmi jednoduchým úkonem. Úryvek z dokumentace odhaluje příkaz
+systémového protokolu \texttt{steam} a činnosti \texttt{run}, kterou lze
+pro účel spouštěče použít:
+
+\begin{quote}
+\texttt{steam://run/\textless{}id\textgreater{}}\\
+Runs an application. It will be installed if necessary.
+\end{quote}
+
+Z popsaného chování plyne, že se tímto příkazem spustí hra, a pokud je
+to nutné, tak se spustí instalační proces. Problémová situace nastává ve
+chvíli, kdy chceme spustit opět náš spouštěč ve chvíli, kdy uživatel
+ukončí jím spuštěnou VR aplikaci. OpenVR, které má na starosti
+komunikaci se systémem virtuální reality, je koncipovaná takový
+způsobem, aby vykreslovala pouze jednu hlavní scénu.
+
+Vhodným řešením tohoto problému se jeví použití OpenVR knihovny, která
+dovoluje pracovat s událostmi, kterým můžeme naslouchat a reagovat na
+ně. Z dokumentace je patrné, že k tomuto účelu slouží událost s názvem
+\texttt{VREvent\_SceneApplicationChanged}. Ovšem tím není vyřešen
+problém výchozího chování systému \emph{SteamVR}, potažmo knihovny
+\emph{OpenVR}. Po spuštění jiné VR aplikace je ta původní automaticky
+ukončena. Je totiž dovoleno, aby se na popředí vykreslovala pouze jedna
+VR aplikace. Jako řešení se ukázala nutnost napsat malý jednoduchý
+program -- agenta, který bude detekovat spuštěnou aplikaci právě pomocí
+zmíněného odposlouchávání události a pokud dojde k ukončení aplikace,
+spustí znovu spouštěč aplikace této práce.
+
+\begin{quote}
+TODO: Here goes agent screenshot
+\end{quote}
+
+Agent je psán taktéž v jazyce C\#, poskytuje jednoduché uživatelské
+rozhraní, určené pro obsluhu, které je psáno pomocí knihovny WPF.
+Uživatelské rozhraní nabízí primární tlačítko určené ke spuštění a
+zastavení celé aplikace (pokud bude zastavena, přestane se tak i
+automaticky spouštět spouštěč) a přehlednou informaci o aktuálním stavu
+agenta -- zda-li se podařilo připojit k OpenVR systému apod.
+
+\subsection{Implementace}\label{implementace}
+
+V kapitole jsou uvedeny konkrétnější detaily implementační fáze práce.
+Je popsána struktura celé scény, jakým způsobem jsou ukládána data o
+scénáři výuky, jak je generováno uživatelské rozhraní spouštěče a jakým
+způsobem se vyvářel voice-over výuky.
+
+\subsubsection{Struktura scény}\label{struktura-scuxe9ny}
+
+Herní engine Unity podporuje strukturizaci aplikace do scén. Scény mohou
+obsahovat herní objekty (třída \texttt{GameObject}) na které jsou
+``zavěšeny'' komponenty. Může jít o komponenty pracující s herním
+světem, fyzikálními vlastnostmi objektů a nebo o nejobecnější a
+nejmocnější komponentu -- komponentu skriptu. Ta umožňuje k objektu
+připojit vlastní skript v jazyce C\#, JavaScript či Boo, a naprogramovat
+tak logiku daného herního objektu.
+
+Aplikace je strukturována pouze do jedné scény. Ač by na první pohled
+dávalo smysl oddělit výuku a spouštěč do samostatných scén, je nutné
+brát v potaz, že přechod z jedné scény na jinou provází kratší či delší
+načítání a implicitně jsou nahrazeny všechny objekty staré scény za
+objekty nové scény. I přesto, že toto chování se dá do určité míry
+změnit, je i přesto nežádoucí, aby v přechodu mezi výukou a spouštěčem
+byla prodleva. Je tak jednodušší obě části strukturovat do jedné scény a
+důkladněji pak strukturovat jednu danou hlavní scénu.
+
+Herní objekty v enginu Unity disponují velmi důležitou a užitečnou
+funkcí -- mohou být do sebe zanořovány a může jít o prázdné objekty
+pouze s komponentou \texttt{Transform}, která se stará o pozicování v
+herním světě. Objekty tak lze sestavovat z jiných objektů, nebo je jen
+používat pro seskupování objektů.
+
+\begin{figure}
+\centering
+\includegraphics{http://i.imgur.com/nkWHyOO.png}
+\caption{Imgur}
+\end{figure}
+
+Ve scéně aplikace hrají velkou roli dva druhy objektů - tzv.
+\textbf{Rigs} (skupiny objektů) a \textbf{Managers} (manažeři). Rigs
+slouží k seskupení objektů se společným účelem. Managers jsou pak
+objekty se skripty, které řídí určitou část aplikace.
+
+\paragraph{EnvironmentRig}\label{environmentrig}
+
+Jedná se o seskupení všech objektů prostředí, vizuálních efektů a
+statických zvuků. Patří sem objekt vykreslující hory na pozadí,
+částicový efekt hvězd na obloze či objekt obstarávající přehrávání hudby
+na pozadí.
+
+\paragraph{SteamVRRig}\label{steamvrrig}
+
+\texttt{SteamVRRig} je předpřipravený díky Steam VR Pluginu pro
+\emph{Unity}. Obsahuje objekty reprezentující oba ovladače a headset.
+Steam VR Plugin pak zařídí synchronizaci těchto objektů se snímáním
+systému virtuální reality. Tyto objekty jsou aktualizovány o svou
+přesnou polohu a rotaci ve fyzickém světě a díky tomu jsou velmi přesně
+promítány do herního světa.
+
+\paragraph{TutorialRig}\label{tutorialrig}
+
+Skupina všech objektů určených pro výuku. Nachází se zde
+\texttt{TutorialManager}, objekt zobrazující textový přepis scénáře a
+další pomocné objekty výuky, jako je objekt s modelem terče, či objekt s
+modelem loga herny.
+
+\paragraph{LauncherRig}\label{launcherrig}
+
+Obdobně jako \texttt{TutorialRig}, je tento určen k seskupení všech
+objektů spouštěče. Patří sem \texttt{LauncherManager}, prvky
+uživatelského rozhraní a objekt knihovny, který má na starosti
+vykreslení mřížky dostupných her.
+
+\subsubsection{Formát ukládání dat
+scénáře}\label{formuxe1t-ukluxe1duxe1nuxed-dat-scuxe9nuxe1ux159e}
+
+Aby se předešlo do kódu napevno zadrátovaného průběhu scénáře, bude
+načítán z externího souboru, který scénář bude popisovat. Díky tomu bude
+možné kdykoliv jednoduše provádět úpravy, nebo texty přeložit do
+libovolného jazyka. Aplikace díky tomu bude lokalizovatelná.
+
+Interně je formát souboru pojmenován \textbf{STXT} a bude mu příslušet
+běžně známá koncovka \texttt{.txt}, jelikož jde o čitelný textový
+soubor, který může být upravován v běžných editorech.
+
+V aplikaci se nachází třída \texttt{StxtReader}, jejíž jediný úkol bude
+právě čtení tohoto formátu. S touto třídou souvisí i
+\texttt{ScenarioCue}, což je třída primárně koncipovaná jako datová
+struktura, zahrnující všechny údaje o jednom úseku scénáře.
+\texttt{StxtReader} pak principiálně vrací pole objektů třídy
+\texttt{ScenarioCue}. Toto pole je chronologicky seřazeno a celý scénář
+bude přehráván postupně podle řazení prvků v poli.
+
+Vlastnosti třídy \texttt{ScenarioCue} jsou následující: - časové
+odsazení od předchozího úseku (offset) - délka časového úseku (duration)
+- identifikátor souvisejícího zvukového úseku (audio cue id) - text
+úseku (text) - činnost úseku (action) - skupina úseku (groupname)
+
+Časové vlastnosti jsou určeny pro pozicování a časování úseků.
+Identifikátor zvukového úseku určuje, která zvuková část má být ve
+chvíli průchodu úsekem přehrávána. Text úseku je pak přepisem toho, co
+lze ve zvukovém úseku slyšet. Skupina úseku je čistě organizační
+záležitostí pro přehlednost \emph{STXT} souboru.
+
+\paragraph{Syntaxe STXT souboru}\label{syntaxe-stxt-souboru}
+
+U syntaxe formátu byl kladen důraz na jednoduchost implementace čtení
+formátu. Obecně lze syntaxi definovat následovně:
+
+\begin{verbatim}
+#<groupname>
+<offset>;<duration>;<audio cue id>:(<text>|%<action>)
+[<offset>;<duration>;<audio cue id>:(<text>|%<action>)] ...
+
+[#<groupname>
+<offset>;<duration>;<audio cue id>:(<text>|%<action>)
+[<offset>;<duration>;<audio cue id>:(<text>|%<action>)]] ...
+
+...
+\end{verbatim}
+
+Kde bloky označené \texttt{\textless{}} a \texttt{\textgreater{}} jsou
+bloky hodnot, bloky označené \texttt{{[}} a \texttt{{]}} jsou nepovinné
+bloky a bloky ve tvaru \texttt{(\ A\ \textbar{}\ B\ )} představují
+možnost alternativy (A nebo B).
+
+\begin{quote}
+TODO: Popsat syntax slovně
+\end{quote}
+
+Významy bloků jsou uvedeny v tabulce:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Název bloku & Funkce bloku\tabularnewline
+\midrule
+\endhead
+\texttt{\textless{}groupname\textgreater{}} & Název
+skupiny\tabularnewline
+\texttt{\textless{}offset\textgreater{}} & Časové odsazení od
+předchozího úseku v sekundách\tabularnewline
+\texttt{\textless{}duration\textgreater{}} & Doba trvání daného časového
+úseku v sekundách\tabularnewline
+\texttt{\textless{}audio\ cue\ id\textgreater{}} & Identifikátor
+zvukového úseku\tabularnewline
+\texttt{\textless{}text\textgreater{}} & Text úseku (přepis zvukového
+úseku)\tabularnewline
+\texttt{\textless{}action\textgreater{}} & Činnost, která se má v úseku
+provést\tabularnewline
+\bottomrule
+\end{longtable}
+
+Pro lepší představu je níže uveden krátký úryvek \emph{STXT} souboru z
+aplikace, na kterém lze snadněji vidět jeho praktické použití.
+
+\begin{verbatim}
+#intro
+1;0;0:%showlogo
+2;2.4;0:Vítejte v herně Virtualnirealita.cz!
+0;3.6;0:Tato krátká výuka vás provede vstupem do virtuální reality.
+0;0;0:%hidelogo
+
+#skippable
+0;0;1:%showskiptxt
+0;6.5;1:Pokud s virtuální realitou již máte zkušenosti a výuku\nchcete ...
+0;0;1:%hideskiptxt
+
+...
+\end{verbatim}
+
+Činnosti jsou narozdíl od textů a časování pevně určené, protože jsou
+daleko komplexnější a mnohem méně parametrizovatelné. Pro referenci je
+tak uvedena kompletní tabulka všech použitelných činností.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+Název činnosti\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+Popis činnosti\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%showlogo}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zobrazí před hráčem logo herny.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%hidelogo}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Skryje logo herny.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%showskiptxt}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zobrazí informaci o možnosti přeskočit výuku.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%hideskiptxt}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Skryje informaci o možnosti přeskočit výuku.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%waitforuserraise}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Pozastaví se a čeká, dokud uživatel nezvedne ruce před sebe.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%highlighttrigger}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zvýrazní na ovladači tlačítko spouště.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%givelaser}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Přidá uživateli možnost používat laserové ukazovátko.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%waitforusertargethit}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Pozastaví se a čeká, dokud uživatel netrefí laserovým paprskem
+terč.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%highlightside}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zvýrazní boční tlačítko na ovladači.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%waitforside}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Pozastaví se a čeká, dokud uživatel nestiskne boční tlačítko.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%highlighttouchpad}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zvýrazní na ovladači dotykovou plochu.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%waitforusercolor}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Pozastaví se a čeká, dokud uživatel nezvolí na ovladači barvu.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%highlightmenu}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zvýrazní menu tlačítko na ovladači.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%highlightsystem}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zvýrazní systémové tlačítko na ovladači.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%gotolibrary}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Zobrazí spouštěč.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%skip}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Přeskočí výuku.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Stále je ale pružnost výuky do určité míry dodržena a je dostatečně
+přizpůsobitelná. Tyto akce lze přeskládat jinak, spouštět v jiné časy,
+případně je i vynechat.
+
+\subsubsection{Mluvený text průvodce
+výuky}\label{mluvenuxfd-text-prux16fvodce-vuxfduky}
+
+Dokončená implementace postupování výuky a zobrazení přepisu si žádala
+přidání mluveného textu do aplikace. Součástí práce bylo nadabování
+mluvy, jeho post-produkce a import do projektu.
+
+Při dabování byl dbán důraz na rychlost mluvy, aby výuka nebyla
+zdlouhavá, ale zároveň byla kontrolována srozumitelnost projevu a pauzy
+na vhodných místech.
+
+Výsledná délka pouze mluveného textu je 116 vteřin. Práce se zvukovými
+soubory dělá výslednou délku výuky odlišnou od délky samotného mluveného
+textu. Jsou mezi jednotlivé části vloženy mezery, nebo některé části
+mohou být uživatelem přeskočeny. Délka výuky s vloženými mezerami a bez
+čekání na vstup uživatele je 124 vteřin. Právě vstup uživatele dělá tuto
+hodnotu velmi kolísavou. Předběžným odhadem bude výuka \textbf{100s až
+160s} dlouhá. Reálné délky výuky však odhalí až testování.
+
+\begin{figure}
+\centering
+\includegraphics{http://i.imgur.com/9kTxlkl.png}
+\caption{Imgur}
+\end{figure}
+
+\begin{quote}
+TODO: cheesus this chart sucks
+\end{quote}
+
+Z pozdní analýzy mluvy plyne, že jsou užitečné a neužitečné části mluvy
+rozděleny (subjektivně) správně -- přibližně tři čtvrtiny jsou věnovány
+tomu nejdůležitějšímu -- vysvětlování, a jedna čtvrtina je zaplněna
+meta-vysvětlováním a pauzami, kde pauzy konkrétně zaujímají pouze přes 7
+\% celého času.
+
+Lze tak tvrdit, že výuka je efektivní a splní požadavek \emph{N-04} na
+časovou efektivitu.

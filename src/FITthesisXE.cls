@@ -67,12 +67,13 @@
 \RequirePackage {hyperref}		% hyperlinks support
 \RequirePackage {minted}		% source code highlighting via Pygments
 \RequirePackage {etoolbox}
+\RequirePackage {nameref}
 
 % microtype currently supports only protrusion with XeLaTeX :(
 \RequirePackage [protrusion=true] {microtype}
 
 % support for acronyms
-\RequirePackage [acronym,nonumberlist] {glossaries}
+\RequirePackage [nopostdot,acronym,nonumberlist,sort=def] {glossaries}
 
 % define new glossary style for list of acronyms
 \newglossarystyle {acronyms} {%
@@ -87,6 +88,16 @@
 	}
 }
 
+% move page numers on chapter first pages to right
+\def\ps@plain{%
+  \let\@oddhead\@empty%
+  \let\@evenhead\@empty%
+  \def\@oddfoot{\reset@font\hfil\thepage}%
+  \def\@evenfoot{\reset@font\thepage\hfil}%
+}
+
+\newfloat{dirfigure}{htbp}{lod}[chapter]
+
 \if@langczech
 	\setmainlanguage {czech}
 	\setotherlanguage {english}
@@ -99,15 +110,23 @@
 		{\textquoteright}		% closing inner mark
 	\setquotestyle {czech}
 
-	\RequirePackage [backend=biber, citestyle=numeric, babel=other,%
-					sorting=none, urldate=iso8601]{ biblatex }
+	\RequirePackage [backend=biber, style=iso-numeric, autolang=other,%
+					sorting=nyt, sortlocale=cs_CZ, spacecolon=false]{ biblatex }
 
 	\renewcommand*{\acronymname}{Seznam použitých zkratek}
+	\renewcommand*{\dirfigurename}{Adresářová struktura}
+	\newcommand{\listdirfigurename}{Seznam adresářových struktur}
 \else
 	\setdefaultlanguage [variant=british] {english}
-	\RequirePackage [backend=biber, citestyle=numeric, babel=other,%
-					sorting=none, urldate=iso8601]{ biblatex }
+	\RequirePackage [backend=biber, style=iso-numeric, autolang=other,%
+					sorting=nyt, sortlocale=en_US, spacecolon=false]{ biblatex }
+	\renewcommand*{\dirfigurename}{Directory structure}
+	\newcommand{\listdirfigurename}{List of Directory structures}
 \fi
+
+\newlistof{listofdirfigures}{lod}{\listdirfigurename}
+\newlistentry{dirfigure}{lod}{0}
+\floatsetup[dirfigure]{justification=justified}
 
 % disable per-chapter numbering for footnotes
 \counterwithout* {footnote} {chapter}
@@ -125,6 +144,9 @@
 \DeclareRobustCommand {\listoftablescond} {%
 	\@ifundefined {r@tab:was:used:in:doc} {} {\listoftables*} 
 }
+
+\renewcommand{\memchapinfo}[4]{%
+  \addtocontents{lol}{\protect\addvspace{10pt}}}
 
 % declare conditional list of listings that prints list only if there's some
 % listing in the document
@@ -148,6 +170,18 @@
 }
 \DeclareRobustCommand {\listoffigurescond} {%
 	\@ifundefined {r@figure:was:used:in:doc} {} {\listoffigures*} 
+}
+
+% declare conditional list of dirfigures that prints list only if there's some
+% dirfigure in the document
+\AtEndEnvironment {dirfigure} {%
+	\gdef \there@is@a@dirfigure{}
+}
+\AtEndDocument {%
+	\ifdefined \there@is@a@dirfigure \label{dirfigure:was:used:in:doc} \fi
+}
+\DeclareRobustCommand {\listofdirfigurescond} {%
+	\@ifundefined {r@dirfigure:was:used:in:doc} {} {\listofdirfigures*} 
 }
 
 % line breaks in URL
@@ -190,12 +224,17 @@
 %\tolerance=1000
 
 % try to minimalize widows and orphans
-\widowpenalty=10000
-\clubpenalty=10000
+\clubpenalty 10000 % prvni radek odstavce nebude sam na konci stranky 
+\widowpenalty 10000 % posl. radek odstavce nepujde na novou stranku
+\brokenpenalty 10000
+
+\setcounter{biburlnumpenalty}{600}
+\setcounter{biburlucpenalty}{900}
+\setcounter{biburllcpenalty}{600}
 
 % adjust settings for minted if used
 \AtBeginDocument {%
-	\renewcommand*{\today}{10. května 2014} % FIXME
+	\renewcommand*{\today}{15. května 2014} % FIXME
 	\@ifpackageloaded {minted} {%
 		% use smaller font in code listings
 		\AtBeginEnvironment {minted} { \singlespacing \fontsize{11}{11} \selectfont }
@@ -345,7 +384,7 @@
 	\ifx2#1 \DeclareRobustCommand{\thedeclarationofauthenticity}{\@declarationOptionSelectedtrue\if@langczech{%
 		Prohlašuji, že jsem předloženou práci vypracoval samostatně a že jsem uvedl veškeré použité informační zdroje v~souladu s~Metodickým pokynem o~etické přípravě vysokoškolských závěrečných prací.
 
-		Beru na vědomí, že se na moji práci vztahují práva a povinnosti vyplývající ze zákona č.~121/2000~Sb., autorského zákona, ve znění pozdějších předpisů. V~souladu s~ust. §~46 odst.~6 tohoto zákona tímto uděluji nevýhradní oprávnění (licenci) k~užití této mojí práce, a to včetně všech počítačových programů, jež jsou její součástí či přílohou a veškeré jejich dokumentace (dále souhrnně jen \uv{Dílo}), a to všem osobám, které si přejí Dílo užít. Tyto osoby jsou oprávněny Dílo užít jakýmkoli způsobem, který nesnižuje hodnotu Díla, avšak pouze k~nevýdělečným účelům. Toto oprávnění je časově, teritoriálně i množstevně neomezené.
+		Beru na vědomí, že se na moji práci vztahují práva a povinnosti vyplývající ze zákona č.~121/2000~Sb., autorského zákona, ve znění pozdějších předpisů. V~souladu s~ust. §~46 odst.~6 tohoto zákona tímto uděluji nevýhradní oprávnění (licenci) k~užití této mojí práce, a to včetně všech počítačových programů, jež jsou její součástí či přílohou a veškeré jejich dokumentace (dále souhrnně jen „Dílo“), a to všem osobám, které si přejí Dílo užít. Tyto osoby jsou oprávněny Dílo užít jakýmkoli způsobem, který nesnižuje hodnotu Díla, avšak pouze k~nevýdělečným účelům. Toto oprávnění je časově, teritoriálně i množstevně neomezené.
 		}\else{%
 		I hereby declare that the presented thesis is my own work and that I have cited all sources of information in accordance with the Guideline for adhering to ethical principles when elaborating an academic final thesis.
 		
@@ -365,8 +404,7 @@
 	\ifx4#1 \DeclareRobustCommand{\thedeclarationofauthenticity}{\if@langczech{%
 		Prohlašuji, že jsem předloženou práci vypracoval samostatně a že jsem uvedl veškeré použité informační zdroje v~souladu s~Metodickým pokynem o~etické přípravě vysokoškolských závěrečných prací.
 
-		Beru na vědomí, že se na moji práci vztahují práva a povinnosti vyplývající ze zákona č.~121/2000~Sb., autorského zákona, ve znění pozdějších předpisů. V~souladu s~ust. §~46 odst.~6 tohoto zákona tímto uděluji nevýhradní oprávnění (licenci) k~užití této mojí práce, a to včetně všech počítačových programů, jež jsou její součástí či přílohou a veškeré jejich dokumentace (dále souhrnně jen \uv{Dílo}), a to všem osobám, které si přejí Dílo užít. Tyto osoby jsou oprávněny Dílo užít jakýmkoli způsobem, který nesnižuje hodnotu Díla a za jakýmkoli účelem (včetně užití k~výdělečným účelům). Toto oprávnění je časově, teritoriálně i~množstevně neomezené. Každá osoba, která využije výše 
-uvedenou licenci, se však zavazuje udělit ke každému dílu, které vznikne (byť jen zčásti) na základě Díla, úpravou Díla, spojením Díla s~jiným dílem, zařazením Díla do díla souborného či zpracováním Díla (včetně překladu), licenci alespoň ve výše uvedeném rozsahu a zároveň zpřístupnit zdrojový kód takového díla alespoň srovnatelným způsobem a ve srovnatelném rozsahu, jako je zpřístupněn zdrojový kód Díla.
+		Beru na vědomí, že se na moji práci vztahují práva a povinnosti vyplývající ze zákona č.~121/2000~Sb., autorského zákona, ve znění pozdějších předpisů. V~souladu s~ust. §~46 odst.~6 tohoto zákona tímto uděluji nevýhradní oprávnění (licenci) k~užití této mojí práce, a to včetně všech počítačových programů, jež jsou její součástí či přílohou a veškeré jejich dokumentace (dále souhrnně jen „Dílo“), a to všem osobám, které si přejí Dílo užít. Tyto osoby jsou oprávněny Dílo užít jakýmkoli způsobem, který nesnižuje hodnotu Díla a za jakýmkoli účelem (včetně užití k~výdělečným účelům). Toto oprávnění je časově, teritoriálně i~množstevně neomezené. Každá osoba, která využije výše uvedenou licenci, se však zavazuje udělit ke každému dílu, které vznikne (byť jen zčásti) na základě Díla, úpravou Díla, spojením Díla s~jiným dílem, zařazením Díla do díla souborného či zpracováním Díla (včetně překladu), licenci alespoň ve výše uvedeném rozsahu a zároveň zpřístupnit zdrojový kód takového díla alespoň srovnatelným způsobem a ve srovnatelném rozsahu, jako je zpřístupněn zdrojový kód Díla.
 		}\else{%
 		I hereby declare that the presented thesis is my own work and that I have cited all sources of information in accordance with the Guideline for adhering to ethical principles when elaborating an academic final thesis.
 		
@@ -377,7 +415,7 @@ of works or by adapting the Work (including translation), and at the same time m
 	\ifx5#1 \DeclareRobustCommand{\thedeclarationofauthenticity}{\if@langczech{%
 		Prohlašuji, že jsem předloženou práci vypracoval samostatně a že jsem uvedl veškeré použité informační zdroje v~souladu s~Metodickým pokynem o~etické přípravě vysokoškolských závěrečných prací.
 
-		Beru na vědomí, že se na moji práci vztahují práva a povinnosti vyplývající ze zákona č.~121/2000~Sb., autorského zákona, ve znění pozdějších předpisů. V~souladu s~ust. §~46 odst.~6 tohoto zákona tímto uděluji nevýhradní oprávnění (licenci) k~užití této mojí práce, a to včetně všech počítačových programů, jež jsou její součástí či přílohou a veškeré jejich dokumentace (dále souhrnně jen \uv{Dílo}), a to všem osobám, které si přejí Dílo užít. Tyto osoby jsou oprávněny Dílo užít jakýmkoli způsobem, který nesnižuje hodnotu Díla a za jakýmkoli účelem (včetně užití k~výdělečným účelům). Toto oprávnění je časově, teritoriálně i množstevně neomezené.
+		Beru na vědomí, že se na moji práci vztahují práva a povinnosti vyplývající ze zákona č.~121/2000~Sb., autorského zákona, ve znění pozdějších předpisů. V~souladu s~ust. §~46 odst.~6 tohoto zákona tímto uděluji nevýhradní oprávnění (licenci) k~užití této mojí práce, a to včetně všech počítačových programů, jež jsou její součástí či přílohou a veškeré jejich dokumentace (dále souhrnně jen „Dílo“), a to všem osobám, které si přejí Dílo užít. Tyto osoby jsou oprávněny Dílo užít jakýmkoli způsobem, který nesnižuje hodnotu Díla a za jakýmkoli účelem (včetně užití k~výdělečným účelům). Toto oprávnění je časově, teritoriálně i množstevně neomezené.
 		}\else{
 		I hereby declare that the presented thesis is my own work and that I have cited all sources of information in accordance with the Guideline for adhering to ethical principles when elaborating an academic final thesis.
 		
@@ -422,7 +460,7 @@ of works or by adapting the Work (including translation), and at the same time m
 					\else
 						\ClassError{FITthesis}{Department unspecified}{Specify the department using the \department command.}
 					\fi
-				} & \hfill\includegraphics[width=.16\textwidth]{images/cvut-logo-bw}
+				} & \hfill\includegraphics[width=.16\textwidth]{src/cvut-logo-bw}
 			\end{tabular*}
 		\end{center}
 		
@@ -487,7 +525,7 @@ of works or by adapting the Work (including translation), and at the same time m
 	\if@declarationOptionSelected
 		\if@langczech\chapterstyletitle{Prohlášení}\else\chapterstyletitle{Declaration}\fi\thedeclarationofauthenticity{}
 		
-		\vspace{2cm}
+		\vspace{1cm}
 
 		\noindent
 			\if@cityfordeclarationdefined
@@ -529,20 +567,11 @@ of works or by adapting the Work (including translation), and at the same time m
 }
 
 \DeclareRobustCommand{\abstractpage}{%
-	\chapter*{Abstract}
-	\if@abstractendefined%
-		\theabstracten
-	\else
-		\ClassError{FITthesis}{Abstract in English unspecified}{Specify abstract in English using the \abstractEN command.}
-	\fi
-	\if@keywordsendefined%
-		\paragraph*{Keywords} \thekeywordsen{}
-	\else
-		\ClassError{FITthesis}{English keywords unspecified}{Specify the keywords in English of your thesis using \keywordsEN command.}
-	\fi
-
-	\newpage
 	\if@abstractcsdefined
+		\cleardoublepage
+		\thispagestyle{empty}
+		~
+		\vfill
 		\chapterstyletitle{Abstrakt}\theabstractcs
 	\else
 		\ClassError{FITthesis}{Abstract in Czech unspecified}{Specify abstract in Czech language using the \abstractCS command.}
@@ -553,17 +582,29 @@ of works or by adapting the Work (including translation), and at the same time m
 	\else
 		\ClassError{FITthesis}{Czech keywords unspecified}{Specify the keywords in Czech of your thesis using \keywordsCS command.}
 	\fi
-	
-	\vfill
+
+	\if@abstractendefined
+		%\cleardoublepage
+		%\thispagestyle{empty}
+		%~
+		%\vfill
+		\chapterstyletitle{Abstract}\theabstracten
+	\else
+		\ClassError{FITthesis}{Abstract in English unspecified}{Specify abstract in English using the \abstractEN command.}
+	\fi
+	\if@keywordsendefined%
+		\paragraph*{Keywords} \thekeywordsen{}
+	\else
+		\ClassError{FITthesis}{English keywords unspecified}{Specify the keywords in English of your thesis using \keywordsEN command.}
+	\fi
+
 }
 
-\AtBeginDocument{
-% 	\if@langczech\frontmatter*\else\frontmatter\fi %cislovani stranek pred prvni kapitolou
-	\frontmatter
-%	\thispagestyle{empty}
-%	\if@langczech{Sem vložte zadání Vaší práce.}\else{Insert here your thesis' task.}\fi
 
-	\pagestyle{plain}
+\renewcommand*{\l@listing}{\@dottedtocline{1}{0em}{2.3em}}
+
+\AtBeginDocument{
+	%\pagestyle{plain}
 	\cleardoublepage
 	\titlepage
 	
@@ -582,12 +623,13 @@ of works or by adapting the Work (including translation), and at the same time m
 	\listoflistingscond
 
 	\cleardoublepage
+	\listofdirfigurescond
+
+	\cleardoublepage
 	\listoftablescond
 
-	%\cleardoublepage
-	%\listoffigurescond
+	\cleardoublepage
+	\listoffigurescond
 
 	\pagestyle{ruled}
-% 	\if@langczech\mainmatter*\else\mainmatter\fi %hlavni text prace
-	\mainmatter
 }

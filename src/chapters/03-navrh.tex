@@ -1,0 +1,426 @@
+\section{Návrh}\label{nuxe1vrh}
+
+\subsection{Průběh výuky}\label{prux16fbux11bh-vuxfduky}
+
+Před konkrétním návrhem přesného scénáře výuky se v této kapitole budu
+nejdříve zabývat hrubým a obecnějším návrhem průběhu celé výuky.
+Samotnou výuku rozdělím do tzv. momentů, které si i označím
+identifikátory, pro snazší pozdější referenci v textu. Výsledný průběh
+pak dále zpracuji ve formě storyboards.
+
+Celá výuka bude v češtině, jelikož se prozatím počítá pouze s nasazením
+v české herně. Do herny však chodí i zahraniční návštěvníci a s nimi je
+nutné počítat taky. Rámec této závěrečné práce nebude zahrnovat překlad
+do jiného jazyka, ovšem aplikace bude na lokalizaci připravena.
+
+\subsection{Momenty výuky}\label{momenty-vuxfduky}
+
+Seznam klíčových momentů průběhu výuky v chronologickém pořadí:
+
+\begin{itemize}
+\tightlist
+\item
+  M1 Uživatel je uvítán do herny, kterou navštívil.
+\item
+  M2 Uživateli je vysvětleno, jaký bude průběh výuky.
+\item
+  M3 Uživateli je umožněno výuku přeskočit.
+\item
+  M4 Uživateli je představena play area a chaperone bounds.
+\item
+  M5 Uživatel je požádán, aby prozkoumal ovladače systému.
+\item
+  M6 Uživateli je představeno každé tlačítko na ovladači a je požádán
+  aby je stiskl.
+\item
+  M7 Uživateli je vysvětleno, k čemu je určen spouštěč, který je mu
+  zobrazen po skončení výuky.
+\end{itemize}
+
+\subsubsection{M1 Uvítání herny}\label{m1-uvuxedtuxe1nuxed-herny}
+
+Jako první moment je herně posktynut velmi krátký prostor na její
+prezentaci. Návštěvník herny je uvítán jménem herny do virtuální
+reality. Zároveň je mu na krátký moment zobrazeno logo herny. Díky
+tomuto prvku je aplikace blíže svázána s hernou a jedná se tak i o
+jistou formu brandingu.
+
+Díky tomuto prvku mohou mít o aplikaci zájem i jiné firmy provozující
+herny virtuální reality, jelikož prozatím neexistuje žádná jednoduše
+dostupná aplikace pro virtuální realitu, která by vhodným způsobem
+prezentovala hernu, kterou uživatel právě navštívil.
+
+\subsubsection{M2 Vysvětlení průběhu
+výuky}\label{m2-vysvux11btlenuxed-prux16fbux11bhu-vuxfduky}
+
+Aby byl uživatel připravený a věděl, co jej čeká, je mu velmi stručně
+přiblížen průběh výuky. Zároveň se tak může lépe v následujícím momentu
+rozhodnout, zda-li bude výuku přeskakovat, či nikoliv.
+
+\subsubsection{M3 Možnost přeskočení
+výuky}\label{m3-moux17enost-pux159eskoux10denuxed-vuxfduky}
+
+Protože někteří uživatelé jsou již systému HTC Vive znalí, je jim
+umožněno takovou výuku přeskočit a jsou rovnou uvedeni do spouštěče.
+
+Přeskočení výuky lze provést stisknutím kombinace tlačítek na ovladači.
+Na obou ovladačích bude uživatel nucen stisknout tlačítko spouště a
+tlačítko nabídky. Tato kombinace bude uživateli představena a jde o
+takovou kombinaci tlačítek, kterou neznalý uživatel omylem nestiskne.
+
+Stisknutí těchto dvou tlačítek není úplně přirozené. Při běžném držení
+má uživatel palec spíše v oblasti nad dotykovou plochou, nebo mírně pod
+ní. Tlačítko nabídky se nachází nad dotykovou plochou. Zároveň stisknutí
+obou tlačítek zároveň je mírně nepřirozené (je nepravděpodobné, že by
+tato dvě tlačítka uživatel stiskl omylem, např. nevhodným úchopem
+ovladače), ale zároveň ne nemožné, či obtížně stisknutelné.
+
+Původním záměrem bylo instruovat uživatele k této kombinaci tlačítek
+pouze slovy a textem -- tím by bylo zajištěno, že uživatel, který
+tlačítka a jejich pojmenování nezná, nebude schopen tato tlačítka najít
+a stisknout. V závěru jsem však došel k tomu, že je naprosto v
+kompetenci uživatele, aby se rozhodl, jestli chce výuku spustit, či
+nikoliv, a tedy pokud se rozhodne výuku nepodstoupit i za předpokladu,
+že tlačítka nezná, je to jeho volba, která bude respektována. Zároveň
+může dojít i k jazykovým nepřesnostem a uživatel může z jiných zdrojů
+znát tlačítka pod jinými názvy, nebo jejich pojmenování znát pouze ve
+specifické anglické mutaci (mnohem pravděpodobnější).
+
+\subsubsection{M4 Představení Play area a Chaperone
+Bounds}\label{m4-pux159edstavenuxed-play-area-a-chaperone-bounds}
+
+Jelikož bezpečnost zákazníka a majetku herny je prioritní, jsou
+uživateli vysvětleny pravidla pohybování se v play area jako první.
+
+Uživateli se na podlaze zobrazí ohraničení odpovídající velikosti a
+pozici nastavené play area. Je mu vysvětleno, k čemu play area slouží.
+Následně jsou mu představeny chaperone bounds. Uživatel je požádán, aby
+k nim přistoupil, aby si jejich funkcionalitu vyzkoušel.
+
+\includegraphics{http://icdn9.digitaltrends.com/image/chaperone-beginner-1500x1000.png}
+\emph{fig. 1 Chaperone bounds a jejich možnosti v nastavení OpenVR}
+
+Tento přístup je tak inspirován výukou v aplikaci \emph{SteamVR
+Tutorial}, nicméně je zkrácena o jedno opakování, aby tato část nebyla
+příliš dlouhá. Ač jsem výše poznamenal, že je žádoucí, aby byl na tuto
+část kladen důraz, domnívám se, že jedno přistoupení k mřížce uživateli
+stačí k tomu, aby intuitivně funkci pochopil a na zobrazení mřížky v
+budoucnu reagoval.
+
+\subsubsection{M5 Prozkoumání
+ovladače}\label{m5-prozkoumuxe1nuxed-ovladaux10de}
+
+Uživatel je požádán, aby si prohlédl ovladač. V aplikaci bude
+vykreslován velmi přesný model ovladače, takže uživatel může pohodlně
+prozkoumat, jak ovladač vypadá, pokusit se nalézt tlačítka a najít
+správný úchop pro vlastní komfort.
+
+Délka této části je dynamická a uživateli je tady poskytnut libovolný
+prostor pro jeho vlastní zkoumání. Důvod je prostý -- každému z
+uživatelů bude průzkum ovladačů trvat různou dobu, odvíjející se i od
+důkladnosti prozkoumávání. Zde by mělo být kompletně na jeho uvážení,
+zda-li si chce a potřebuje ovladače prohlédnout skutečně důkladně, nebo
+mu stačí jen letmý pohled na jejich vzhled a přibližnou polohu tlačítek.
+
+Pokud se uživatel rozhodne pro druhou volbu, neznamená to, že by se
+nedosáhlo na potřebnou kvalitu výuky. Seznámení s tlačítky zajistí
+moment \emph{M6}, takže se nestane, že by s ovladači po skončení výuky
+nebyl seznámen pouze proto, že si ovladače v této části neprohlédl
+důkladně.
+
+Uživatel je pak požádán, aby ve chvíli, kdy bude připraven pokračovat ve
+výuce dále, si stoupl do středu místnosti a zvedl své ovladače před sebe
+tak, aby na ně viděl.
+
+Skriptově nebude podmíněno, aby si uživatel stoupl do středu místnosti.
+Instrukce slouží spíše k úpravě pozice uživatele. Poslední jeho poloha
+je totiž u kraje místnosti, kde právě před chvílí zkoumal Chaperone
+bounds. Ač mají Chaperone bounds od reálně vyměřené velikosti místnosti
+určitý odstup, stále se může stát, že uživatel ve chvíli, kdy je
+požádán, aby zvedl natažené ruce před sebe, natáhne ruce příliš a může
+ovladačemi praštit do stěny, která je před ním.
+
+\subsubsection{M6 Představení
+tlačítek}\label{m6-pux159edstavenuxed-tlaux10duxedtek}
+
+Každé tlačítko je uživateli postupně představeno, zvýrazněno se
+zobrazením titulku názvu tlačítka a je požádán aby tlačítko stiskl, nebo
+s ním provedl nějakou interakci v následujícím pořadí:
+
+\begin{itemize}
+\tightlist
+\item
+  Tlačítko spouště
+\item
+  Boční tlačítka
+\item
+  Dotyková plocha
+\item
+  Tlačítko nabídky a systémové tlačítko
+\end{itemize}
+
+Po každém požádání o stisk tlačítka je uživatel jen přibližně seznámen s
+tím, k čemu se tlačítko běžně používá. Je však nutné u návrhu scénáře
+dát pozor, aby takové informace nebyly zavádějící, protože jak jsem již
+v analýze zmínil, tlačítka si VR aplikace mapují podle vlastního uvážení
+a každá aplikace tak tlačítka používá k různě jiným činnostem.
+
+\includegraphics{http://i.imgur.com/5rTX05h.png} \emph{fig. 2 Náčrt
+ovladače HTC Vive}
+
+\begin{quote}
+TODO: Nahradit tento obrázek jiným, pravděpodobně nejsou práva na
+použití!
+\end{quote}
+
+Protože je tlačítko spouště důležité, je do výuky přidán prvek
+laserového ukazovátka, pomocí kterého se uživatel naučí s ovladačem
+mířit a spouští vybírat. Mělo by to tak podvědomě utvrdit často VR
+aplikacemi využívaný koncept navigace v nabídkách -- ukázáním a výběrem
+spouští.
+
+Následně je uživatel požádán, aby tlačítko spouště stiskl, což vyvolá
+akci ve formě zesílení laserového paprsku a vypalování tmavých stop do
+okolí po tomto paprsku. Uživatel je požádán, aby namířil na terč, který
+bude pro účely tohoto kroku do scény umístěn a stiskl spoušť. Je tak v
+rychlosti uveden do schopnosti mířit ovladačem a zároveň provést akci.
+
+Protože laserový paprsek vypaluje do okolí stopy, uživatel může být
+podvědomě podnícen práci se spouští procvičit více a to tak, že začne do
+okolí vypalovat další stopy. Ač je hned následně pobídnut, aby stiskl
+boční tlačítko, může tak stále činit a dále používat tlačítko spouště s
+laserovým paprskem.
+
+Poté, co uživatel stikne boční tlačítko, je mu představena dotyková
+plocha. Je důležité, aby uživatel pochopil, že má dvě funkce. Pohyb
+prstem přes plochu a její stisknutí. Na ovladači přes dotykovou plochu
+se zobrazí barevný kruh a uživatel je požádán, aby přes plochu přejížděl
+prstem, vybral si barvu a dotykovou plochu stiskl. Výběrem barvy a
+stikem dotykového tlačítka je uživateli změněna barva laserového
+ukazovátka. Opět jej to může podpořit v další spontánní činností s
+ovladači.
+
+Jako poslední jsou mu představena tlačítko nabídky a systémové tlačítko.
+Tady uživatel výjimečně není požádán o stisk těchto tlačítek, jelikož
+systémové tlačítko otevírá \emph{SteamVR Dashboard}, který záměrně
+uživateli představit nechceme. V rámci konzistence pak nechceme
+uživatele žádat o stisk tlačítka nabídky.
+
+Nicméně uživateli je vysvětlena funkce obou tlačítek a nedochází ve
+výuce ke snaze přesvědčit jej, aby systémové tlačítko nemačkal. Místo
+toho je mu vysvětleno, k čemu slouží, co se po stisku stane a velmi
+mírně s dobrou volbou slov doporučíme procházení \emph{SteamVR
+Dashboard} pouze zkušenějším uživatelům. Chceme však toto tlačítko
+vysvětlit i uživatelům neznalým, aby při stisku tohoto tlačítka
+nepanikařili a vzpomněli si na výuku, která je naučila stisk tohoto
+tlačítka v případě, že nějakou systémovou nabídku otevřeli omylem.
+
+\subsubsection{M7 Představení
+spouštěče}\label{m7-pux159edstavenuxed-spouux161tux11bux10de}
+
+Po skončení výuky je uživateli oznámeno, že je to vše, co o systému
+potřebuje vědět a je mu vysvětleno, co se bude dále dít.
+
+Krátce je mu představeno, co před sebou vidí, k čemu je spouštěč určen a
+jak může spustit svůj první VR zážitek.
+
+\subsection{Návrh výuky}\label{nuxe1vrh-vuxfduky}
+
+Poté, co jsem specifikoval hrubý návrh scénáře výuky a její momenty, lze
+z těchto momentů sestavit konkrétní podobu výuky.
+
+\subsubsection{Návrh scénáře}\label{nuxe1vrh-scuxe9nuxe1ux159e}
+
+První část návrhu výuky je sestavení scénáře, který pak lze velmi
+efektivně využít pro skriptování průběhu, zobrazení přepisu a samotnému
+dabování mluveného slova.
+
+Ve scénáři jsou uvedeny identifikátory momentů. Označují části, které
+vycházejí ze zmíněných momentů.
+
+Tento konkrétní přepis scénáře je lokalizován do češtiny a je určen pro
+použití v herně \emph{Virtualnirealita.cz}, kde bude později produkčně
+nasazen. Aplikaci bude však možné připravit i pro jiné herny, nebo jiná
+prostředí. Bude však nutné pozměnit tento scénář, konkrétně v místech
+úvodu a závěru.
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\emph{Zobrazí se logo herny. {[}M1{]}}
+
+\textbf{Průvodce:} Vítejte v herně Virtualnirealita.cz! Tato krátká
+výuka vás provede vstupem do virtuální reality. \emph{{[}M2{]}}
+
+\emph{Zobrazí se instrukce pro přeskočení výuky na obrazovce.}
+
+\textbf{Průvodce:} Pokud s virtuální realitou již máte zkušenosti a
+výuku chcete přeskočit, stiskněte kombinaci tlačítek menu a spouště.
+\emph{{[}M3{]}}
+
+\emph{- krátká pauza -}
+
+\textbf{Průvodce:} Rozhlédněte se kolem sebe a na podlahu. Ohraničení,
+které můžete vidět na zemi je místo, ve kterém se lze volně pohybovat v
+průběhu vašich zážitků ve virtuální realitě. \emph{{[}M4{]}}
+
+\textbf{Průvodce:} Toto ohraničení však není vidět vždy, proto se
+zobrazuje pomocná mřížka, která vás na tyto hranice upozorní, pokud se
+je pokusíte překročit.
+
+\textbf{Průvodce:} Nyní se zkuste pomalu k hranici přiblížit, abyste si
+vyzkoušeli, jak to funguje. Za tuto hranici dále nechoďte.
+
+\emph{- krátká pauza -}
+
+\textbf{Průvodce:} Až dokončíte prozkoumávání ohraničení, vraťte se
+doprostřed místnosti a zvedněte obě ruce před sebe. Řekneme si něco k
+ovladačům, které máte v ruce. \emph{{[}M5{]}}
+
+\emph{Čekání na reakci uživatele: zvednutí rukou před sebe\ldots{}}
+
+\textbf{Průvodce:} Toto jsou ovladače systému HTC Vive. Nyní vám
+představíme tlačítka těchto ovladačů. \emph{{[}M6{]}}
+
+\emph{Zvýrazní se tlačítko spouště.}
+
+\textbf{Průvodce:} Toto je tlačítko spouště. Slouží ve hrách většinou
+jako tlačítko pro výstřel, nebo výběr položky v menu.
+
+\emph{Uživateli začne z pravého ovladače vyzařovat slabý laserový
+paprsek.}
+
+\textbf{Průvodce:} Namiřte laserové ukazovátko na terč a stiskněte
+spoušť.
+
+\emph{Čekání na reakci uživatele: namíření na terč a stisk
+spouště\ldots{}}
+
+\emph{Zvýrazní se boční tlačítko.}
+
+\textbf{Průvodce:} Perfektní! Toto je boční tlačítko, které lze
+stisknout z libovolné strany. Slouží jako alternativní funkce, například
+pro přebíjení zbraně. Stiskněte jej.
+
+\emph{Čekání na reakci uživatele: stisk bočního tlačítka\ldots{}}
+
+\emph{Zvýrazní se dotyková plocha.}
+
+\textbf{Průvodce:} Dobře. Toto je dotyková část ovladače. Můžete po ní
+přejíždět prstem a také ji stisknout. Přejížděním prstu vyberte barvu a
+stisknutím dotykové plochy vyberte barvu svého laserového ukazovátka.
+
+\emph{Čekání na reakci uživatele: stisk dotykové plochy\ldots{}}
+
+\textbf{Průvodce:} Skvěle! Zbývají nám dvě tlačítka. Menu tlačítko a
+systémové tlačítko.
+
+\emph{Zvýrazní se menu tlačítko.}
+
+\textbf{Průvodce:} Menu tlačítko slouží většinou k vyvolání nabídky ve
+hře. Často můžete tímto tlačítkem také pozastavit hru.
+
+\emph{Zvýrazní se systémové tlačítko.}
+
+\textbf{Průvodce:} Systémové tlačítko pak otevírá rozhraní systému
+Steam. Pokud jste s platformou Steam seznámeni, můžete toto tlačítko
+používat pro procházení knihovnou. Stejným tlačítkem toto rozhraní i
+můžete zavřít.
+
+\textbf{Průvodce:} Nyní jste připraveni spustit svůj první zážitek ve
+virtuální realitě. Před sebou vidíte knihovnu dostupných aplikací naší
+herny. Vyberte si, o který zážitek máte zájem, namiřte na něj a
+stiskněte spoušť. \emph{{[}M7{]}}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Storyboards}\label{storyboards}
+
+Pro lepší vizualizaci je k podrobnému konkrétnímu scénáři i ilustrován
+průběh výuky ve formě storyboards.
+
+\begin{quote}
+TODO: Storyboards
+\end{quote}
+
+\subsection{Návrh spouštěče}\label{nuxe1vrh-spouux161tux11bux10de}
+
+Spouštěč je funkcionalita aplikace navazující po výuce. Je určen k tomu,
+aby nahradil stávající řešení výběru VR aplikací skrze \emph{SteamVR
+Dashboard}, které se ukázalo být nevhodné pro použití v prostředí herny.
+
+Podle funkčních požadavků a v kontrastu s existujícími řešení v podobě
+\emph{SteamVR Dashboard} a \emph{Oculus Home} chceme vytvořit takový
+spouštěč, který bude pro uživatele jednoduchý, bude brát v potaz fakt,
+že uživatel může být v systému virtuální reality stále nováček a že
+nemusí znát tituly podle jejich názvu. Nechceme uživatele zatěžovat v
+herně nerelevantními komunitními funkcemi a nechceme uživateli jednoduše
+dovolit prohlížet obchod a nakupovat tituly na účtu herny. Zároveň tato
+funkce nahrazuje nutnost obsluhy dotazovat se návštěvníků, co mají rádi
+a odhadovat tak o jaký typ zážitku by tak mohli mít návštěvníci zájem.
+
+\subsubsection{Návrh rozhraní}\label{nuxe1vrh-rozhranuxed}
+
+Pro rozhraní lze využít celý prostor kolem uživatele. Nebude se jednat o
+rozhraní, které můžeme vidět u \emph{SteamVR Dashboard} -- ploché
+dvourozměrné rozhraní vykreslované na malou plochu před uživatelem.
+
+Základní myšlenka rozhraní je přímý přístup k výběru VR aplikací jako
+hlavní primární obrazovka spouštěče. Oba zkoumané existující řešení
+zmíněné výše mají výběr VR aplikací ukrytý pod tlačíkem ``Library''.
+
+Jako první bude uvádět rozhraní velký nadpis vyzývající uživatele k
+činnosti: ``Vyberte si VR aplikaci''. Pod ním bude zobrazen název
+aktuálně otevřené kategorie s šipkou evokující známý dropdown prvek,
+kterým může uživatel změnit aktuálně zobrazenou kategorii. Pod výběřem
+kategorií se nachází již samotná mřížka s aplikacemi. Mřížka má na výšku
+čtyři prvky a na šířku počet sloupců dynamický, podle velikosti
+místnosti takový, že vyplní bannery pokud možno kruh okolo uživatele.
+
+\includegraphics{http://i.imgur.com/EEyrMmf.png}\\
+\emph{fig. 3 Rozložení prvků rozhraní kolem uživatele}
+
+VR aplikace budou v mřížce zobrazovány velmi podobně, jako jsou
+zobrazovány v existujících spouštěčích -- vizuální obdélníkový banner s
+vizuálem hry. Velký rozdíl se však bude projevovat při ukázání
+ukazatelem na takový banner. Hra zobrazí svůj rychlý detail. Místo
+vizuálního banneru zaujme krátké video pořízené ze hry (tzv. in-game
+gameplay), které se bude opakovat. Nepůjde tedy o vizuál autorů
+aplikace, ani o trailer, ale čistě realistický záznam přímo ze hry.
+Uživatel tak bude schopen velmi přesně odhadnout, o čem aplikace je,
+jaká je její vizuální úroveň a přibližně i hratelnost a celkový dojem z
+aplikace, ještě dřív, než ji spustí. Napravo od videa bude pak doplněno
+celým názvem titulu, krátkým popisem a kategorizací podle žánru a
+intenzity. Pokud se bude jednat o často spouštěnou aplikaci, bude
+automaticky označena jako oblíbená. Celý tento blok detailu hry bude k
+uživateli mírně přiblížen a ostatní prvky se stanou částečně průhledné a
+budou mírně potlačeny do pozadí.
+
+\includegraphics{http://i.imgur.com/W7i1O7H.png}\\
+\emph{fig. 4 Základní stav aplikace spouštěče}
+
+Mřížka těchto bannerů se bude zobrazovat v kruhu okolo uživatele. Hlavní
+mřížka aplikací bude zarovnána k pravému ``virtuálnímu okraji'', za
+kterým budou dva sloupce dalších bannerů, označených jako ``Naše herna
+doporučuje''. Tyto bannery bude volit herna jako doporučené hry pro své
+zákazníky a bude obsahovat maximální počet 8 aplikací. Pravý ``virtuální
+okraj'' se bude nacházet po pravé ruce uživatele a hlavní mřížka
+aplikace se bude podle počtu zobrazených aplikací rozšiřovat proti směru
+hodinových ručiček o obvodu kruhu, na kterém se mřížka zobrazuje. Pokud
+počet aplikací bude větší, než prostor k zobrazení bannerů na mřížce,
+zobrazí se pod mřížkou přepínač stránek.
+
+\includegraphics{http://i.imgur.com/K37enUq.png}\\
+\emph{fig. 5 Detail hry po ukázání na jeho položku v mřížce}
+
+Po výběru prvku pro změnu kategorie se potlačí pozadí stejným způsobem,
+jako při práci s detailem hry. Do popředí se pak zobrazí velmi
+jednoduchá nabídka v podobě seznamu dostupných kategorií, ze kterých
+může uživatel vybírat. První oddělená položka této nabídky bude tlačítko
+pro návrat nazvané ``Zpět''.
+
+\includegraphics{http://i.imgur.com/49YOKw4.png}\\
+\emph{fig. 6 Výběr kategorie po kliknutí na prvek výběru kategorie}
+
+Rozhraní by tak mělo být velmi přehledné a především jednoduché.
+Uživatel se v rozhraní nemá kde ztratit, rozhraní nemá přechod na jiné
+obrazovky či stavy s vyjímkou možnosti třídění her.

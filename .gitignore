@@ -1,1 +1,9 @@
 dist
+
+
+/thesis.*
+!/thesis.tex
+
+_minted-thesis
+*_.bib
+*.log

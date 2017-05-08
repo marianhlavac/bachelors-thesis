@@ -1,0 +1,50 @@
+% arara: xelatex: { shell: yes }
+% narara: makeglossaries
+% narara: biber
+% narara: xelatex: { shell: yes }
+% narara: xelatex: { shell: yes }
+\documentclass[thesis=B,czech,hidelinks]{src/FITthesisXE}
+
+\usepackage{ graphicx }
+\usepackage{ dirtree }
+\usepackage{ longtable } 
+
+\bibliography{library.bib}
+
+\makeglossaries
+\input{src/acronyms.tex}
+\glsaddall
+
+%%%
+
+%\acknowledgements{\input{podekovani.tex}}
+
+%\abstractCS{\input{abstrakt_cs.tex}}
+%\abstractEN{\input{abstrakt_en.tex}}
+
+\input{src/meta.tex}
+
+\begin{document}
+
+\begin{introduction}
+\label{introduction}
+	Úvod práce.
+\end{introduction}
+
+Obsah práce.
+
+\begin{conclusion}
+\label{conclusion}
+	Sem napište závěr své práce.
+\end{conclusion}
+
+\printbibliography[title={Zdroje}]
+
+\appendix
+
+\chapter{Seznam použitých zkratek}
+\printglossary[type=\acronymtype,style=acronyms]
+
+%\input{medium.tex}
+
+\end{document}
