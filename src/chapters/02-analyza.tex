@@ -1,29 +1,28 @@
 \section{Analýza}\label{analuxfdza}
 
-Jak je zvykem u organizovaného vývoje softwaru -- implementací a
-prototypování předchází analýza, pro stanovení požadavků uživatelů
-softwaru a upřesnění funkcionalit aplikace.
+Jak je zvykem u organizovaného vývoje softwaru -- implementaci a návrhu
+aplikace předchází analýza, pro stanovení požadavků uživatelů softwaru a
+upřesnění funkcionalit aplikace.
 
-Následující kapitola se takovou analýzou bude zabývat. Analyzuji
-existující řešení, co požadují hráči navštěvující hernu, co požadují
-zaměstnanci pracující v herně a jaké požadavky jsou realizovatelné.
+Následující kapitola se takovou analýzou bude zabývat. Budou analyzována
+existující řešení, zjištěno, co požadují hráči navštěvující hernu a
+zaměstnanci pracující v herně, a jaké požadavky jsou realizovatelné.
 
 \subsection{Analýza a porovnání existujících řešení
 výuky}\label{analuxfdza-a-porovnuxe1nuxed-existujuxedcuxedch-ux159eux161enuxed-vuxfduky}
 
 Výukové aplikace pro seznámení s virtuální realitou již existují.
-Nicméně většina z nich trpí špatnou přístupností. Systémy jsou
-navrhovány tak, aby po absolvování takové výuky již nebyly výukové
-aplikace jednoduše dostupné. V našem případě jsou tak obtížně
-spustitelné pro návštěvníky herny.
+Nicméně většina z nich trpí špatnou přístupností. Jsou navrhovány tak,
+že po absolvování takové výuky již nejsou jednoduše dostupné. Jsou tak
+obtížně spustitelné pro návštěvníky herny.
 
 Takové aplikace jsou spíše určené pro toho, kdo jako první systém
-konfiguruje a je jímž prvním uživatelem. Nově příchozímu k
+konfiguruje a je jeho prvním uživatelem. Nově příchozímu k
 nakonfigurovanému systému není tutoriál nabídnut a jsou přímo uvedeni do
 prostředí, ve kterém se již očekává, že uživatel systém důvěrně zná.
 
 Součásti analýzy je i porovnání jednotlivých existujících řešení, pro
-které jsem si stanovil následující metriky k porovnání:
+které jsou stanoveny následující metriky k porovnání:
 
 \begin{itemize}
 \tightlist
@@ -42,78 +41,78 @@ které jsem si stanovil následující metriky k porovnání:
 \subsubsection{SteamVR Tutorial}\label{steamvr-tutorial}
 
 Pro totožnou platformu, pro kterou je aplikace této závěrečné práce
-určena -- \textbf{HTC Vive}, existuje oficiální výuková aplikace
-vytvořená přímo autory samotné platformy -- společnosti Valve.
+určena existuje oficiální výuková aplikace vytvořená přímo společností
+\emph{Valve}.
 
 \paragraph{Průběh výuky}\label{prux16fbux11bh-vuxfduky}
 
 Aplikace se nejprve uvede vizuálně poutavým úvodem, který spočívá v
-sestavení výukové scény animací obklopující hráče. Hráči je tak názorně
-ukázana možnost rozhlížet se kolem sebe a prozkoumávat prostředí.
+sestavení výukové scény animací obklopující hráče. Hráči je tak nenuceně
+ukázána možnost rozhlížet se kolem sebe a prozkoumávat prostředí, což
+většina uživatelů intuitivně udělá.
 
-Následně je uživateli představena postava (\emph{Virtual Reality
-Assistance and Education Core}) ze hry Portal 2, která s hráčem
+Následně je uživateli představena postava \emph{Virtual Reality
+Assistance and Education Core} z prostředí hry Portal 2, která s hráčem
 komunikuje a provádí ho výukou -- stává se tak \emph{průvodcem}. Monolog
-je dabovaný a v místech, kde se nachází průvodce lze číst titulky, které
-jsou lokalizovány do nepřeberného množství jazyků (je k dispozici i
-Čeština).
+je dabovaný a v místech, kde se nachází průvodce se zobrazují titulky,
+které jsou lokalizovány do nepřeberného množství jazyků (i češtiny).
 
 Příjemným bonusem je pro hráče hry Portal 2 familiarita postavy, která
-může zvýšit hráčovu pozornost a pro hráče, kteří si hru Portal 2 v
-minulosti oblíbili tak tutoriál navozuje na obličejích úsměv.
+může zvýšit hráčovu pozornost, a pro hráče, kteří si hru Portal 2 v
+minulosti oblíbili, tak tutoriál navozuje na obličejích úsměv.
 
 \includegraphics{http://1u88jj3r4db2x4txp44yqfj1.wpengine.netdna-cdn.com/wp-content/uploads/2016/03/Walkthrough-of-SteamVRs-new-tutorial_17-930x523.jpg}\\
 \emph{fig.1 Výuková aplikace SteamVR Tutorial}
 
-Jako první je uživateli představena plocha, tzv. \emph{Play area}, ve
+Jako první je uživateli představena plocha, tzv. \emph{play area}, ve
 které se VR zážitky budou odehrávat. Neprodleně jsou pak představeny
-tzv. \emph{Chaperone bounds}, které upozorňují hráče na skutečnost, že
-opouštějí hranice \emph{play area} a jsou vystaveni limitacím fyzické
-místnosti, ve které se nacházejí. Protože je tato funkcionalita důležitá
-v zájmu uživatele, pro jeho bezpečnost, je na ni ve výuce kladen důraz a
-je proto požádán, aby se ke kraji místnosti pomalu přiblížil a následně
-to stejné zopakoval na druhé straně místnosti.
+tzv. \emph{chaperone bounds}, které upozorňují hráče na skutečnost, že
+opouští hranice \emph{play area}. Protože je tato funkcionalita
+důležitá, je pro jeho bezpečnost na ni ve výuce kladen důraz a je proto
+požádán, aby se ke kraji místnosti pomalu přiblížil a následně to stejné
+zopakoval na druhé straně místnosti.
 
 Dále je uživatel požádán, aby se podíval na ovladače, které drží v ruce
 a provedl s nimi libovolné pohyby pro vyzkoušení manipulace s nimi.
 Poté, co se seznámí s pohyby s ovladačem jsou mu postupně představena
 všechna tlačítka, která se nacházejí na ovladači a je požádán, aby každé
-stiskl a vyzkoušel si tak, kde se nacházejí a jakou mají zpětnou odezvu.
+stiskl a vyzkoušel si, kde se nacházejí a jakou mají zpětnou odezvu.
 
 Výuková aplikace je pojatá spíše komicky a každé tlačítko velmi chytře
 vyvolává různé destrukční, hlasité a nečekané události, které se
-průvodci nelíbí. Průvodce hráče žádá aby přestal, hráč však může mít
-nutkání tyto tlačítka mačkat opakovaně, aby průvodce rozčílil a dělal
-nepořádek. Tím se s tlačítky seznámí o to více.
+průvodci příliš nelíbí. Průvodce hráče po chvíli žádá, aby s opakovaným
+mačkáním přestal. Hráč však může mít zlé úmysly a nutkání tyto tlačítka
+stisknout opakovaně, aby průvodce rozčílil a dělal nepořádek. Tím se
+však s tlačítky seznámí o to více.
 
 Hráč není informován o tom, která tlačítka mají jakou funkci, logicky z
-toho důvodu, že každá VR aplikace má své vlastní pojetí smyslu těchto
+důvodu, že každá VR aplikace má své vlastní pojetí smyslu těchto
 tlačítek. Ovšem k tlačítkům \emph{Menu} a \emph{System} je uživateli
 řečeno, k čemu se nejčastěji používají.
 
-Ke stisknutí tlačítka \emph{System} je vzápětí požádáno, což vede k
-otevření \emph{SteamVR Dashboard}. Lze si povšimnout, že se hra
-nepozastaví při otevření \emph{Dashboardu} a probíhá tak stále
-instruktáž, jak se lze ve \emph{SteamVR Dashboard} pohybovat a k čemu je
-určena.
+Hráč je požádán o stisk tlačítka \emph{System}, což vede k otevření
+\emph{SteamVR Dashboard}. Lze si povšimnout, že se hra při oteření
+nepozastaví, a probíhá tak stále instruktáž, jak se lze ve \emph{SteamVR
+Dashboard} pohybovat a k čemu je určena.
 
-Tím je výuka u konce, uživatel je instruován k otevření
-\emph{Dashboardu} a výběrem VR aplikace. Stále ovšem může v aplikaci
-zůstat a dále zkoušet práci s ovladači, nebo zhlédnout závěrečnou
-animaci, kdy průvodce komicky odvezou pryč ze scény.
+Tím je výuka u konce. Uživatel je instruován k otevření
+\emph{Dashboardu}, pokud jej opustil, a výběrem VR aplikace. Může však v
+aplikaci zůstat a dále zkoušet práci s ovladači, nebo zhlédnout
+závěrečnou animaci, kdy průvodce komicky odvezou jiné postavy pryč ze
+scény.
 
 \paragraph{Zhodnocení}\label{zhodnocenuxed}
 
-SteamVR Tutorial je relativně dobrým příkladem výukové aplikace. Je
-kvalitně navržena, s objektivně sic strohým, ale kvalitním vizuálním a
-zvukovým zpracováním.
+SteamVR Tutorial je dobrým příkladem výukové aplikace. Je kvalitně
+navržena, se spíše strohým, ale kvalitním vizuálním a zvukovým
+zpracováním.
 
 Pro účely herny je však shledán nevhodným, jelikož je návštěvníkům herny
-takový tutoriál prakticky nepřístupný. Obsluha je nucena jej spustit
-manuálně a také se návštěvníka herny zeptat, jestli už tutoriál
-absolvoval a zdali jej chce skutečně absolvovat. Návštěvník nemá možnost
-takovou výuku zopakovat, nebo alespoň získat nějaký závěrečný přehled,
-pro zopakování toho, co se naučil.
+taková aplikace prakticky nepřístupná. Obsluha je nucena ji spustit
+manuálně a také se návštěvníka herny zeptat, jestli už výuku absolvoval
+a zda ji chce skutečně absolvovat. Návštěvník nemá možnost si takovou
+výuku spustit sám, zopakovat ji, nebo alespoň po absolvování získat
+nějaký závěrečný přehled, pro zopakování toho, co se naučil.
 
 \includegraphics{http://i.imgur.com/dHgOC1S.png}\\
 \emph{fig.2 Přístup k aplikaci je skryt ve SteamVR nabídce, která je
@@ -126,12 +125,11 @@ jednu hodinu, velkou část takového času.
 \subsubsection{Oculus Touch Tutorial \& Oculus First
 Contact}\label{oculus-touch-tutorial-oculus-first-contact}
 
-Pro konkurenční systém \textbf{Oculus Rift} a jeho platformu je určena
+Pro konkurenční systém \emph{Oculus Rift} a jeho platformu je určena
 aplikace \emph{Oculus First Contact}, která je spojena s předcházející
-krátkou výukou ovladačů \emph{Oculus Touch}, které jsou k systému
-\emph{Oculus Rift} prodávány odděleně.
-
-Bez těchto ovladačů tuto výuku nelze spustit.
+krátkou výukou k ovladačům \emph{Oculus Touch}, které jsou k systému
+\emph{Oculus Rift} prodávány odděleně. Bez těchto ovladačů tuto výuku
+nelze absolvovat.
 
 \paragraph{Průběh výuky}\label{prux16fbux11bh-vuxfduky-1}
 
@@ -140,24 +138,25 @@ pouze ovladače v ruce. Před ním se pak zobrazuje přepis (titulky) hlasu
 průvodkyně, která není vizuálně zpracována, lze slyšet pouze hlas.
 
 Jako první je požádán, aby se podíval na podlahu a zpozoroval obrys
-prostoru, ve kterém se může uživatel pohybovat -- \emph{the play area}.
-Následně je požádán, aby se podíval na své ruce a ovladače, které v nich
-právě drží a osahal si všechna tlačítka, která se mu podaří nalézt.
-Následně jsou mu všechna tlačítka jedno po druhém představeny, jsou
+prostoru, ve kterém se může uživatel pohybovat (\emph{play area}).
+Následně je požádán, aby se podíval na své ruce a ovladače, které drží,
+a osahal si všechna tlačítka, která se mu podaří nalézt. Následně jsou
+mu všechna tlačítka jedno po druhém představeny. Jsou postupně
 zvýrazněny a je požádán, aby tato tlačítka stiskl.
 
 \includegraphics{http://i.imgur.com/pLGppB7.png}\\
 \emph{fig.3 Výuková aplikace Oculus Touch Tutorial}
 
 Pokud uživatel provádí stisky tlačítek svižně, lze tuto část projít
-relativně velmi rychle. Výuka nezdržuje dlouhým monologem, nebo pauzami,
-jde o krátké věty a díky tomu může působit velmi svižně.
+rychleji. Výuka nezdržuje dlouhým monologem nebo pauzami. Jde o krátké
+věty a díky tomu působí velmi svižně.
 
 Vzápětí jsou uživateli ovladače vizuálně z rukou odstraněny a je
-požádán, aby znovu vyzkoušel mačkat tlačítka a zvedat z nich prsty tak,
-aby pochopil přibližnou reprezentaci přirozeného pohybu rukou a prstů.
-Je požádán, aby mačkal specifické kombinace tlačítek tak, aby vytvářel
-gesta rukou jako je například gesto uzavření v pěst nebo míření na
+požádán, aby znovu vyzkoušel stisknout tlačítka a zvedat z nich prsty
+tak, aby pochopil reprezentaci přirozeného pohybu rukou a prstů, kterou
+se ovladače \emph{Oculus Touch} od konkurence liší. Je požádán, aby
+stiskl specifické kombinace tlačítek takovým způsobem, aby vytvářel
+gesta rukou, jako je například gesto uzavření v pěst nebo míření na
 objekty ukazováčkem.
 
 Uživateli není vysvětlen účel tlačítek, z dříve zmíněných důvodů. Pokud
@@ -167,123 +166,129 @@ schopen odvodit účel tlačítek sám, což lze považovat za nespornou
 výhodu.
 
 Překvapující je absence objasnění smyslu tlačítek \emph{Oculus} a
-\emph{Menu}, které téměř ve všech VR aplikacích fungují totožně.
+\emph{Menu}, které většinou ve všech VR aplikacích mají totožný účel.
 
-Tím výuka končí a je uživateli spuštěna aplikace \emph{Oculus First
-Contact}, která je určena k prohloubení seznámení s virtuální realitou a
-slouží jako úvodní zábavný zážitek, který je srovnatelně kvalitní a
-zábavný jako jiné herní tituly pro virtuální realitu. Tím tak lze
-považovat výuku jako dokončenou a aplikací \emph{Oculus First Contact}
-začíná ``zábava''.
+Tím výuka končí a je spuštěna aplikace \emph{Oculus First Contact},
+která je určena k prohloubení právě nabytých znalostí, a slouží jako
+úvodní zábavný zážitek, který je srovnatelně kvalitní a zábavný jako
+jiné herní tituly pro virtuální realitu. Tím tak lze považovat výuku
+jako dokončenou a aplikací \emph{Oculus First Contact} začíná
+``zábava''.
 
 \includegraphics{http://i.imgur.com/Ly6t8mi.png}\\
 \emph{fig.4 Aplikace Oculus First Contact}
 
 \paragraph{Zhodnocení}\label{zhodnocenuxed-1}
 
-Oculus má výukovou aplikaci zpracovanou do podstatně rychlejšího tempa,
-než SteamVR. Přispívá tomu i jednoznačné rozdělení práce od zábavy.
-Nejprve přichází rychlý a strohý úvod do ovládání, který trvá přibližně
-4-5 minut, až následně po tomto úvodu následuje zábavný prvek ve formě
-plnohodnotného VR zážitku. Vidíme tak zásadní rozdíl vůči SteamVR, který
-tyto dva prvky míchá do jednoho průběhu.
+\emph{Oculus} má výukovou aplikaci zpracovanou do podstatně rychlejšího
+tempa, než \emph{SteamVR}. Přispívá tomu i jednoznačné rozdělení výuky
+od zábavy. Nejprve přichází rychlý a strohý úvod do ovládání, který trvá
+přibližně 4-5 minut. Až následně po tomto úvodu následuje zábavný prvek
+ve formě plnohodnotného VR zážitku. Vidíme tak zásadní rozdíl vůči
+SteamVR, který tyto dva prvky míchá do jednoho spojeného průběhu.
 
 \subsection{Analýza existujících řešení
 spouštěčů}\label{analuxfdza-existujuxedcuxedch-ux159eux161enuxed-spouux161tux11bux10dux16f}
 
 Po skončení výuky můžeme předpokládat, že návštěvník herny je se
 systémem do určité míry seznámen a dále je nutné mu nějakým způsobem
-nabídnout výběr VR zážitků. O VR aplikacích může vědět a jít do herny za
-účelem takovou aplikaci vyzkoušet, nebo může hernu navštívit z
-obecnějšího důvodu -- protože chce vyzkoušet virtuální realitu.
+nabídnout výběr VR zážitků. O VR aplikacích může mít předchozí znalost a
+jít do herny za účelem konkrétní aplikaci vyzkoušet, nebo může hernu
+navštívit, protože chce zkrátka vyzkoušet virtuální realitu. Druhý
+zmíněný důvod je v hernách vídán mnohem častěji.
 
 Dvě v předchozí kapitole zmíněné platformy (SteamVR a Oculus) mají
-vlastní software pro spouštění VR aplikací, které blíže analyzuji.
+vlastní software pro spouštění VR aplikací. Ty jsou v této kapitole
+analyzovány.
 
 \subsubsection{SteamVR Dashboard}\label{steamvr-dashboard}
 
 \emph{SteamVR Dashboard} je pouze malou modifikací již existujícího
-rozhraní \emph{Steam Big Picture}, který je určen k použití \emph{Steam}
-platformy z pohodlí gauče s použitím herního ovladače.
+\emph{Steam Big Picture} -- rozhraní pro práci s platformou
+\emph{Steam}, které je přizpůsobeno pro ovládání herním ovladačem.
 
-Díky tomu má \emph{SteamVR Dashboard} nespornou výhodu v tom, že většina
-hráčů počítačových her se s platformou \emph{Steam} již setkala a
-setkala se dokonce i s rozhraním \emph{Big Picture}, které část hráčů
-dokonce používá jako primární rozhraní pro práci s platformou
-\emph{Steam}.
+U hráčů počítačových her je velká pravděpodobnost, že se s platformou
+\emph{Steam} již v minulosti setkali. Mnozí z nich se také setkali i s
+rozhraním \emph{Big Picture}, které někteří dokonce používají jako
+primární rozhraní pro práci s platformou \emph{Steam}. Tento fakt
+představuje nespornou výhodu, protože takoví hráči se budou pohybovat ve
+známém prostředí.
 
-Na druhou stranu lze však považovat jako nevýhodu ten fakt, že fakticky
-\emph{Steam Big Picture} nebyl původně navržen pro použití s VR. Hráč
-tak pracuje s malým oknem na virtualizovaném monitoru.
+Na druhou stranu lze však považovat jako nevýhodu fakt, že \emph{Steam
+Big Picture} nebyl původně navržen pro použití s VR. Hráč tak pracuje s
+malým oknem na virtualizovaném monitoru. Vidí před sebou plochu, na
+kterou je rozhraní plošně promítáno. Není tak plně využito potenciálu VR
+prostoru.
 
 \includegraphics{https://cdn0.vox-cdn.com/thumbor/Lei26JXsB0zMdW_jkshawf3t29o=/0x205:839x677/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/49240909/ViveTheaterModeTop.0.0.jpg}
 \emph{fig.5 SteamVR Dashboard}
 
 Z tohoto rozhraní lze procházet knihovnu her, prohlížet elektronický
-obchod s hrami a hry také nakupovat, prohlížet komunitní profily,
-stránky her, sledovat průběh aktuální ho stahování, používat webový
-prohlížeč a přistupovat k omezenému nastavení.
+obchod s hrami, nakupovat v něm, prohlížet komunitní profily, stránky
+her, sledovat průběh aktuálního stahování, používat webový prohlížeč,
+zobrazit monitor počítače, ovládat počítač a přistupovat k nastavení.
 
 Pokud budeme hodnotit \emph{SteamVR Dashboard} z pohledu návštěvníka
-herny, je takové rozhraní naprosto nevyhovující. Pro návštěvníka, který
-nemá s platformou \emph{Steam} zkušenosti je rozhraní spíše matoucí a
-může vyžadovat nějakou dobu, než se s ním seznámí. V rozhraní se také
-nacházejí sociální a komunitní funkce, které pro použití v herně nemají
-žádný význam a jsou tak dalším matoucím prvkem pro návštěvníka. Zákazník
-herny má nadále plný přístup k obchodu a mohl by tak na účet herny
-libovolně nakupovat hry, není mu v tom nikterak zabráněno.
+herny, je takové rozhraní nevyhovující. Pro návštěvníka, který nemá s
+platformou \emph{Steam} zkušenosti je rozhraní spíše matoucí a může
+vyžadovat určitou dobu, než se s ním seznámí. V rozhraní se nacházejí
+sociální a komunitní funkce, které pro použití v herně nemají žádný
+význam a jsou dalším matoucím prvkem pro návštěvníka. Zákazník herny má
+nadále plný přístup k obchodu a mohl by na účet herny libovolně
+nakupovat hry. Není mu v tom nikterak zabráněno.
 
-Seznam a výběr her je pro použití v herně taktéž spíše nevhodný. Seznam
-se skládá z mřížky 3x4 grafických bannerů, které o dané hře vypovídají
-jen málo. Je totiž spíše na vývojářích, či v takovém banneru zobrazí
-pouze logo hry, obrázek ze hry či obojí. Lze tak velmi obtížně odhadnout
-o jaký žánr hry jde, zda je zábavná, zda je subjektivně návštěvníkovi
-herny vizuálně přitažlivá, jaké ovládání podporuje, či zda způsobuje
-závratě a kinetózu.
+Seznam a výběr VR aplikací je pro použití v herně taktéž spíše nevhodný.
+Seznam se skládá z mřížky 3x4 grafických bannerů, které o dané hře
+vypovídají jen málo. Je totiž na vývojářích, či v takovém banneru
+zobrazí pouze logo hry, obrázek ze hry, či obojí. Lze tak velmi obtížně
+odhadnout o jaký žánr hry jde, zda je zábavná, vizuálně přitažlivá, jaké
+ovládání podporuje či zda způsobuje závratě a kinetózu.
 
 \subsubsection{Oculus Home}\label{oculus-home}
 
 \emph{Oculus Home} je plnohodnotným rozhraním pro virtuální realitu od
-společnosti Oculus pro svou stejnojmennou platformu.
+společnosti Oculus pro svou stejnojmennou platformu. Narozdíl od
+\emph{SteamVR Dashboard} je navržen přímo pro VR.
 
 Skrze toto rozhraní lze procházet knihovnu her a nakupovat hry v
-obchodě. Uživatel může vidět i minimální komunitní funkce, jako je
+obchodě. Uživatel může vidět i minimální komunitní funkce, jakými jsou
 seznam hráčů a notifikace (a to i systémové).
 
-Rozhraní je vizuálně velmi přitažlivé, zobrazuje se jako výchozí prostor
+Rozhraní je vizuálně velmi přitažlivé. Zobrazuje se jako výchozí prostor
 při nasazení headsetu na hlavu bez spuštěné hry, což oproti platformě
-SteamVR, kde se zobrazuje prázdná šedá místnost s mřížkou, může působit
-příjemně.
+SteamVR, kde se zobrazuje prázdná šedá místnost s mřížkou, působí lepším
+dojmem.
 
 \includegraphics{https://i.ytimg.com/vi/kWJvFR04xyM/maxresdefault.jpg}
 \emph{fig.6 Oculus Home}
 
 Jelikož je rozhraní navržené specificky pro použití s hrami pro
-virtuální realitu, k hrám lze nalézt informaci o tom, jaké ovládání
+virtuální realitu, k hrám lze nalézt informace o tom, jaké ovladače
 podporuje a lze je řadit podle míry ``komfortu''. Nekomfortní hry jsou
-pak označeny jako takové, které mohou způsobovat kinetózu a lidé, kterým
-se z intenzivnějších her dělá nevolno, se takovým hrám mohou snadno
-vyhnout.
+pak označeny jako takové, které mohou způsobovat kinetózu. Díky tomu se
+lidé, kterým se z intenzivnějších her dělá nevolno, mohou snadno takovým
+hrám vyhnout.
 
-Pro hernu je však \emph{Oculus Home} také nevyhovující. Přístup k
-obchodu a komunitní funkce jsou opět irelevantní a nejsou určeny
-návštěvníkům herny.
+V prostředí herny je však \emph{Oculus Home} také mírně nevyhovující.
+Přístup k obchodu a komunitní funkce jsou irelevantní účelu herny a
+zbytečně odvádějí pozornost.
 
 \subsection{Pozorování v herně}\label{pozorovuxe1nuxed-v-hernux11b}
 
-Ke konci března roku 2017 jsem měl příležitost stát se na jeden den
-obsluhou v herně \emph{Virtualnirealita.cz} v pražských Dejvicích. Tuto
-příležitost jsem využil v prospěch analýzy jako předmět pozorování a
-bližšího pochopení požadavků jak hráčů tak obsluhy herny.
+Ke konci března roku 2017 se naskytla příležitost stát se na jeden den
+obsluhou v herně \emph{Virtualnirealita.cz} v pražských Dejvicích. Tato
+příležitost byla využita v prospěch analýzy, jako předmět pozorování a
+bližšího pochopení požadavků hráčů a obsluhy herny.
 
-Jako obsluha jsem měl povinnost seznámit zákazníky s pronajatým systémem
-a pokud s virtuální realitou neměli dosud zkušenost, nebo se nedoslechli
-o žádné konkrétní hře, či aplikaci, kterou by si přišli vyzkoušet, byl
-jsem dále pověřen doporučením nějaké hry na základě jejich preferencí.
+Jako obsluha vznikala povinnost seznámit zákazníky s pronajatým
+systémem. Pokud s virtuální realitou neměli dosud zkušenost, nebo se
+nedoslechli o žádné konkrétní VR aplikaci, kterou by si přišli
+vyzkoušet, bylo nutné doporučit nějakou VR aplikaci na základě jejich
+preferencí.
 
-Protože jsem se ptal na přirozené otázky, abych byl schopen lépe s lidmi
-pracovat a také jim doporučit správnou hru, vznikla mi tak miniaturní
-analýza z malého vzorku lidí, kteří ten den do herny dorazili.
+Aby bylo možné s návštěvníky lépe pracovat a doporučit jim správnou
+aplikaci, byli dotazováni na přirozené otázky. Z odpovědí na ně vznikla
+miniaturní analýza z malého vzorku lidí, kteří ten den hernu navštívili.
 
 Dotazování zákazníků se tak běžně skládalo z otázek: - ``Už jste u nás
 někdy byli?'' - ``Máte zkušenosti s VR?'' - ``Hrajete počítačové hry?''
@@ -307,91 +312,8 @@ měli zkušenost.
 
 Občasným jevem bylo několikanásobné vystřídání zákazníků na jednom
 systému za dobu zapůjčení. To je důležitá informace, protože výuková
-aplikace musí s takovým jevem počítat.
-
-Rychlost seznámení se systémem byla převážně ovlivněna zákazníkovou
-zkušenosti s počítačovými hrami.
-
-\subsection{Aplikování bodů použitelnosti podle
-Nielsena}\label{aplikovuxe1nuxed-bodux16f-pouux17eitelnosti-podle-nielsena}
-
-Před stanovením požadavků jsem se pokusil aplikovat body použitelnosti
-podle \emph{Jakoba Nielsena}, které jsem v minulosti úspěšně použil pro
-návrh uživatelského rozhraní pro webové aplikace.
-
-\emph{Jakob Nielsen} je významným odborníkem v oblasti tvorby
-uživatelského rozhraní, specializující se především na webová rozhraní.
-Jeho klíčovým dílem je kniha \emph{Designing Web Usability} z roku 1999,
-ve které popisuje veškeré své znalosti a zkušenosti z oboru.
-
-Na základě svých zkušeností sestavil \textbf{deset bodů použitelnosti},
-které se používají pro heuristickou analýzu uživatelských rozhraní.
-Jedná se o tyto body:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Viditelnost stavu systému
-\item
-  Propojení systému a reálného světa
-\item
-  Uživatelská kontrola a svoboda
-\item
-  Standardizace a konzistence
-\item
-  Prevence chyb
-\item
-  Rozpoznání namísto vzpomínání
-\item
-  Flexibilní a efektivní použití
-\item
-  Estetický a minimalistický
-\item
-  Pomoc uživatelů pochopit, poznat a vzpamatovat se z chyb
-\item
-  Nápověda a návody
-\end{enumerate}
-
-Nielsenovy body použitelnosti pravděpodobně nebudou plně vhodné pro
-jejich použití na aplikaci virtuální reality, jelikož jsou primárně
-určeny pro analýzu webových rozhraní. V této kapitole jsem vybral ty z
-nich, které nejsou vhodné a upravil je tak, aby byly aplikovatelné.
-
-Všechny tyto body jsem pak použil pro sestavení dodatečných požadavků na
-aplikaci, které lze nalézt v následující kapitole.
-
-\subsubsection{Bod č. 2 -- Propojení systému a reálného
-světa}\label{bod-ux10d.-2-propojenuxed-systuxe9mu-a-reuxe1lnuxe9ho-svux11bta}
-
-Druhý z Nielsenových bodů použitelnosti ukazuje na to, jak by mělo
-uživatelské rozhraní reflektovat známé jevy a souvislosti reálného
-světa. Typickým příkladem je ikona složky vyzobrazená v rozhraní. Podle
-tohoto bodu je žádoucí, aby se taková ikona opravdu podobala složce a
-při přetažení objektů na takovou ikonu se provedla očekávatelná akce --
-přesunutí objektu do této složky.
-
-Ve virtuální realitě je nutné tyto vztahy ještě více utvrdit. Z
-přednášky na americké konferenci GCD 2016 hovoří \emph{Kimberly Voll} ze
-společnosti \emph{Riot Games} o konceptu takzvaného \emph{fidelity
-contract} (volně přeloženo -- kontraktu věrnosti) a popisuje jej jako
-mechanismus splnění očekávání chování virtuálního světa shodným s
-chováním reálného světa.
-
-\begin{quote}
-TODO: Dopsat k tomuto tématu více.
-\end{quote}
-
-\subsubsection{Bod č. 10 -- Nápověda a
-návody}\label{bod-ux10d.-10-nuxe1povux11bda-a-nuxe1vody}
-
-Vzhledem k tomu, že samotná aplikace slouží k výuce a je ji tak možné
-považovat jako nápovědu, je tento bod pro daný typ aplikace
-neaplikovatelný.
-
-\begin{quote}
-TODO: Tohle zvážit a případně přepsat.
-\end{quote}
+aplikace musí s takovým jevem počítat. Rychlost seznámení se systémem
+byla převážně ovlivněna zákazníkovou zkušenosti s počítačovými hrami.
 
 \subsection{Funkční požadavky návštěvníků
 herny}\label{funkux10dnuxed-poux17eadavky-nuxe1vux161tux11bvnuxedkux16f-herny}
@@ -461,15 +383,15 @@ Aby uživatel používal systém správně, obsluha se potřebuje ujistit, že
 zákazník ví, jak se systém používá, aby nedošlo k jeho poškození
 nesprávným použitím a zákazník nebyl vystaven nebezpečí.
 
-\textbf{F-B02 Obsluha chce zákazníka seznámi s ovladači systému}\\
+\textbf{F-B02 Obsluha chce zákazníka seznámit s ovladači systému}\\
 Aby uživatel byl se zážitkem spokojený, obsluha potřebuje, aby zákazník
 byl schopen používat ovladače systému. Taková znalost pak zákazníkovi
 usnadní pochopení ovládání konkrétních aplikací a je tak logicky více
 spokojený.
 
-\textbf{F-B03 Obsluha chce zákazníkovi vybrat VR aplikaci pro něj
+\textbf{F-B03 Obsluha chce, aby si zákazník vybral VR aplikaci pro něj
 vhodnou}\\
-Zákazníci velmi často přicházejí do herny pouze za účele vyzkoušení
+Zákazníci velmi často přicházejí do herny pouze za účelem vyzkoušení
 virtuální reality. Zřídkakdy se stává, že by zákazník věděl o jakou
 konkrétní VR aplikaci má zájem a chce si ji vyzkoušet. Obsluha je tak
 povinna zjistit, co bude zákazníkovi vyhovovat a vybrat mu tak nějakou
@@ -485,21 +407,21 @@ konec.
 obecné}\label{funkux10dnuxed-poux17eadavky-obecnuxe9}
 
 Požadavky nekategorizovatelné jako požadavek návštěvníka či obsluhy
-herny. Valná většina z nich se týká fukncionality spouštěče.
+herny. Většina z nich se týká fukncionality spouštěče.
 
-\textbf{F-C01 Aplikace chce zobrazit uživateli seznam VR aplikací a
-umožnit mu výběr}\\
+\textbf{F-C01 Uživateli je zobrazen seznam VR aplikací a je mu umožněn
+výběr}\\
 Základní funkce spouštěče je zobrazení seznamu VR aplikací, ze kterých
 může uživatel provést výběr. Takový seznam by měl poskytovat možnost
 vyhledávat přímo podle názvu, dále podle žánru, intenzity i podle
 vizuálu.
 
-\textbf{F-C02 Aplikace chce stáhnout data o VR aplikaci}\\
+\textbf{F-C02 Uživateli jsou zobrazená podrobnější data k VR aplikaci}\\
 Aby mohla aplikace splnit požadavek \emph{F-C01}, je nutné taková data o
 hrách získat. Většina požadavkem zmíněných dat je dostupná přes veřejná
 API. Více se získáním dat bude zabývat návrh.
 
-\textbf{F-C03 Aplikace spustí uživatelem vybranou VR aplikaci}\\
+\textbf{F-C03 Spustí se uživatelem vybraná VR aplikace}\\
 Poté, co uživatel provede výběr aplikace, je tato aplikace spuštěna a
 funkce spouštěče jsou pozastaveny či ukončeny.
 
@@ -521,14 +443,20 @@ aplikace splňovat alespoň nějakou základní úroveň kvality vizuálního
 zpracování.
 
 \textbf{N-03 Výukou je uživatel prováděn mluvenou řečí}\\
-Jelikož je kvůli disperzi krajů obrazu, omezenému rozlišení a obtížně
+Jelikož je kvůli disperzi krajů obrazu, omezenému rozlišení a obtížněji
 proveditelnému umístění psaného textu ve virtuální realitě, je nutné
-kromě titulků ve formě takového textu, uživatele navigovat i
-prostřednictvím mluveného slova. Požadavek na primární jazyk mluveného
-slvoa je Čeština.
+kromě titulků uživatele navigovat i prostřednictvím mluveného slova.
+Požadavek na primární jazyk mluveného slova je Čeština.
 
 \textbf{N-04 Výuka je časově efektivní}\\
 Protože je návštěvník herny časově omezen dobou zapůjčení systému, je
 nutné, aby taková výuka trvala co nejkratší možnou dobu.
 
-\textbf{N-05 Aplikace bude jednoduchá na použití}
+\textbf{N-05 Aplikace bude jednoduchá na použití} Uživatelem může být
+velmi mladá i stará osoba. Je tak nutné redukovat kognitivní zátěž a
+nepřehlednost prostředí, aby byla aplikace jednoduchá a její použití
+přímočaré.
+
+\textbf{N-06 Aplikace bude lokalizovatelná do jiného jazyka} Musí být
+umožněno přeložit výuku do jiného jazyka, než je čeština. Texty nebudou
+umístěny pevně v kódu aplikace.
