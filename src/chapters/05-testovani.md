@@ -7,3 +7,7 @@ Jelikož jde o aplikaci s lineárním postupem, nebyly k testování sestaveny s
 ## Předměty testování
 
 Z funkčních požadavků definovaných v analytické části bylo určeno
+
+## Zjištěné nedostatky
+
+ - Nelze se vrátit k výuce ve chvíli, kdy si systém vymění uživatele. Řešit by se to dalo detekcí sundání headsetu.

@@ -82,7 +82,9 @@ Agent je psán taktéž v jazyce C#, poskytuje jednoduché uživatelské rozhran
 
 ## Implementace
 
-V kapitole jsou uvedeny konkrétnější detaily implementační fáze práce. Je popsána struktura celé scény, jakým způsobem jsou ukládána data o scénáři výuky, jak je generováno uživatelské rozhraní spouštěče a jakým způsobem se vyvářel voice-over výuky.
+V kapitole jsou uvedeny konkrétnější detaily implementační fáze práce. Je popsána struktura celé scény, jakým způsobem jsou ukládána data o scénáři výuky, jak je generováno uživatelské rozhraní spouštěče a jakým způsobem se vytvářel voice-over výuky. Nezbytnou součástí implementace je také i vytvoření vizuálu - 3D modelů prostředí, ve kterém se výuka odehrává.
+
+*fig? Snímek obrazovky z výsledné podoby aplikace*
 
 ### Struktura scény
 
@@ -93,6 +95,7 @@ Aplikace je strukturována pouze do jedné scény. Ač by na první pohled dáva
 Herní objekty v enginu Unity disponují velmi důležitou a užitečnou funkcí -- mohou být do sebe zanořovány a může jít o prázdné objekty pouze s komponentou `Transform`, která se stará o pozicování v herním světě. Objekty tak lze sestavovat z jiných objektů, nebo je jen používat pro seskupování objektů.
 
 ![Imgur](http://i.imgur.com/nkWHyOO.png)
+*fig: Struktura scény*
 
 Ve scéně aplikace hrají velkou roli dva druhy objektů - tzv. **Rigs** (skupiny objektů) a **Managers** (manažeři). Rigs slouží k seskupení objektů se společným účelem. Managers jsou pak objekty se skripty, které řídí určitou část aplikace.
 
@@ -216,3 +219,7 @@ Výsledná délka pouze mluveného textu je 116 vteřin. Práce se zvukovými so
 Z pozdní analýzy mluvy plyne, že jsou užitečné a neužitečné části mluvy rozděleny (subjektivně) správně -- přibližně tři čtvrtiny jsou věnovány tomu nejdůležitějšímu -- vysvětlování, a jedna čtvrtina je zaplněna meta-vysvětlováním a pauzami, kde pauzy konkrétně zaujímají pouze přes 7 % celého času.
 
 Lze tak tvrdit, že výuka je efektivní a splní požadavek *N-04* na časovou efektivitu.
+
+## Nedostatky
+
+Realizace...
