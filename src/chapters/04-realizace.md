@@ -1,16 +1,14 @@
 # Realizace
 
-Pro realizaci aplikace bude použit herní engine *Unity*. *Unity* je multi-platformní herní engine napsaný v C a C++ určený k vývoji her pro PC, konzole a mobilní zařízení. Je to v současnosti jeden z nejvhodnějších a nejpopulárnějších nástrojů na vývoj her pro virtuální realitu.
+Pro realizaci aplikace bude použit herní engine *Unity*. *Unity* je multi-platformní herní engine napsaný v C a C++, určený k vývoji her pro PC, konzole a mobilní zařízení. Je to v současnosti jeden z nejvhodnějších a nejpopulárnějších nástrojů na vývoj her pro virtuální realitu.
 
-Ač jde o nástroj pro tvorbu her, je vhodným nástrojem i pro tvorbu aplikace určené pro virtuální realitu, jelikož aplikace pro virtuální realitu jsou vykreslovány stereoskopicky a trojrozměrně. Předmětem tvorby této aplikace by neměla být tvorba takového vykreslovacího jádra, ale spíše samotné aplikace. Proto je využito herního enginu, aby čas strávený tvorbou vykreslovacího jádra byl využit spíše pro tvorbu samotné aplikace.
+Ač jde o nástroj pro tvorbu her, je vhodným nástrojem i pro tvorbu aplikace určené pro virtuální realitu, jelikož aplikace pro virtuální realitu jsou vykreslovány stereoskopicky a trojrozměrně. Předmětem tvorby této aplikace by neměla být tvorba takového vykreslovacího jádra, ale spíše samotné aplikace. Proto je využito herního enginu, aby byl čas věnovaný implementaci využit spíše pro tvorbu samotné aplikace.
 
-Jako název aplikace jsem zvolil sousloví **Immersion VR**, které slouží k jednoznačné identifikaci produktu. Slovo "immersion" lze přeložit jako "ponoření" a symbolicky tak vyjadřuje uživatelův proces "ponoření" do virtuální reality.
+Jako název aplikace bylo zvoleno sousloví **Immersion VR**, které slouží k jednoznačné identifikaci produktu. Slovo "immersion" lze přeložit jako "ponoření" a symbolicky tak vyjadřuje uživatelův proces "ponoření" do virtuální reality.
 
 ## Jazyk implementace
 
 Herní engine *Unity* podporuje několik programovacích jazyků, ve kterých můžou být vytvořeny skripty pro ovládání logiky aplikace. Jsou to jazyky *C#*, *JavaScript* a *Boo*. Tato kapitola se bude zabývat volbou jednoho z těchto jazyků, ovšem výhradně v souvislosti s použitím v enginu *Unity*.
-
-Výběr jazyku budou ovlivňovat i mé předchozí zkušenosti. V *Unity* jsem doposud napsal několik skriptů pouze v jazyce *C#*. Na druhou stranu mám s jazykem *JavaScript* mnohem hlubší zkušenosti a znalosti, ovšem mimo herní vývoj -- především ve webovém prostředí.
 
 Po rešerši z různorodých názorů vývojářů bylo možné vyderivovat následující doporučení, týkající se výběru jazyka pro *Unity*:
 
@@ -23,17 +21,17 @@ Po rešerši z různorodých názorů vývojářů bylo možné vyderivovat nás
  - C# je rychlejší, než JavaScript ale ne znatelně.
  - Boo se nedoporučuje, používá jej pouze malý zlomek vývojářů.
 
-Jako jazyk implementace tak byl zvolen jazyk *C#*, z důvodu mých předchozích zkušeností, majority komunity, která může poskytnout pomoc v případě problémů a z důvodu existence kvalitní dokumentace.
+Jako jazyk implementace tak byl zvolen jazyk *C#*, z důvodu předchozích zkušeností, majority komunity, která může poskytnout pomoc v případě problémů a z důvodu existence kvalitní dokumentace.
 
 ## Proof of Concept
 
-V aplikaci lze rozlišit klíčové funkce, které jsou poněkud specifické a charakteristické pro danou aplikaci. Ač je snadné navrhnout způsob řešení implementace takových funkcí, je vhodné tyto funkce podrobit principem **Proof of Concept** — důkaz existence původně jen teoreticky předpokládané funkcionality, tedy rychlou implementací konkrétních funkcí nezávisle na zasazení do koncové aplikace.
+V aplikaci lze rozlišit klíčové funkce, které jsou poněkud specifické a charakteristické pro danou aplikaci. Ač je snadné navrhnout způsob řešení implementace takových funkcí, je vhodné tyto funkce podrobit principem **Proof of Concept** -- důkazem existence původně jen teoreticky předpokládané funkcionality. Jde o rychlou implementací konkrétních funkcí nezávisle na zasazení do koncové aplikace.
 
-Na základě takové implementace je pak možné potvrdit, zda-li je návrh implementace klíčových funkcí, na kterých aplikace stojí, realizovatelný.
+Na základě takové implementace je pak možné potvrdit, zda je návrh implementace klíčových funkcí, na kterých aplikace stojí, realizovatelný.
 
-Jednou z takových funkcí je zobrazení her, které vlastní herna na svém účtu platformy *Steam*. Aby bylo možné zobrazení provést, je nutné o hrách stáhnout informace, podle požadavku *F-C02* -- stažení dat o VR aplikacích. Taková data jsou přístupná pomocí některého z API rozhraní služby *Steam*. Předmětem POC bude takový zdroj dat nalézt a implementovat práci s takovým zdrojem do enginu *Unity*.
+Jednou z takových funkcí je zobrazení her, které vlastní herna na svém účtu platformy *Steam*. Aby bylo možné zobrazení provést, je nutné o hrách stáhnout informace, podle požadavku *F-C02* (stažení dat o VR aplikacích). Taková data jsou přístupná pomocí některého z API rozhraní služby *Steam*. Předmětem POC bude takový zdroj dat nalézt a implementovat práci s takovým zdrojem do enginu *Unity*.
 
-Další funkcí, kterou je nutné podrobit POC je samotný spouštěč her a to konkrétně funkci spuštění a opouštění VR aplikací, podle požadavků *F-C03* a *F-C04* -- spuštění a ukončení uživatelem vybrané VR aplikace. Je nutné vyzkoušet, jak z aplikace vytvořené v *Unity* spouštět aplikace nainstalované skrz platformu *Steam* a jak detekovat jejich ukončení a vyvolání spouštěče opět do popředí.
+Další funkcí, kterou je nutné ověřit, je samotný spouštěč her. Konkrétně je potenciálně problémová funkce spuštění a opouštění VR aplikací, podle požadavků *F-C03* a *F-C04* (spuštění a ukončení uživatelem vybrané VR aplikace). Je nutné vyzkoušet, jak z aplikace vytvořené v *Unity* spouštět aplikace nainstalované skrz platformu *Steam* a jak detekovat jejich ukončení a vyvolání spouštěče opět do popředí.
 
 ### Stahování informací o aplikacích
 
@@ -43,15 +41,15 @@ Aby došlo ke splnění požadavku *F-C02*, je nutné získat následující inf
  - Které z nich jsou nainstalovány na konkrétním počítači
  - Název aplikace, její krátký oficiální popis od výrobce, obrázek aplikace
 
-Mezi informace nepatří navržené krátké video ze hry, či popis úrovně intenzity, jelikož platforma Steam není zdrojem takových dat. Předmětem zíkáním těchto dat se bude zabývat jedna z následujících kapitol.
+Mezi informace nepatří navržené krátké video ze hry, či popis úrovně intenzity, jelikož platforma Steam není zdrojem takových dat. Tyto informace bude nutné do aplikace dodávat ručně z vlastního zdroje.
 
 Steam nabízí více API rozhraní pro komunikaci, specifická pro různá použití, jako je např. přístup k různorodým API v rámci partnerského progrmu *Steamworks*, které by dávalo smysl použít, jelikož je běžně používáno pro aplikace a hry distribuované skrz platformu Steam, které jsou s platformou integrovány a pracují s ní, což se velmi podobá aplikací této závěrečné práce (minimálně splňuje podmínku práce s platformou Steam). *Steamworks SDK* je ovšem dostupné pouze pro partnery společnosti, což nejeví problém, partnerství je možné získat. Jde však o mírně zdlouhavý proces a pro účely stažení informací by šlo o neefektivní postup. Komplikaci by mohly představovat i licenční podmínky platformy, při použití pro účely závěrečné práce.
 
-Ideálním API rozhraním se tak ukázalo veřejné *Steam Web API*, které ač, jak je z názvu patrné, je určeno pro použití webovými službami, je ideálním a snadno přístupným zdrojem informací, které jsou nutné pro splnění požadavku. Rozhraní disponuje několika endpointy, nabízejícími různá data, pro nás zajímavým endpointem je však *GetOwnedGames-v0001*, který vrací seznam všech her, které vlastní určitý účet platformy Steam.
+Ideálním API rozhraním se tak ukázalo veřejné *Steam Web API*, které ač, jak je z názvu patrné, je určeno pro použití webovými službami, je ideálním a snadno přístupným zdrojem informací, které jsou nutné pro splnění požadavku. Rozhraní disponuje několika endpointy, nabízejícími různá data. Pro nás zajímavým endpointem je `GetOwnedGames-v0001`, který vrací seznam všech her, které vlastní určitý účet platformy Steam.
 
 Situace se však komplikuje ve dvou bodech -- viditelností dat a autentizací:
 
-Pro stažení takových dat z účtu pomocí tohoto API, je nutné, aby daný účet měl v nastavení účtu platformy Steam povolen veřejný přístup k datům, jako je např. seznam her, který potřebujeme. V naší situaci by to neměl být problém za předpokladu, že herna nemá důvod chtít skrývat seznam her, který vlastní na svých účtech. V případě, že herna z libovolného důvodu nebude chtít zveřejnit svůj seznam her na platformě Steam, tento postup tak selhává a není možné herně nabídnout takovou aplikaci bez toho, aniž by se využilo jiného API rozhraní služby Steam. Tomuto problému však nepřikládám vážnost, protože se obecně dá předpokládat, že herna svůj účet zveřejní. Lze totiž vycházet z faktu, že seznam her většina heren již zveřejnila na svých webových stránkách, aby zákazníci mohli vidět, jaké tituly herna nabízí.
+Pro stažení takových dat z účtu pomocí tohoto API je nutné, aby daný účet měl v nastavení účtu platformy Steam povolen veřejný přístup k datům o vlastnictví aplikací. V naší situaci by to neměl být problém za předpokladu, že herna nemá důvod chtít skrývat seznam her, který vlastní na svých účtech. V případě, že herna z libovolného důvodu nebude chtít zveřejnit svůj seznam her na platformě Steam, tento postup tak selhává a není možné herně nabídnout takovou aplikaci bez toho, aniž by se využilo jiného API rozhraní služby Steam. Tomuto problému však nepřikládám vážnost, protože se obecně dá předpokládat, že herna svůj účet zveřejní. Lze totiž vycházet z faktu, že seznam her většina heren již zveřejnila na svých webových stránkách, aby zákazníci mohli vidět, jaké tituly herna nabízí.
 
 Další, tentokrát už mnohem méně závažnější komplikací, je způsob autentizace pro použití *Steam Web API*. Steam nabízí dva způsoby -- vygenerováním statického klíče na jejich stránkách a jeho použitím při vytváření požadavků na API, nebo implementací OpenID přihlašování. Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití (resp. konfiguraci) jedním subjektem (či malým počtem subjektů), vygenerování klíče je velmi jednoduché a v ideálním případě je nutné takový proces provést jen jednou, je z důvodu časové efektivity a jednoduchosti implementace použita autorizace pomocí klíče.
 
@@ -72,17 +70,19 @@ Spouštění aplikace se díky systémového protokolu `steam://` stává velmi 
 > `steam://run/<id>`  
 > Runs an application. It will be installed if necessary.
 
-Z popsaného chování plyne, že se tímto příkazem spustí hra, a pokud je to nutné, tak se spustí instalační proces. Problémová situace nastává ve chvíli, kdy chceme spustit opět náš spouštěč ve chvíli, kdy uživatel ukončí jím spuštěnou VR aplikaci. OpenVR, které má na starosti komunikaci se systémem virtuální reality, je koncipovaná takový způsobem, aby vykreslovala pouze jednu hlavní scénu.
+Z popsaného chování plyne, že se tímto příkazem spustí hra, a pokud je to nutné, tak se spustí instalační proces. Problémová situace nastává ve chvíli, kdy chceme spustit opět náš spouštěč ve chvíli, kdy uživatel ukončí jím spuštěnou VR aplikaci. *OpenVR*, které má na starosti komunikaci se systémem virtuální reality, je koncipovaná takový způsobem, aby vykreslovala pouze jednu hlavní scénu.
 
-Vhodným řešením tohoto problému se jeví použití OpenVR knihovny, která dovoluje pracovat s událostmi, kterým můžeme naslouchat a reagovat na ně. Z dokumentace je patrné, že k tomuto účelu slouží událost s názvem `VREvent_SceneApplicationChanged`. Ovšem tím není vyřešen problém výchozího chování systému *SteamVR*, potažmo knihovny *OpenVR*. Po spuštění jiné VR aplikace je ta původní automaticky ukončena. Je totiž dovoleno, aby se na popředí vykreslovala pouze jedna VR aplikace. Jako řešení se ukázala nutnost napsat malý jednoduchý program -- agenta, který bude detekovat spuštěnou aplikaci právě pomocí zmíněného odposlouchávání události a pokud dojde k ukončení aplikace, spustí znovu spouštěč aplikace této práce.
+Vhodným řešením tohoto problému se jeví použití OpenVR knihovny, která dovoluje pracovat s událostmi, kterým můžeme naslouchat a reagovat na ně. Z dokumentace je patrné, že k tomuto účelu slouží událost s názvem `VREvent_SceneApplicationChanged`. Ovšem tím není vyřešen problém výchozího chování systému *SteamVR*, potažmo knihovny *OpenVR*. Po spuštění jiné VR aplikace je ta původní automaticky ukončena. Je totiž dovoleno, aby se na popředí vykreslovala pouze jedna VR aplikace. Jako řešení se ukázala nutnost napsat malý jednoduchý program (tzv. agenta), který bude detekovat spuštěnou aplikaci právě pomocí zmíněného odposlouchávání události a pokud dojde k ukončení aplikace, spustí znovu spouštěč aplikace této práce.
 
 > TODO: Here goes agent screenshot
 
-Agent je psán taktéž v jazyce C#, poskytuje jednoduché uživatelské rozhraní, určené pro obsluhu, které je psáno pomocí knihovny WPF. Uživatelské rozhraní nabízí primární tlačítko určené ke spuštění a zastavení celé aplikace (pokud bude zastavena, přestane se tak i automaticky spouštět spouštěč) a přehlednou informaci o aktuálním stavu agenta -- zda-li se podařilo připojit k OpenVR systému apod.
+Agent je psán také v jazyce *C#*. Poskytuje jednoduché uživatelské rozhraní určené pro obsluhu, které je psáno pomocí knihovny WPF. Uživatelské rozhraní nabízí tlačítko určené ke spuštění a zastavení celé aplikace (pokud bude zastavena, přestane se tak i automaticky spouštět spouštěč) a přehlednou informaci o aktuálním stavu agenta a úspěšnosti připojení k OpenVR systému.
 
 ## Implementace
 
-V kapitole jsou uvedeny konkrétnější detaily implementační fáze práce. Je popsána struktura celé scény, jakým způsobem jsou ukládána data o scénáři výuky, jak je generováno uživatelské rozhraní spouštěče a jakým způsobem se vytvářel voice-over výuky. Nezbytnou součástí implementace je také i vytvoření vizuálu - 3D modelů prostředí, ve kterém se výuka odehrává.
+V kapitole jsou uvedeny některé konkrétnější detaily implementační fáze práce. Je popsána struktura celé scény, jakým způsobem jsou ukládána data o scénáři výuky, jak je generováno uživatelské rozhraní spouštěče a jakým způsobem se vytvářel voice-over výuky.
+
+V kapitole však ze zřejmých důvodů není popsán kompletní postup implementace. Nezbytnou součástí, která stojí alespoň za zmínku, byla tvorba vizuálu a 3D modelů prostředí, ve kterém se výuka odehrává.
 
 *fig? Snímek obrazovky z výsledné podoby aplikace*
 
@@ -133,6 +133,8 @@ Vlastnosti třídy `ScenarioCue` jsou následující:
 
 Časové vlastnosti jsou určeny pro pozicování a časování úseků. Identifikátor zvukového úseku určuje, která zvuková část má být ve chvíli průchodu úsekem přehrávána. Text úseku je pak přepisem toho, co lze ve zvukovém úseku slyšet. Skupina úseku je čistě organizační záležitostí pro přehlednost *STXT* souboru.
 
+K popsanému účelu mohlo být využito existujícího formátu *SubRip*, jehož soubory mají koncovku `.srt` a jsou hojně využívány pro tvorbu titulků k filmům a seriálům. *SubRip* však pracuje s neúměrnou časovou značkou k našemu účelu a nepodporuje jiné vlastnosti časových úseků, pouze jejich text.
+
 #### Syntaxe STXT souboru
 
 U syntaxe formátu byl kladen důraz na jednoduchost implementace čtení formátu. Obecně lze syntaxi definovat následovně:
@@ -181,7 +183,7 @@ Pro lepší představu je níže uveden krátký úryvek *STXT* souboru z aplika
 ...
 ```
 
-Činnosti jsou narozdíl od textů a časování pevně určené, protože jsou daleko komplexnější a mnohem méně parametrizovatelné. Pro referenci je tak uvedena kompletní tabulka všech použitelných činností.
+Činnosti jsou, narozdíl od textů a časování, pevně určené, protože jsou daleko komplexnější a mnohem méně parametrizovatelné. Pro referenci je tak uvedena kompletní tabulka všech použitelných činností.
 
 Název činnosti | Popis činnosti
 --- | ---
@@ -202,7 +204,7 @@ Název činnosti | Popis činnosti
 `%gotolibrary` | Zobrazí spouštěč.
 `%skip` | Přeskočí výuku.
 
-Stále je ale pružnost výuky do určité míry dodržena a je dostatečně přizpůsobitelná. Tyto akce lze přeskládat jinak, spouštět v jiné časy, případně je i vynechat.
+Stále je ale pružnost výuky do určité míry zachována a je dostatečně přizpůsobitelná. Tyto akce lze přeskládat jinak, spouštět v jiné časy, případně je i vynechat.
 
 ### Mluvený text průvodce výuky
 
@@ -216,10 +218,13 @@ Výsledná délka pouze mluveného textu je 116 vteřin. Práce se zvukovými so
 
 > TODO: cheesus this chart sucks
 
-Z pozdní analýzy mluvy plyne, že jsou užitečné a neužitečné části mluvy rozděleny (subjektivně) správně -- přibližně tři čtvrtiny jsou věnovány tomu nejdůležitějšímu -- vysvětlování, a jedna čtvrtina je zaplněna meta-vysvětlováním a pauzami, kde pauzy konkrétně zaujímají pouze přes 7 % celého času.
+Z pozdní analýzy mluvy subjektivně plyne, že jsou užitečné a neužitečné části mluvy rozděleny správně -- přibližně tři čtvrtiny jsou věnovány tomu nejdůležitějšímu -- vysvětlování, a jedna čtvrtina je zaplněna meta-vysvětlováním a pauzami, kde pauzy konkrétně zaujímají pouze přes 7 % celého času.
 
 Lze tak tvrdit, že výuka je efektivní a splní požadavek *N-04* na časovou efektivitu.
 
 ## Nedostatky
 
-Realizace...
+> TODO: Dopsat nedostatky
+
+- Nestihlo se implementovat výměna
+- Nebylo možné realizovat F-A3 a F-B04
