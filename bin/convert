@@ -1,8 +1,12 @@
+PANDOC_OPTS="-f markdown -t latex --no-wrap --listings --no-tex-ligatures --biblatex --bibliography=library.bib"
+
 mkdir -p ../dist/chapters
+echo "Target is ../dist/"
+
 find ../src/ -iname "*.md" -type f -exec sh -c '
 
   output=`echo "${0%.md}.tex" | sed "s/src/dist/"`; 
   echo "Converting $0..."; 
-  pandoc "${0}" -o $output
+  pandoc "${0}" -o $output $PANDOC_OPTS
   
 ' {} \;
