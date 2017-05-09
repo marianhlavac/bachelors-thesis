@@ -69,14 +69,14 @@ Na základě takové implementace je pak možné potvrdit, zda je návrh
 implementace klíčových funkcí, na kterých aplikace stojí,
 realizovatelný.
 
-Jednou z takových funkcí je zobrazení her, které vlastní herna na svém
+Jednou z takových funkcí je zobrazení her a aplikací, které vlastní herna na svém
 účtu platformy \emph{Steam}. Aby bylo možné zobrazení provést, je nutné
 o hrách stáhnout informace, podle požadavku \emph{F-C02} (stažení dat o
 VR aplikacích). Taková data jsou přístupná pomocí některého z API
 rozhraní služby \emph{Steam}. Předmětem POC bude takový zdroj dat nalézt
 a implementovat práci s takovým zdrojem do enginu \emph{Unity}.
 
-Další funkcí, kterou je nutné ověřit, je samotný spouštěč her. Konkrétně
+Další funkcí, kterou je nutné ověřit, je samotný spouštěč. Konkrétně
 je potenciálně problémová funkce spuštění a opouštění VR aplikací, podle
 požadavků \emph{F-C03} a \emph{F-C04} (spuštění a ukončení uživatelem
 vybrané VR aplikace). Je nutné vyzkoušet, jak z aplikace vytvořené v
@@ -100,7 +100,7 @@ informace:
   aplikace
 \end{itemize}
 
-Mezi informace nepatří navržené krátké video ze hry, či popis úrovně
+Mezi informace nepatří navržené krátké video z VR aplikace, či popis úrovně
 intenzity, jelikož platforma Steam není zdrojem takových dat. Tyto
 informace bude nutné do aplikace dodávat ručně z vlastního zdroje.
 
@@ -132,11 +132,11 @@ autentizací:
 Pro stažení takových dat pomocí tohoto API je nutné, aby \emph{Steam} 
 účet herny měl v nastavení povolen veřejný přístup k
 datům o vlastnictví aplikací. Pro tyto účely by to neměl být problém za
-předpokladu, že herna nemá důvod chtít skrývat seznam her, který vlastní
+předpokladu, že herna nemá důvod chtít skrývat seznam aplikací, který vlastní
 na svých účtech. 
 
 V případě, že herna z libovolného důvodu nebude chtít
-zveřejnit svůj seznam her na platformě Steam, tento postup tak selhává a
+zveřejnit svůj seznam aplikací na platformě Steam, tento postup tak selhává a
 není možné herně nabídnout takovou aplikaci bez toho, aniž by se využilo
 jiného API rozhraní služby Steam. 
 
@@ -190,9 +190,9 @@ označí takovou hru jako nenainstalovanou i přesto, že nainstalovaná je.
 
 Jiné řešení však podle dostupných zdrojů neexistuje. Nabízí se tak
 motivace přidat do konfigurace aplikace možnost zobrazení všech titulů
-ve spouštěči a obsluha herny pak bude zodpovědná za udržení všech her
+ve spouštěči a obsluha herny pak bude zodpovědná za udržení všech VR aplikací 
 nainstalovaých a připravených ke spuštění. Což dává v herně smysl --
-herna bude chtít svým zákazníkům nabídnout všechny hry, které
+herna bude chtít svým zákazníkům nabídnout všechny aplikace, které
 zakoupila. Neměl by z toho tak plynout žádný zásadní problém.
 
 \subsection{Spouštění
@@ -200,8 +200,8 @@ aplikací}\label{spouux161tux11bnuxed-aplikacuxed}
 
 Požadavky \emph{F-C03} a \emph{F-C04} (spuštění a ukončení uživatelem
 vybrané VR aplikace) jsou nezbytnou součástí spouštěče
-aplikací. Hry je nutné na uživatelův pokyn spouštět a po jeho ukončení
-práce s aplikací je nutné uživateli znova zobrazit spouštěč.
+aplikací. Aplikace je nutné na uživatelův pokyn spouštět a po jejich ukončení 
+je nutné uživateli znova zobrazit spouštěč.
 
 Spouštění aplikace se díky systémového protokolu \texttt{steam://} stává
 velmi jednoduchým úkonem. Úryvek z dokumentace odhaluje příkaz
@@ -213,7 +213,7 @@ pro účel spouštěče použít:
 Runs an application. It will be installed if necessary.
 \end{quote}
 
-Z popsaného chování plyne, že se tímto příkazem spustí hra, a pokud je
+Z popsaného chování plyne, že se tímto příkazem spustí aplikace, a pokud je
 to nutné, spustí se instalační proces. 
 
 Problémová situace nastává ve
@@ -306,7 +306,7 @@ modelem loga herny.
 Obdobně jako \texttt{TutorialRig}, je tento určen k seskupení všech
 objektů spouštěče. Patří sem \texttt{LauncherManager} (manažer logiky spouštěče), prvky
 uživatelského rozhraní a objekt knihovny, který má na starosti
-vykreslení mřížky dostupných her.
+vykreslení mřížky dostupných aplikací.
 
 \paragraph{SteamVRRig}\label{steamvrrig}
 
