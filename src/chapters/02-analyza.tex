@@ -1,4 +1,4 @@
-\section{Analýza}\label{analuxfdza}
+\chapter{Analýza}\label{analuxfdza}
 
 Jak je zvykem u organizovaného vývoje softwaru -- implementaci a návrhu
 aplikace předchází analýza, pro stanovení požadavků uživatelů softwaru a
@@ -8,7 +8,7 @@ Následující kapitola se takovou analýzou bude zabývat. Budou analyzována
 existující řešení, zjištěno, co požadují hráči navštěvující hernu a
 zaměstnanci pracující v herně, a jaké požadavky jsou realizovatelné.
 
-\subsection{Analýza a porovnání existujících řešení
+\section{Analýza a porovnání existujících řešení
 výuky}\label{analuxfdza-a-porovnuxe1nuxed-existujuxedcuxedch-ux159eux161enuxed-vuxfduky}
 
 Výukové aplikace pro seznámení s virtuální realitou již existují.
@@ -38,7 +38,7 @@ které jsou stanoveny následující metriky k porovnání:
   srozumitelnost
 \end{itemize}
 
-\subsubsection{SteamVR Tutorial}\label{steamvr-tutorial}
+\subsection{SteamVR Tutorial}\label{steamvr-tutorial}
 
 Pro totožnou platformu, pro kterou je aplikace této závěrečné práce
 určena existuje oficiální výuková aplikace vytvořená přímo společností
@@ -61,8 +61,8 @@ Příjemným bonusem je pro hráče hry Portal 2 familiarita postavy, která
 může zvýšit hráčovu pozornost, a pro hráče, kteří si hru Portal 2 v
 minulosti oblíbili, tak tutoriál navozuje na obličejích úsměv.
 
-\includegraphics{http://1u88jj3r4db2x4txp44yqfj1.wpengine.netdna-cdn.com/wp-content/uploads/2016/03/Walkthrough-of-SteamVRs-new-tutorial_17-930x523.jpg}\\
-\emph{fig.1 Výuková aplikace SteamVR Tutorial}
+
+\emph{obr.1 Výuková aplikace SteamVR Tutorial}
 
 Jako první je uživateli představena plocha, tzv. \emph{play area}, ve
 které se VR zážitky budou odehrávat. Neprodleně jsou pak představeny
@@ -114,15 +114,15 @@ a zda ji chce skutečně absolvovat. Návštěvník nemá možnost si takovou
 výuku spustit sám, zopakovat ji, nebo alespoň po absolvování získat
 nějaký závěrečný přehled, pro zopakování toho, co se naučil.
 
-\includegraphics{http://i.imgur.com/dHgOC1S.png}\\
-\emph{fig.2 Přístup k aplikaci je skryt ve SteamVR nabídce, která je
+
+\emph{obr.2 Přístup k aplikaci je skryt ve SteamVR nabídce, která je
 přístupna jen z monitoru počítače}
 
 Další nevýhodou je délka tutoriálu, která se běžně pohybuje kolem 6-11
 minut. To představuje v prostředí, kde se běžně systém zapůjčuje na
 jednu hodinu, velkou část takového času.
 
-\subsubsection{Oculus Touch Tutorial \& Oculus First
+\subsection{Oculus Touch Tutorial \& Oculus First
 Contact}\label{oculus-touch-tutorial-oculus-first-contact}
 
 Pro konkurenční systém \emph{Oculus Rift} a jeho platformu je určena
@@ -144,8 +144,8 @@ a osahal si všechna tlačítka, která se mu podaří nalézt. Následně jsou
 mu všechna tlačítka jedno po druhém představeny. Jsou postupně
 zvýrazněny a je požádán, aby tato tlačítka stiskl.
 
-\includegraphics{http://i.imgur.com/pLGppB7.png}\\
-\emph{fig.3 Výuková aplikace Oculus Touch Tutorial}
+
+\emph{obr.3 Výuková aplikace Oculus Touch Tutorial}
 
 Pokud uživatel provádí stisky tlačítek svižně, lze tuto část projít
 rychleji. Výuka nezdržuje dlouhým monologem nebo pauzami. Jde o krátké
@@ -175,8 +175,8 @@ jiné herní tituly pro virtuální realitu. Tím tak lze považovat výuku
 jako dokončenou a aplikací \emph{Oculus First Contact} začíná
 ``zábava''.
 
-\includegraphics{http://i.imgur.com/Ly6t8mi.png}\\
-\emph{fig.4 Aplikace Oculus First Contact}
+
+\emph{obr.4 Aplikace Oculus First Contact}
 
 \paragraph{Zhodnocení}\label{zhodnocenuxed-1}
 
@@ -187,7 +187,7 @@ přibližně 4-5 minut. Až následně po tomto úvodu následuje zábavný prve
 ve formě plnohodnotného VR zážitku. Vidíme tak zásadní rozdíl vůči
 SteamVR, který tyto dva prvky míchá do jednoho spojeného průběhu.
 
-\subsection{Analýza existujících řešení
+\section{Analýza existujících řešení
 spouštěčů}\label{analuxfdza-existujuxedcuxedch-ux159eux161enuxed-spouux161tux11bux10dux16f}
 
 Po skončení výuky můžeme předpokládat, že návštěvník herny je se
@@ -201,7 +201,7 @@ Dvě v předchozí kapitole zmíněné platformy (SteamVR a Oculus) mají
 vlastní software pro spouštění VR aplikací. Ty jsou v této kapitole
 analyzovány.
 
-\subsubsection{SteamVR Dashboard}\label{steamvr-dashboard}
+\subsection{SteamVR Dashboard}\label{steamvr-dashboard}
 
 \emph{SteamVR Dashboard} je pouze malou modifikací již existujícího
 \emph{Steam Big Picture} -- rozhraní pro práci s platformou
@@ -220,8 +220,8 @@ malým oknem na virtualizovaném monitoru. Vidí před sebou plochu, na
 kterou je rozhraní plošně promítáno. Není tak plně využito potenciálu VR
 prostoru.
 
-\includegraphics{https://cdn0.vox-cdn.com/thumbor/Lei26JXsB0zMdW_jkshawf3t29o=/0x205:839x677/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/49240909/ViveTheaterModeTop.0.0.jpg}
-\emph{fig.5 SteamVR Dashboard}
+
+\emph{obr.5 SteamVR Dashboard}
 
 Z tohoto rozhraní lze procházet knihovnu her, prohlížet elektronický
 obchod s hrami, nakupovat v něm, prohlížet komunitní profily, stránky
@@ -244,7 +244,7 @@ zobrazí pouze logo hry, obrázek ze hry, či obojí. Lze tak velmi obtížně
 odhadnout o jaký žánr hry jde, zda je zábavná, vizuálně přitažlivá, jaké
 ovládání podporuje či zda způsobuje závratě a kinetózu.
 
-\subsubsection{Oculus Home}\label{oculus-home}
+\subsection{Oculus Home}\label{oculus-home}
 
 \emph{Oculus Home} je plnohodnotným rozhraním pro virtuální realitu od
 společnosti Oculus pro svou stejnojmennou platformu. Narozdíl od
@@ -259,8 +259,8 @@ při nasazení headsetu na hlavu bez spuštěné hry, což oproti platformě
 SteamVR, kde se zobrazuje prázdná šedá místnost s mřížkou, působí lepším
 dojmem.
 
-\includegraphics{https://i.ytimg.com/vi/kWJvFR04xyM/maxresdefault.jpg}
-\emph{fig.6 Oculus Home}
+
+\emph{obr.6 Oculus Home}
 
 Jelikož je rozhraní navržené specificky pro použití s hrami pro
 virtuální realitu, k hrám lze nalézt informace o tom, jaké ovladače
@@ -273,7 +273,7 @@ V prostředí herny je však \emph{Oculus Home} také mírně nevyhovující.
 Přístup k obchodu a komunitní funkce jsou irelevantní účelu herny a
 zbytečně odvádějí pozornost.
 
-\subsection{Pozorování v herně}\label{pozorovuxe1nuxed-v-hernux11b}
+\section{Pozorování v herně}\label{pozorovuxe1nuxed-v-hernux11b}
 
 Ke konci března roku 2017 se naskytla příležitost stát se na jeden den
 obsluhou v herně \emph{Virtualnirealita.cz} v pražských Dejvicích. Tato
@@ -290,9 +290,20 @@ Aby bylo možné s návštěvníky lépe pracovat a doporučit jim správnou
 aplikaci, byli dotazováni na přirozené otázky. Z odpovědí na ně vznikla
 miniaturní analýza z malého vzorku lidí, kteří ten den hernu navštívili.
 
-Dotazování zákazníků se tak běžně skládalo z otázek: - ``Už jste u nás
-někdy byli?'' - ``Máte zkušenosti s VR?'' - ``Hrajete počítačové hry?''
-- ``Jaký žánr her rádi hrajete?''
+Dotazování zákazníků se tak běžně skládalo z otázek: 
+
+\begin{itemize}
+\tightlist
+\item
+``Už jste u nás
+někdy byli?''
+\item
+  ``Máte zkušenosti s VR?''
+\item
+  ``Hrajete počítačové hry?''
+\item
+  ``Jaký žánr her rádi hrajete?''
+\end{itemize}
 
 Za daný den navštívilo hernu \textbf{15 zákazníků}, z toho \textbf{10
 mužů}. Většina -- \textbf{12 zákazníků} hraje počítačové hry, ale pouze
@@ -307,15 +318,15 @@ Vive obtížné na seznámení, stejně tak tito lidé odpověděli, že by se
 obešli bez pomoci obsluhy. Dva z těchto čtyř byli ti, kteří již s VR
 měli zkušenost.
 
-\includegraphics{http://i.imgur.com/lEo1Fkh.jpg}\\
-\emph{fig.3 Na jeden den jsem změnil svou pracovní roli}
+
+\emph{obr.3 Na jeden den jsem změnil svou pracovní roli}
 
 Občasným jevem bylo několikanásobné vystřídání zákazníků na jednom
 systému za dobu zapůjčení. To je důležitá informace, protože výuková
 aplikace musí s takovým jevem počítat. Rychlost seznámení se systémem
 byla převážně ovlivněna zákazníkovou zkušenosti s počítačovými hrami.
 
-\subsection{Funkční požadavky návštěvníků
+\section{Funkční požadavky návštěvníků
 herny}\label{funkux10dnuxed-poux17eadavky-nuxe1vux161tux11bvnuxedkux16f-herny}
 
 Z pozorování v herně a analýzy existujících řešení plynou následující
@@ -371,7 +382,7 @@ Protože má návštěvník herny omezený čas, po který je mu zapůjčen syst
 virtuální reality, je pro něj důležité, aby ho výuka o tento čas
 připravila v co nejmenší míře.
 
-\subsection{Funkční požadavky obsluhy
+\section{Funkční požadavky obsluhy
 herny}\label{funkux10dnuxed-poux17eadavky-obsluhy-herny}
 
 Požadavky obsluhy se velkou částí kryje s požadavky zákazníka, jen z
@@ -403,7 +414,7 @@ Přibližně pět minut před koncem doby zápůjčky obsluha žádá zákazník
 aby si na moment sundal sluchátka a mohla jej upozornit na blížící se
 konec.
 
-\subsection{Funkční požadavky
+\section{Funkční požadavky
 obecné}\label{funkux10dnuxed-poux17eadavky-obecnuxe9}
 
 Požadavky nekategorizovatelné jako požadavek návštěvníka či obsluhy
@@ -431,7 +442,7 @@ Po ukončení práce s VR aplikací, kterou uživatel spustil, je mu opět
 nabídnut výběr spouštěče (pokračováním v činnosti či opětovým
 spuštěním).
 
-\subsection{Nefunkční požadavky}\label{nefunkux10dnuxed-poux17eadavky}
+\section{Nefunkční požadavky}\label{nefunkux10dnuxed-poux17eadavky}
 
 \textbf{N-01 Aplikace je navržena pro systém HTC Vive}\\
 Ze zadání plyne soustředění aplikace na jednu platformu a její konkrétní
