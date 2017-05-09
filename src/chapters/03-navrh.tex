@@ -93,8 +93,8 @@ vyzkoušel.
 
 Tento přístup je tak inspirován výukou v aplikaci \emph{SteamVR
 Tutorial}. Je však zkrácena o jedno opakování, aby tato část nebyla
-příliš dlouhá. Ač jsem výše poznamenal, že je žádoucí, aby byl na tuto
-část kladen důraz, domnívám se, že jedno přistoupení k mřížce uživateli
+příliš dlouhá. Ač bylo výše poznamenáno, že je žádoucí, aby byl na tuto
+část kladen důraz, je předpokládáno, že jedno přistoupení k mřížce uživateli
 stačí k tomu, aby funkci pochopil a na zobrazení mřížky v budoucnu
 reagoval.
 
@@ -138,8 +138,8 @@ provedl nějakou interakci, a to v následujícím pořadí:
 
 Po každém požádání o stisk tlačítka je uživatel jen přibližně seznámen s
 tím, k čemu se tlačítko běžně používá. Je však nutné u návrhu scénáře
-dát pozor, aby takové informace nebyly zavádějící, protože jak jsem již
-v analýze zmínil, tlačítka si VR aplikace mapují podle vlastního uvážení
+dát pozor, aby takové informace nebyly zavádějící, protože jak bylo již
+v analýze zmíněno, tlačítka si aplikace mapují podle vlastního uvážení
 a každá aplikace tak tlačítka používá k různým činnostem.
 
 \includegraphics{http://i.imgur.com/5rTX05h.png} \emph{fig. 2 Náčrt
@@ -199,7 +199,7 @@ jak může spustit svůj první VR zážitek.
 
 \section{Návrh výuky}\label{nuxe1vrh-vuxfduky}
 
-Poté, co jsem specifikoval hrubý návrh scénáře výuky a její momenty, lze
+Poté, co byl specifikován hrubý návrh scénáře výuky a její momenty, lze
 z těchto momentů sestavit konkrétní podobu výuky.
 
 \subsection{Návrh scénáře}\label{nuxe1vrh-scuxe9nuxe1ux159e}
@@ -326,7 +326,9 @@ Podle funkčních požadavků a v kontrastu s existujícími řešení v podobě
 \emph{SteamVR Dashboard} a \emph{Oculus Home} chceme vytvořit takový
 spouštěč, který bude pro uživatele jednoduchý, bude brát v potaz fakt,
 že uživatel může být v systému virtuální reality stále nováček a nemusí
-znát tituly podle jejich názvu. Nechceme uživatele zatěžovat v herně
+znát tituly podle jejich názvu. 
+
+Nechceme uživatele zatěžovat v herně
 nerelevantními komunitními funkcemi. Tato funkce by měla nahradit
 povinnost obsluhy dotazovat se návštěvníků, co mají rádi a odhadovat, o
 jaký typ zážitku by mohli mít zájem.
@@ -355,14 +357,17 @@ počtem sloupců zobrazitelných v konkrétní místnosti.
 VR aplikace budou v mřížce zobrazovány velmi podobně, jako jsou
 zobrazovány v existujících spouštěčích -- vizuální obdélníkový banner s
 vizuálem aplikace. Velký rozdíl se však projeví při výběru banneru.
-Aplikace zobrazí svůj rychlý detail. Místo vizuálního banneru zaujme
+
+Aplikace zobrazí po výběru svůj rychlý detail. Místo vizuálního banneru zaujme
 krátké video pořízené z aplikace (tzv. in-game gameplay), které se bude
 opakovat. Nepůjde tedy o vizuál autorů aplikace nebo trailer, ale o
 realistický záznam přímo z aplikace. Uživatel bude schopen velmi přesně
 odhadnout, o čem aplikace je, jaká je její vizuální úroveň a přibližně
 odhadne i hratelnost a celkový dojem z aplikace, ještě dřív, než ji
 spustí. Napravo od videa pak bude detail doplněn o celý název titulu,
-krátkým popisem a kategorizací podle žánru a intenzity. Celý tento blok
+krátkým popisem a kategorizací podle žánru a intenzity. 
+
+Celý tento blok
 detailu apliakce bude k uživateli mírně přiblížen a ostatní prvky budou
 potlačeny do pozadí.
 
@@ -373,8 +378,9 @@ Mřížka těchto bannerů se bude zobrazovat v kruhu okolo uživatele. Hlavní
 mřížka aplikací bude zarovnána k pravému ``virtuálnímu okraji'', za
 kterým budou dva sloupce dalších bannerů, označených jako ``Naše herna
 doporučuje''. Tyto bannery bude volit herna jako doporučené aplikace pro
-své zákazníky a bude obsahovat maximální počet 8 aplikací. Pravý
-``virtuální okraj'' se bude nacházet po pravé ruce uživatele a hlavní
+své zákazníky a bude obsahovat maximální počet 8 aplikací. 
+
+Pravý ``virtuální okraj'' se bude nacházet po pravé ruce uživatele a hlavní
 mřížka aplikace se bude podle počtu zobrazených aplikací rozšiřovat
 proti směru hodinových ručiček o obvodu kruhu, na kterém se mřížka
 zobrazuje. Pokud počet aplikací bude větší, než prostor k zobrazení

@@ -110,7 +110,9 @@ progrmu \emph{Steamworks}, které by dávalo smysl použít, jelikož je
 běžně používáno pro aplikace a hry distribuované skrz platformu Steam,
 které jsou s platformou integrovány a pracují s ní, což se velmi podobá
 aplikací této závěrečné práce (minimálně splňuje podmínku práce s
-platformou Steam). \emph{Steamworks SDK} je ovšem dostupné pouze pro
+platformou Steam). 
+
+\emph{Steamworks SDK} je ovšem dostupné pouze pro
 partnery společnosti, což ovšem nepředstavuje problém a partnerství je možné získat.
 Jde však o mírně zdlouhavý proces a pro účely stažení informací by šlo o
 neefektivní postup. Komplikaci by mohly představovat i licenční podmínky
@@ -131,10 +133,14 @@ Pro stažení takových dat pomocí tohoto API je nutné, aby \emph{Steam}
 účet herny měl v nastavení povolen veřejný přístup k
 datům o vlastnictví aplikací. Pro tyto účely by to neměl být problém za
 předpokladu, že herna nemá důvod chtít skrývat seznam her, který vlastní
-na svých účtech. V případě, že herna z libovolného důvodu nebude chtít
+na svých účtech. 
+
+V případě, že herna z libovolného důvodu nebude chtít
 zveřejnit svůj seznam her na platformě Steam, tento postup tak selhává a
 není možné herně nabídnout takovou aplikaci bez toho, aniž by se využilo
-jiného API rozhraní služby Steam. Tomuto problému však nepřikládám
+jiného API rozhraní služby Steam. 
+
+Tomuto problému však není přikládána
 vážnost, protože se obecně dá předpokládat, že herna svůj účet zveřejní.
 Lze totiž vycházet z faktu, že seznam aplikací většina heren již zveřejnila
 na svých webových stránkách, aby zákazníci mohli vidět, jaké tituly
@@ -144,6 +150,7 @@ Další, tentokrát už mnohem méně závažnější komplikací, je způsob
 autentizace. Steam nabízí dva způsoby
 -- vygenerování statického klíče na jejich stránkách a jeho použití
 při vytváření požadavků na API, nebo implementaci OpenID přihlašování.
+
 Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití
 (resp. konfiguraci) jedním subjektem (či malým počtem subjektů),
 vygenerování klíče je velmi jednoduché a v ideálním případě je nutné
@@ -161,8 +168,9 @@ spouštět pomocí systémového protokolu \texttt{steam://} a jeho akce
 \texttt{steam://run/\textless{}appid\textgreater{}}. Tato akce se chová
 tak, že pokud je v systému aplikace nainstalovaná, provede její
 spuštění. V opačném případě se zahájí proces instalace a provede
-uživatele procesem stažení a nainstalování takové aplikace. Z pohledu
-návštěvníka herny je však takové chování nežádoucí. Potřebujeme tedy
+uživatele procesem stažení a nainstalování takové aplikace. 
+
+Z pohledu návštěvníka herny je takové chování nežádoucí. Potřebujeme
 vědět, které aplikace jsou nainstalovány a ty, které nainstalovány
 nejsou je nutné ze spouštěče vyřadit, aby nebyly uživatelům nabízeny,
 pokud nejsou připraveny ke spuštění.
@@ -170,8 +178,9 @@ pokud nejsou připraveny ke spuštění.
 Detekce připravenosti aplikace se však ukázala jako
 problémová. Podle dostupných zdrojů v současné chvíli není exponováno
 žádné rozhraní pro detekci nainstalovaných aplikací na počítači. 
-Takovou detekci je tak nutné provádět ručně. Ze zkušeností
-ostatních vývojářů, kteří se o detekci nainstalovaných aplikací pokusili
+Takovou detekci je tak nutné provádět ručně. 
+
+Ze zkušeností ostatních vývojářů, kteří se o detekci nainstalovaných aplikací pokusili
 plyne, že ruční sken složek není tak jednoduchý. Většina aplikací splňuje
 podmínku, že se v jejich složkách nachází soubor
 \texttt{steam\_appid.txt}, který jednoznačně složku se hrou
@@ -217,7 +226,9 @@ je ta původní automaticky ukončena.
 Vhodným řešením tohoto problému se jeví použití OpenVR knihovny, která
 dovoluje pracovat s událostmi, kterým můžeme naslouchat a reagovat na
 ně. Z dokumentace je patrné, že k tomuto účelu slouží událost s názvem
-\texttt{VREvent\_SceneApplicationChanged}. Ovšem tím není vyřešen
+\texttt{VREvent\_SceneApplicationChanged}. 
+
+Tím ovšem není vyřešen
 problém výchozího chování systému \emph{SteamVR}, potažmo knihovny
 \emph{OpenVR}. Práci s knihovnou nelze dělat v procesu VR aplikace,
 protože je systémem \emph{SteamVR} vždy ukončena, když dojde k 
@@ -542,10 +553,13 @@ na vhodných místech.
 Výsledná délka pouze mluveného textu je 116 vteřin. Práce se zvukovými
 soubory dělá výslednou délku výuky odlišnou od délky samotného mluveného
 textu. Jsou mezi jednotlivé části vloženy mezery, nebo některé části
-mohou být uživatelem přeskočeny. Délka výuky s vloženými mezerami a bez
+mohou být uživatelem přeskočeny. 
+
+Délka výuky s vloženými mezerami a bez
 čekání na vstup uživatele je 124 vteřin. Právě vstup uživatele dělá tuto
 hodnotu velmi kolísavou. Předběžným odhadem bude výuka \textbf{100s až
 160s} dlouhá. Reálné délky výuky však odhalí až testování.
+
 Z pozdní analýzy subjektivně plyne, že jsou užitečné a neužitečné
 části mluvy rozděleny správně. Přibližně tři čtvrtiny jsou věnovány
 tomu nejdůležitějšímu -- vysvětlování, a jedna čtvrtina je zaplněna
