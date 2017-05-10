@@ -4,7 +4,7 @@ Pro realizaci aplikace bude použit herní engine \emph{Unity}.
 \emph{Unity} je multi-platformní herní engine napsaný v C a C++, určený
 k vývoji her pro PC, konzole a mobilní zařízení. Je to v současnosti
 jeden z nejvhodnějších a nejpopulárnějších nástrojů na vývoj her pro
-virtuální realitu.
+virtuální realitu. **cit**
 
 Ač jde o nástroj pro tvorbu her, je vhodným nástrojem i pro tvorbu
 aplikace určené pro virtuální realitu, jelikož jsou vykreslovány 
@@ -22,12 +22,12 @@ přeložit jako ``ponoření'' a symbolicky tak vyjadřuje uživatelův proces
 
 Herní engine \emph{Unity} podporuje několik programovacích jazyků, ve
 kterých můžou být vytvořeny skripty pro ovládání logiky aplikace. Jsou
-to jazyky \emph{C\#}, \emph{JavaScript} a \emph{Boo}. Tato kapitola se
+to jazyky \emph{C\#}, \emph{JavaScript} a \emph{Boo}. **cit** Tato kapitola se
 bude zabývat volbou jednoho z těchto jazyků, ovšem výhradně v
 souvislosti s použitím v enginu \emph{Unity}.
 
 Po rešerši z různorodých názorů vývojářů bylo možné vyderivovat
-následující doporučení, týkající se výběru jazyka pro \emph{Unity}:
+následující doporučení, týkající se výběru jazyka pro \emph{Unity}: **cit**
 
 \begin{itemize}
 \tightlist
@@ -62,7 +62,7 @@ V aplikaci lze rozlišit klíčové funkce, které jsou poněkud specifické a
 charakteristické pro danou aplikaci. Ač je snadné navrhnout způsob
 řešení implementace takových funkcí, je vhodné tyto funkce podrobit
 principem \textbf{Proof of Concept} -- důkazem existence původně jen
-teoreticky předpokládané funkcionality. Jde o rychlou implementací
+teoreticky předpokládané funkcionality **cit**. Jde o rychlou implementaci
 konkrétních funkcí nezávisle na zasazení do koncové aplikace.
 
 Na základě takové implementace je pak možné potvrdit, zda je návrh
@@ -106,25 +106,25 @@ informace bude nutné do aplikace dodávat ručně z vlastního zdroje.
 
 Steam nabízí více API rozhraní pro komunikaci, specifická pro různá
 použití, jako je např. přístup k různorodým API v rámci partnerského
-progrmu \emph{Steamworks}, které by dávalo smysl použít, jelikož je
+programu \emph{Steamworks}, které by dávalo smysl použít, jelikož je
 běžně používáno pro aplikace a hry distribuované skrz platformu Steam,
 které jsou s platformou integrovány a pracují s ní, což se velmi podobá
 aplikací této závěrečné práce (minimálně splňuje podmínku práce s
-platformou Steam). 
+platformou Steam).  **cit**
 
 \emph{Steamworks SDK} je ovšem dostupné pouze pro
-partnery společnosti, což ovšem nepředstavuje problém a partnerství je možné získat.
+partnery společnosti, což ovšem nepředstavuje problém a partnerství je možné získat. **cit**
 Jde však o mírně zdlouhavý proces a pro účely stažení informací by šlo o
 neefektivní postup. Komplikaci by mohly představovat i licenční podmínky
-platformy v kombinaci s použitím pro účely závěrečné práce.
+platformy v kombinaci s použitím pro účely závěrečné práce. **cit**
 
 Ideálním API rozhraním se tak ukázalo veřejné \emph{Steam Web API},
 které ač, jak je z názvu patrné, je určeno pro použití webovými
 službami, je ideálním a snadno přístupným zdrojem informací, které jsou
-nutné pro splnění požadavku. Rozhraní disponuje několika endpointy,
+nutné pro splnění požadavku. **cit** Rozhraní disponuje několika endpointy,
 nabízejícími různá data. Pro nás zajímavým endpointem je
 \texttt{GetOwnedGames-v0001}, který vrací seznam všech her, které
-vlastní určitý účet platformy Steam.
+vlastní určitý účet platformy Steam. **cit**
 
 Situace se však komplikuje ve dvou bodech -- viditelností dat a
 autentizací:
@@ -149,7 +149,7 @@ herna nabízí.
 Další, tentokrát už mnohem méně závažnější komplikací, je způsob
 autentizace. Steam nabízí dva způsoby
 -- vygenerování statického klíče na jejich stránkách a jeho použití
-při vytváření požadavků na API, nebo implementaci OpenID přihlašování.
+při vytváření požadavků na API, nebo implementaci OpenID přihlašování. **cit**
 
 Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití
 (resp. konfiguraci) jedním subjektem (či malým počtem subjektů),
@@ -181,12 +181,12 @@ problémová. Podle dostupných zdrojů v současné chvíli není exponováno
 Takovou detekci je tak nutné provádět ručně. 
 
 Ze zkušeností ostatních vývojářů, kteří se o detekci nainstalovaných aplikací pokusili
-plyne, že ruční sken složek není tak jednoduchý. Většina aplikací splňuje
+plyne, že ruční sken složek není tak jednoduchý. **cit** Většina aplikací splňuje
 podmínku, že se v jejich složkách nachází soubor
 \texttt{steam\_appid.txt}, který jednoznačně složku se hrou
 identifikuje, ovšem to není pravidlem a ve vyjímečných případech může
 dojít k tomu, že se tam soubor nacházet nebude a ruční detekce tak 
-označí takovou hru jako nenainstalovanou i přesto, že nainstalovaná je.
+označí takovou hru jako nenainstalovanou i přesto, že nainstalovaná je. **cit**
 
 Jiné řešení však podle dostupných zdrojů neexistuje. Nabízí se tak
 motivace přidat do konfigurace aplikace možnost zobrazení všech titulů
@@ -204,7 +204,7 @@ aplikací. Aplikace je nutné na uživatelův pokyn spouštět a po jejich ukon�
 je nutné uživateli znova zobrazit spouštěč.
 
 Spouštění aplikace se díky systémového protokolu \texttt{steam://} stává
-velmi jednoduchým úkonem. Úryvek z dokumentace odhaluje příkaz
+velmi jednoduchým úkonem. Úryvek z dokumentace **cit** odhaluje příkaz
 systémového protokolu \texttt{steam} a činnosti \texttt{run}, kterou lze
 pro účel spouštěče použít:
 
@@ -221,11 +221,11 @@ chvíli, kdy chceme zobrazit spouštěč ve chvíli, kdy uživatel
 ukončí jím spuštěnou VR aplikaci. \emph{OpenVR}, které má na starosti
 komunikaci se systémem virtuální reality, je koncipovaná tak, 
 aby vykreslovala pouze jednu hlavní scénu. Po spuštění jiné VR aplikace 
-je ta původní automaticky ukončena. 
+je ta původní automaticky ukončena. **cit**
 
 Vhodným řešením tohoto problému se jeví použití OpenVR knihovny, která
 dovoluje pracovat s událostmi, kterým můžeme naslouchat a reagovat na
-ně. Z dokumentace je patrné, že k tomuto účelu slouží událost s názvem
+ně. Z dokumentace **cit** je patrné, že k tomuto účelu slouží událost s názvem
 \texttt{VREvent\_SceneApplicationChanged}. 
 
 Tím ovšem není vyřešen
@@ -263,7 +263,7 @@ tvorba vizuálu a 3D modelů prostředí, ve kterém se výuka odehrává.
 
 \subsection{Struktura scény}\label{struktura-scuxe9ny}
 
-Herní engine Unity podporuje strukturizaci aplikace do scén. Scény mohou
+Herní engine Unity podporuje strukturizaci aplikace do scén. **cit** Scény mohou
 obsahovat herní objekty (třída \texttt{GameObject}) na které jsou
 ``zavěšeny'' komponenty. Může jít o komponenty pracující s herním
 světem, fyzikálními vlastnostmi objektů a nebo o nejobecnější a
@@ -368,7 +368,7 @@ chvíli průchodu úsekem přehrávána. Text úseku je pak přepisem toho, co
 lze ve zvukovém úseku slyšet. Skupina úseku je pak čistě organizační
 záležitostí pro přehlednost \emph{STXT} souboru.
 
-K popsanému účelu mohlo být využito existujícího formátu \emph{SubRip},
+K popsanému účelu mohlo být využito existujícího formátu \emph{SubRip} **cit**,
 jehož soubory mají koncovku \texttt{.srt} a jsou hojně využívány pro
 tvorbu titulků k filmům a seriálům. \emph{SubRip} však pracuje s
 neúměrnou časovou značkou k účelu aplikace a nepodporuje jiné vlastnosti
