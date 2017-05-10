@@ -237,7 +237,7 @@ jednoduchý program (tzv. agenta), který bude detekovat spuštěnou aplikaci pr
 pomocí zmíněného odposlouchávání události a pokud dojde k ukončení cizí 
 aplikace, vnese spouštěč opět do popředí.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[height=8cm]{src/assets/agent-screen.png}
 \caption{Snímek programu agenta}
@@ -261,7 +261,7 @@ V kapitole však ze zřejmých důvodů není popsán kompletní postup
 implementace. Nezbytnou součástí, která stojí alespoň za zmínku, byla
 tvorba vizuálu a 3D modelů prostředí, ve kterém se výuka odehrává.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=12cm]{src/assets/result.png}
 \caption{Snímek výsledné podoby aplikace}
@@ -292,7 +292,9 @@ pouze s komponentou \texttt{Transform}, která se stará o pozicování v
 herním světě. Objekty tak lze sestavovat z jiných objektů, nebo je
 používat pro seskupování objektů.
 
-\begin{figure}
+\newpage
+
+\begin{figure}[h!]
 \centering
 \includegraphics[height=10cm]{src/assets/structure.png}
 \caption{Struktura scény}
@@ -388,7 +390,7 @@ neúměrnou časovou značkou k účelu aplikace a nepodporuje jiné vlastnosti
 U syntaxe formátu byl kladen důraz na jednoduchost implementace čtení
 formátu. Obecně lze syntaxi definovat následovně:
 
-\begin{verbatim}
+\begin{minted}[bgcolor=codebg]{text}
 #<groupname>
 <offset>;<duration>;<audio cue id>:(<text>|%<action>)
 [<offset>;<duration>;<audio cue id>:(<text>|%<action>)] ...
@@ -398,7 +400,7 @@ formátu. Obecně lze syntaxi definovat následovně:
 [<offset>;<duration>;<audio cue id>:(<text>|%<action>)]] ...
 
 ...
-\end{verbatim}
+\end{minted}
 
 Kde bloky označené \texttt{\textless{}} a \texttt{\textgreater{}} jsou
 bloky hodnot, bloky označené \texttt{{[}} a \texttt{{]}} jsou nepovinné
@@ -407,9 +409,11 @@ možnost alternativy (A nebo B). Skupiny bloků, které jsou odděleny řádky
 lze libovolně opakovat. Minimální počet takových bloků je 1. Skupiny
 není nutné oddělovat prázdnými řádky. Podporuje to však čitelnost souboru.
 
+\newpage
+
 Významy bloků jsou uvedeny v tabulce:
 
-\begin{longtable}[]{@{}ll@{}}
+\begin{longtabu}{XX}
 \toprule
 Název bloku & Funkce bloku\tabularnewline
 \midrule
@@ -427,12 +431,12 @@ zvukového úseku\tabularnewline
 \texttt{\textless{}action\textgreater{}} & Činnost, která se má v úseku
 provést\tabularnewline
 \bottomrule
-\end{longtable}
+\end{longtabu}
 
 Pro lepší představu je níže uveden krátký úryvek \emph{STXT} souboru z
 aplikace, na kterém lze snadněji vidět jeho praktické použití.
 
-\begin{verbatim}
+\begin{minted}[bgcolor=codebg]{text}
 #intro
 1;0;0:%showlogo
 2;2.4;0:Vítejte v herně Virtualnirealita.cz!
@@ -441,108 +445,109 @@ aplikace, na kterém lze snadněji vidět jeho praktické použití.
 
 #skippable
 0;0;1:%showskiptxt
-0;6.5;1:Pokud s virtuální realitou již máte zkušenosti a výuku\nchcete ...
+0;6.5;1:Pokud s virtuální realitou již máte zkušenosti...
 0;0;1:%hideskiptxt
 
 ...
-\end{verbatim}
+\end{minted}
+
+\newpage
 
 Činnosti jsou, narozdíl od textů a časování, pevně určené, protože jsou
 daleko komplexnější a mnohem méně parametrizovatelné. Pro referenci je
 tak uvedena kompletní tabulka všech použitelných činností.
 
-\begin{longtable}[]{@{}ll@{}}
+\begin{longtabu} to \textwidth {XX}
 \toprule
-\begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
-Název činnosti\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
-Popis činnosti\strut
-\end{minipage}\tabularnewline
+
+Název činnosti
+& 
+Popis činnosti
+\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%showlogo}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zobrazí před uživatelem logo herny.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%hidelogo}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Skryje logo herny.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%showskiptxt}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zobrazí informaci o možnosti přeskočit výuku.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%hideskiptxt}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Skryje informaci o možnosti přeskočit výuku.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%waitforuserraise}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Pozastaví se a čeká, dokud uživatel nezvedne ruce před sebe.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%highlighttrigger}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zvýrazní na ovladači tlačítko spouště.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%givelaser}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Přidá uživateli možnost používat laserové ukazovátko.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%waitforusertargethit}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\texttt{\%showlogo}
+& 
+Zobrazí před uživatelem logo herny.
+\tabularnewline
+
+\texttt{\%hidelogo}
+& 
+Skryje logo herny.
+\tabularnewline
+
+\texttt{\%showskiptxt}
+& 
+Zobrazí informaci o možnosti přeskočit výuku.
+\tabularnewline
+
+\texttt{\%hideskiptxt}
+& 
+Skryje informaci o možnosti přeskočit výuku.
+\tabularnewline
+
+\texttt{\%waitforuserraise}
+& 
+Pozastaví se a čeká, dokud uživatel nezvedne ruce před sebe.
+\tabularnewline
+
+\texttt{\%highlighttrigger}
+& 
+Zvýrazní na ovladači tlačítko spouště.
+\tabularnewline
+
+\texttt{\%givelaser}
+& 
+Přidá uživateli možnost používat laserové ukazovátko.
+\tabularnewline
+
+\texttt{\%waitforusertargethit}
+& 
 Pozastaví se a čeká, dokud uživatel netrefí laserovým paprskem
-terč.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%highlightside}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zvýrazní boční tlačítko na ovladači.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%waitforside}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Pozastaví se a čeká, dokud uživatel nestiskne boční tlačítko.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%highlighttouchpad}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zvýrazní na ovladači dotykovou plochu.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%waitforusercolor}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Pozastaví se a čeká, dokud uživatel nezvolí na ovladači barvu.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%highlightmenu}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zvýrazní menu tlačítko na ovladači.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%highlightsystem}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zvýrazní systémové tlačítko na ovladači.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%gotolibrary}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Zobrazí spouštěč.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\texttt{\%skip}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Přeskočí výuku.\strut
-\end{minipage}\tabularnewline
+terč.
+\tabularnewline
+
+\texttt{\%highlightside}
+& 
+Zvýrazní boční tlačítko na ovladači.
+\tabularnewline
+
+\texttt{\%waitforside}
+& 
+Pozastaví se a čeká, dokud uživatel nestiskne boční tlačítko.
+\tabularnewline
+
+\texttt{\%highlighttouchpad}
+& 
+Zvýrazní na ovladači dotykovou plochu.
+\tabularnewline
+
+\texttt{\%waitforusercolor}
+& 
+Pozastaví se a čeká, dokud uživatel nezvolí na ovladači barvu.
+\tabularnewline
+
+\texttt{\%highlightmenu}
+& 
+Zvýrazní menu tlačítko na ovladači.
+\tabularnewline
+
+\texttt{\%highlightsystem}
+& 
+Zvýrazní systémové tlačítko na ovladači.
+\tabularnewline
+
+\texttt{\%gotolibrary}
+& 
+Zobrazí spouštěč.
+\tabularnewline
+
+\texttt{\%skip}
+& 
+Přeskočí výuku.
+\tabularnewline
 \bottomrule
-\end{longtable}
+\end{longtabu}
 
 Stále je ale pružnost výuky do určité míry zachována a je dostatečně
 přizpůsobitelná. Tyto akce lze přeskládat jinak, spouštět v jiné časy,
@@ -569,10 +574,10 @@ Délka výuky s vloženými mezerami a bez
 hodnotu velmi kolísavou. Předběžným odhadem bude výuka \textbf{100s až
 160s} dlouhá. Reálné délky výuky však odhalí až testování.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[height=8cm]{src/assets/chart.png}
-\caption{Rozdělení podle času mluveného textu}
+\includegraphics[height=9cm]{src/assets/time-chart.pdf}
+\caption{Rozdělení času mluveného textu}
 \end{figure}
 
 Z pozdní analýzy subjektivně plyne, že jsou užitečné a neužitečné
