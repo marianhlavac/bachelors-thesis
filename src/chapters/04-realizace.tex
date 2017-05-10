@@ -383,7 +383,7 @@ tvorbu titulků k filmům a seriálům. \emph{SubRip} však pracuje s
 neúměrnou časovou značkou k účelu aplikace a nepodporuje jiné vlastnosti
 časových úseků, pouze jejich text.
 
-\paragraph{Syntaxe STXT souboru}\label{syntaxe-stxt-souboru}
+\subsubsection{Syntaxe STXT souboru}\label{syntaxe-stxt-souboru}
 
 U syntaxe formátu byl kladen důraz na jednoduchost implementace čtení
 formátu. Obecně lze syntaxi definovat následovně:
@@ -586,14 +586,13 @@ Lze tak tvrdit, že výuka je efektivní a splní požadavek \emph{N-04} na
 
 \section{Nedostatky}\label{nedostatky}
 
-\begin{quote}
-TODO: Dopsat nedostatky
-\end{quote}
+Omezený čas na tvorbu aplikace ovlivnil výsledek a tak nebyla splněna realizace
+některých funkí, které byly navrženy.
 
-\begin{itemize}
-\tightlist
-\item
-  Nestihla se implementovat výměna
-\item
-  Nebylo možné realizovat F-A3 a F-B04
-\end{itemize}
+Kategorizace byla implementována pouze částečně. Implementoval se funkční
+prvek rozhraní, ale vnitřně nebylo implementováno seskupování her do kategorií.
+
+Také nebylo implementováno žádné prostředí, ve kterém by mohla obsluha herny
+vybírat oblíbené hry, specifikovat, zda se má zobrazovat celá knihovna her
+a další proměnné. Všechna tato konfigurace je zapsána v 
+uživatelsky nepřívětivém souboru konfigurace.
