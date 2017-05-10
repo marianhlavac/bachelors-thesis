@@ -237,9 +237,11 @@ jednoduchý program (tzv. agenta), který bude detekovat spuštěnou aplikaci pr
 pomocí zmíněného odposlouchávání události a pokud dojde k ukončení cizí 
 aplikace, vnese spouštěč opět do popředí.
 
-\begin{quote}
-TODO: Here goes agent screenshot
-\end{quote}
+\begin{figure}
+\centering
+\includegraphics[height=8cm]{src/assets/agent-screen.png}
+\caption{Snímek programu agenta}
+\end{figure}
 
 Agent je psán také v jazyce \emph{C\#}. Poskytuje jednoduché uživatelské
 rozhraní určené pro obsluhu, které je psáno pomocí knihovny WPF.
@@ -259,7 +261,11 @@ V kapitole však ze zřejmých důvodů není popsán kompletní postup
 implementace. Nezbytnou součástí, která stojí alespoň za zmínku, byla
 tvorba vizuálu a 3D modelů prostředí, ve kterém se výuka odehrává.
 
-\emph{fig? Snímek obrazovky z výsledné podoby aplikace}
+\begin{figure}
+\centering
+\includegraphics[width=12cm]{src/assets/result.png}
+\caption{Snímek výsledné podoby aplikace}
+\end{figure}
 
 \subsection{Struktura scény}\label{struktura-scuxe9ny}
 
@@ -286,8 +292,11 @@ pouze s komponentou \texttt{Transform}, která se stará o pozicování v
 herním světě. Objekty tak lze sestavovat z jiných objektů, nebo je
 používat pro seskupování objektů.
 
-\includegraphics{http://i.imgur.com/nkWHyOO.png} \emph{fig: Struktura
-scény}
+\begin{figure}
+\centering
+\includegraphics[height=10cm]{src/assets/structure.png}
+\caption{Struktura scény}
+\end{figure}
 
 Ve scéně aplikace hrají velkou roli dva druhy objektů: tzv.
 \textbf{Rigs} (skupiny objektů) a \textbf{Managers} (manažeři). Rigs
@@ -559,6 +568,12 @@ Délka výuky s vloženými mezerami a bez
 čekání na vstup uživatele je 124 vteřin. Právě vstup uživatele dělá tuto
 hodnotu velmi kolísavou. Předběžným odhadem bude výuka \textbf{100s až
 160s} dlouhá. Reálné délky výuky však odhalí až testování.
+
+\begin{figure}
+\centering
+\includegraphics[height=8cm]{src/assets/chart.png}
+\caption{Rozdělení podle času mluveného textu}
+\end{figure}
 
 Z pozdní analýzy subjektivně plyne, že jsou užitečné a neužitečné
 části mluvy rozděleny správně. Přibližně tři čtvrtiny jsou věnovány
