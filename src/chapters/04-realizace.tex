@@ -1,6 +1,6 @@
 \chapter{Realizace}\label{realizace}
 
-Pro realizaci aplikace bude použit herní engine \emph{Unity}.
+Pro realizaci aplikace byl použit herní engine \emph{Unity}.
 \emph{Unity} je multi-platformní herní engine napsaný v C a C++, určený
 k vývoji her pro PC, konzole a mobilní zařízení. Je to v současnosti
 jeden z nejvhodnějších a nejpopulárnějších nástrojů na vývoj her pro
@@ -10,7 +10,7 @@ Ač jde o nástroj pro tvorbu her, je vhodným nástrojem i pro tvorbu
 aplikace určené pro virtuální realitu, jelikož jsou vykreslovány 
 stereoskopicky a trojrozměrně. Předmětem této práce by neměla 
 být tvorba vykreslovacího jádra, ale spíše samotné aplikace. 
-Proto je využito herního enginu, aby byl čas
+Proto bylo využito herního enginu, aby byl čas
 věnovaný implementaci využit efektivně.
 
 Jako název aplikace bylo zvoleno sousloví \textbf{Immersion VR}, které
@@ -71,7 +71,7 @@ realizovatelný.
 
 Jednou z takových funkcí je zobrazení her a aplikací, které vlastní herna na svém
 účtu platformy \emph{Steam}. Aby bylo možné zobrazení provést, je nutné
-o hrách stáhnout informace, podle požadavku \emph{F-C02} (stažení dat o
+stáhnout informace o aplikacích, podle požadavku \emph{F-C02} (stažení dat o
 VR aplikacích). Taková data jsou přístupná pomocí některého z API
 rozhraní služby \emph{Steam}. Předmětem POC bude takový zdroj dat nalézt
 a implementovat práci s takovým zdrojem do enginu \emph{Unity}.
@@ -104,9 +104,9 @@ Mezi informace nepatří navržené krátké video z VR aplikace, či popis úro
 intenzity, jelikož platforma Steam není zdrojem takových dat. Tyto
 informace bude nutné do aplikace dodávat ručně z vlastního zdroje.
 
-Steam nabízí více API rozhraní pro komunikaci, specifická pro různá
-použití, jako je např. přístup k různorodým API v rámci partnerského
-programu \emph{Steamworks}, které by dávalo smysl použít, jelikož je
+Steam nabízí více API rozhraní pro komunikaci, která jsou specifická pro různá
+použití. Příkladem je partnerský program \emph{Steamworks} a jeho API rozhraní, 
+které by dávalo smysl použít, jelikož je
 běžně používáno pro aplikace a hry distribuované skrz platformu Steam,
 které jsou s platformou integrovány a pracují s ní, což se velmi podobá
 aplikací této závěrečné práce (minimálně splňuje podmínku práce s
@@ -127,7 +127,7 @@ nabízejícími různá data. Pro nás zajímavým endpointem je
 vlastní určitý účet platformy Steam. \autocite{swadocs}
 
 Situace se však komplikuje ve dvou bodech -- viditelností dat a
-autentizací:
+autentizací.
 
 Pro stažení takových dat pomocí tohoto API je nutné, aby \emph{Steam} 
 účet herny měl v nastavení povolen veřejný přístup k
@@ -154,15 +154,15 @@ při vytváření požadavků na API, nebo implementaci OpenID přihlašování.
 Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití
 (resp. konfiguraci) jedním subjektem (či malým počtem subjektů),
 vygenerování klíče je velmi jednoduché a v ideálním případě je nutné
-takový proces provést jen jednou, je z důvodu časové efektivity a 
-jednoduchosti implementace použita autorizace pomocí klíče.
+takový proces provést jen jednou. Z důvodu časové efektivity a 
+jednoduchosti implementace je proto použita autorizace pomocí klíče.
 
 Získáním takových dat z tohoto API rozhraní jsou však splněny pouze dva
-z tří výše zmíněných bodů -- jaké aplikace jsou zakoupené, jaké jsou
+ze tří výše zmíněných bodů -- jaké aplikace jsou zakoupené, jaké jsou
 jejich názvy, krátké popisy a obrázky aplikací. Chybí informace o tom,
 zda jsou na systému nainstalovány a připraveny ke spuštění.
 
-Pokud na chvíli odběhneme do následující kapitoly zabývající se
+Pokud na chvíli přejdeme do následující kapitoly zabývající se
 spouštěním aplikací, zjistíme, že lze aplikace výhodně a jednoduše
 spouštět pomocí systémového protokolu \texttt{steam://} a jeho akce
 \texttt{steam://run/\textless{}appid\textgreater{}}. Tato akce se chová
@@ -191,7 +191,7 @@ označí takovou hru jako nenainstalovanou i přesto, že nainstalovaná je.
 Jiné řešení však podle dostupných zdrojů neexistuje. Nabízí se tak
 motivace přidat do konfigurace aplikace možnost zobrazení všech titulů
 ve spouštěči a obsluha herny pak bude zodpovědná za udržení všech VR aplikací 
-nainstalovaých a připravených ke spuštění. Což dává v herně smysl --
+nainstalovaných a připravených ke spuštění. Což dává v herně smysl --
 herna bude chtít svým zákazníkům nabídnout všechny aplikace, které
 zakoupila. Neměl by z toho tak plynout žádný zásadní problém.
 
@@ -217,7 +217,7 @@ Z popsaného chování plyne, že se tímto příkazem spustí aplikace, a pokud
 to nutné, spustí se instalační proces. 
 
 Problémová situace nastává ve
-chvíli, kdy chceme zobrazit spouštěč ve chvíli, kdy uživatel
+chvíli, kdy chceme zobrazit spouštěč hned poté, co uživatel
 ukončí jím spuštěnou VR aplikaci. \emph{OpenVR}, které má na starosti
 komunikaci se systémem virtuální reality, je koncipovaná tak, 
 aby vykreslovala pouze jednu hlavní scénu. Po spuštění jiné VR aplikace 
@@ -257,8 +257,8 @@ práce. Je popsána struktura celé scény, jakým způsobem jsou ukládána
 data o scénáři výuky, jak je generováno uživatelské rozhraní spouštěče a
 jakým způsobem se vytvářel voice-over výuky.
 
-V kapitole však ze zřejmých důvodů není popsán kompletní postup
-implementace. Nezbytnou součástí, která stojí alespoň za zmínku, byla
+Není tam však ze zřejmých důvodů popsán kompletní postup
+implementace. Nezbytnou součástí, která stojí alespoň za zmínku, je
 tvorba vizuálu a 3D modelů prostředí, ve kterém se výuka odehrává.
 
 \begin{figure}[h!]
@@ -279,7 +279,7 @@ tak logiku daného herního objektu.
 
 Aplikace je strukturována pouze do jedné scény. Ač by na první pohled
 dávalo smysl oddělit výuku a spouštěč do samostatných scén, je nutné
-brát v potaz, že přechod z jedné scény na jinou provází kratší či delší
+brát v potaz, že přechod z jedné scény na druhou provází kratší či delší
 načítání a implicitně jsou nahrazeny všechny objekty staré scény za
 objekty nové scény. I přesto, že toto chování se dá do určité míry
 změnit, je stále nežádoucí, aby v přechodu mezi výukou a spouštěčem
@@ -566,7 +566,7 @@ na vhodných místech.
 
 Výsledná délka pouze mluveného textu je 116 vteřin. Práce se zvukovými
 soubory dělá výslednou délku výuky odlišnou od délky samotného mluveného
-textu. Jsou mezi jednotlivé části vloženy mezery, nebo některé části
+textu. Mezi jednotlivé části jsou vloženy mezery, nebo některé části
 mohou být uživatelem přeskočeny. 
 
 Délka výuky s vloženými mezerami a bez
