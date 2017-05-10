@@ -1,15 +1,15 @@
 % arara: xelatex: { shell: yes }
-% narara: makeglossaries
-% narara: biber
-% narara: xelatex: { shell: yes }
-% narara: xelatex: { shell: yes }
+% arara: makeglossaries
+% arara: biber
+% arara: xelatex: { shell: yes }
+% arara: xelatex: { shell: yes }
 \documentclass[thesis=B,czech,hidelinks]{src/FITthesisXE}
 
-\usepackage{ graphicx }
-\usepackage{ dirtree }
-\usepackage{ longtable } 
+\usepackage{graphicx}
+\usepackage{dirtree}
+\usepackage{longtable} 
 
-\bibliography{library.bib}
+\bibliography{src/cite.bib}
 
 \makeglossaries
 \input{src/acronyms.tex}

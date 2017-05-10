@@ -1,12 +1,12 @@
-https://upload.wikimedia.org/wikipedia/commons/7/7a/Vive_pre.jpeg
-http://www.inflow.cz/heuristicka-analyza
-http://blog.vojtasvoboda.cz/nielsens-heuristic-evaluation
-https://www.youtube.com/watch?v=-owQfn-iYQw&t=2056s
-https://steamcommunity.com/app/358720/discussions/0/485623406959710519/
+x https://upload.wikimedia.org/wikipedia/commons/7/7a/Vive_pre.jpeg
+x http://www.inflow.cz/heuristicka-analyza
+x http://blog.vojtasvoboda.cz/nielsens-heuristic-evaluation
+x https://www.youtube.com/watch?v=-owQfn-iYQw&t=2056s
+x https://steamcommunity.com/app/358720/discussions/0/485623406959710519/
 
 co je vr
-http://www.dictionary.com/browse/virtual--reality
-https://en.wikipedia.org/wiki/Virtual_reality
+x http://www.dictionary.com/browse/virtual--reality
+x https://en.wikipedia.org/wiki/Virtual_reality
 
 https://github.com/ValveSoftware/openvr
 https://en.wikipedia.org/wiki/Proof_of_concept
