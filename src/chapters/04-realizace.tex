@@ -37,7 +37,7 @@ následující doporučení, týkající se výběru jazyka pro \emph{Unity}. \a
   JavaScript, resp. UnityScript není totožný s webovým JavaScriptem. Jde
   spíše o JavaScript-like syntaxi.
 \item
-  JavaScript je ve srovnání s C\# méně upovídaný.
+  JavaScript je ve srovnání s C\# méně ,,upovídaný''.
 \item
   JavaScript za vývojáře řeší na pozadí více věcí, než C\#. Jde tak o
   jednodušší jazyk.
@@ -47,20 +47,19 @@ následující doporučení, týkající se výběru jazyka pro \emph{Unity}. \a
 \item
   C\# má kvalitní MSDN dokumentaci.
 \item
-  C\# je rychlejší, než JavaScript ale ne znatelně.
+  C\# je rychlejší, než JavaScript, ale ne znatelně.
 \item
   Boo se nedoporučuje, používá jej pouze malý zlomek vývojářů.
 \end{itemize}
 
-Jako jazyk implementace tak byl zvolen jazyk \emph{C\#}, z důvodu
-předchozích zkušeností, majority komunity, která může poskytnout pomoc v
+Jako jazyk implementace byl zvolen jazyk \emph{C\#}, z důvodu zkušeností, majority komunity, která může poskytnout pomoc v
 případě problémů a z důvodu existence kvalitní dokumentace.
 
 \section{Proof of Concept}\label{proof-of-concept}
 
-V aplikaci lze rozlišit klíčové funkce, které jsou poněkud specifické a
+V aplikaci lze rozlišit klíčové funkce, které jsou specifické a
 charakteristické pro danou aplikaci. Ač je snadné navrhnout způsob
-řešení implementace takových funkcí, je vhodné tyto funkce podrobit
+řešení implementace těchto funkcí, je vhodné je podrobit
 principem \textbf{Proof of Concept} -- důkazem existence původně jen
 teoreticky předpokládané funkcionality \autocite{proofofconcept}. Jde o rychlou implementaci
 konkrétních funkcí nezávisle na zasazení do koncové aplikace.
@@ -74,7 +73,7 @@ Jednou z takových funkcí je zobrazení her a aplikací, které vlastní herna 
 stáhnout informace o aplikacích, podle požadavku \emph{F-C02} (stažení dat o
 VR aplikacích). Taková data jsou přístupná pomocí některého z API
 rozhraní služby \emph{Steam}. Předmětem POC bude takový zdroj dat nalézt
-a implementovat práci s takovým zdrojem do enginu \emph{Unity}.
+a implementovat práci s tímto zdrojem do enginu \emph{Unity}.
 
 Další funkcí, kterou je nutné ověřit, je samotný spouštěč. Konkrétně
 je potenciálně problémová funkce spuštění a opouštění VR aplikací, podle
@@ -101,43 +100,42 @@ informace:
 \end{itemize}
 
 Mezi informace nepatří navržené krátké video z VR aplikace, či popis úrovně
-intenzity, jelikož platforma Steam není zdrojem takových dat. Tyto
+intenzity, jelikož platforma Steam není zdrojem těchto dat. Tyto
 informace bude nutné do aplikace dodávat ručně z vlastního zdroje.
 
 Steam nabízí více API rozhraní pro komunikaci, která jsou specifická pro různá
 použití. Příkladem je partnerský program \emph{Steamworks} a jeho API rozhraní, 
 které by dávalo smysl použít, jelikož je
 běžně používáno pro aplikace a hry distribuované skrz platformu Steam,
-které jsou s platformou integrovány a pracují s ní, což se velmi podobá
-aplikací této závěrečné práce (minimálně splňuje podmínku práce s
+které jsou s platformou integrovány a pracují s ní, což je podobný příklad, jako aplikace této práce (minimálně splňuje podmínku práce s
 platformou Steam). \autocite{steamworks}
 
-\emph{Steamworks SDK} je ovšem dostupné pouze pro
-partnery společnosti, což ovšem nepředstavuje problém a partnerství je možné získat. \autocite{steamworkss}
-Jde však o mírně zdlouhavý proces a pro účely stažení informací by šlo o
+\emph{Steamworks SDK} \autocite{steamworks} je dostupné pouze pro
+partnery společnosti. Toto partnerství, nicméně, není obtížné získat.
+Jde sice o mírně zdlouhavý proces, a pro účely stažení informací by šlo o
 neefektivní postup. Komplikaci by mohly představovat i licenční podmínky
 platformy v kombinaci s použitím pro účely závěrečné práce.
 
 Ideálním API rozhraním se tak ukázalo veřejné \emph{Steam Web API},
 které ač, jak je z názvu patrné, je určeno pro použití webovými
-službami, je ideálním a snadno přístupným zdrojem informací, které jsou
+službami, je snadno přístupným zdrojem informací, které jsou
 nutné pro splnění požadavku. \autocite{steamwebapi} Rozhraní disponuje několika endpointy,
 nabízejícími různá data. Pro nás zajímavým endpointem je
 \texttt{GetOwnedGames-v0001}, který vrací seznam všech her, které
 vlastní určitý účet platformy Steam. \autocite{swadocs}
 
-Situace se však komplikuje ve dvou bodech -- viditelností dat a
-autentizací.
+Situace se komplikuje ve dvou bodech -- viditelností dat a
+autentizací:
 
-Pro stažení takových dat pomocí tohoto API je nutné, aby \emph{Steam} 
+Pro stažení těchto dat pomocí zmíněného API je nutné, aby \emph{Steam} 
 účet herny měl v nastavení povolen veřejný přístup k
 datům o vlastnictví aplikací. Pro tyto účely by to neměl být problém za
 předpokladu, že herna nemá důvod chtít skrývat seznam aplikací, který vlastní
 na svých účtech. 
 
 V případě, že herna z libovolného důvodu nebude chtít
-zveřejnit svůj seznam aplikací na platformě Steam, tento postup tak selhává a
-není možné herně nabídnout takovou aplikaci bez toho, aniž by se využilo
+zveřejnit svůj seznam aplikací na platformě Steam, tento postup  selhává a
+není možné herně nabídnout navrhovanou aplikaci, aniž by se využilo
 jiného API rozhraní služby Steam. 
 
 Tomuto problému však není přikládána
@@ -148,7 +146,7 @@ herna nabízí.
 
 Další, tentokrát už mnohem méně závažnější komplikací, je způsob
 autentizace. Steam nabízí dva způsoby
--- vygenerování statického klíče na jejich stránkách a jeho použití
+-- vygenerování statického klíče na svých stránkách a jeho použití
 při vytváření požadavků na API, nebo implementaci OpenID přihlašování. \autocite{swadocs}
 
 Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití
@@ -157,21 +155,19 @@ vygenerování klíče je velmi jednoduché a v ideálním případě je nutné
 takový proces provést jen jednou. Z důvodu časové efektivity a 
 jednoduchosti implementace je proto použita autorizace pomocí klíče.
 
-Získáním takových dat z tohoto API rozhraní jsou však splněny pouze dva
-ze tří výše zmíněných bodů -- jaké aplikace jsou zakoupené, jaké jsou
+Získáním dat ze zmíněného API rozhraní jsou však splněny pouze dva
+ze tří výše uvedených bodů -- jaké aplikace jsou zakoupené, jaké jsou
 jejich názvy, krátké popisy a obrázky aplikací. Chybí informace o tom,
 zda jsou na systému nainstalovány a připraveny ke spuštění.
 
-Pokud na chvíli přejdeme do následující kapitoly zabývající se
-spouštěním aplikací, zjistíme, že lze aplikace výhodně a jednoduše
-spouštět pomocí systémového protokolu \texttt{steam://} a jeho akce
+Pokud na chvíli nahlédneme do následující kapitoly zabývající se
+spouštěním aplikací, zjistíme, že lze aplikace spouštět výhodně a jednoduše pomocí systémového protokolu \texttt{steam://} a jeho akce
 \texttt{steam://run/\textless{}appid\textgreater{}}. Tato akce se chová
 tak, že pokud je v systému aplikace nainstalovaná, provede její
 spuštění. V opačném případě se zahájí proces instalace a provede
-uživatele procesem stažení a nainstalování takové aplikace. 
+uživatele procesem stažení a nainstalování chtěné aplikace. 
 
-Z pohledu návštěvníka herny je takové chování nežádoucí. Potřebujeme
-vědět, které aplikace jsou nainstalovány a ty, které nainstalovány
+Z pohledu návštěvníka herny je toto chování nežádoucí. Proto je nutné vědět, které aplikace jsou nainstalovány a ty, které nainstalovány
 nejsou je nutné ze spouštěče vyřadit, aby nebyly uživatelům nabízeny,
 pokud nejsou připraveny ke spuštění.
 
@@ -180,12 +176,12 @@ problémová. Podle dostupných zdrojů v současné chvíli není exponováno
 žádné rozhraní pro detekci nainstalovaných aplikací na počítači. 
 Takovou detekci je tak nutné provádět ručně. 
 
-Ze zkušeností ostatních vývojářů, kteří se o detekci nainstalovaných aplikací pokusili
+Ze zkušeností ostatních vývojářů, kteří se o detekci nainstalovaných aplikací pokusili,
 plyne, že ruční sken složek není tak jednoduchý. \autocite{hardgamedetection} Většina aplikací splňuje
 podmínku, že se v jejich složkách nachází soubor
 \texttt{steam\_appid.txt}, který jednoznačně složku se hrou
-identifikuje, ovšem to není pravidlem a ve vyjímečných případech může
-dojít k tomu, že se tam soubor nacházet nebude a ruční detekce tak 
+identifikuje. Není to však pravidlem a ve vyjímečných případech může
+dojít k tomu, že zmíněný soubor neexistuje a ruční detekce tak 
 označí takovou hru jako nenainstalovanou i přesto, že nainstalovaná je.
 
 Jiné řešení však podle dostupných zdrojů neexistuje. Nabízí se tak
@@ -200,18 +196,18 @@ aplikací}\label{spouux161tux11bnuxed-aplikacuxed}
 
 Požadavky \emph{F-C03} a \emph{F-C04} (spuštění a ukončení uživatelem
 vybrané VR aplikace) jsou nezbytnou součástí spouštěče
-aplikací. Aplikace je nutné na uživatelův pokyn spouštět a po jejich ukončení 
+aplikací. Aplikace je nutné na pokyn uživatele spouštět a po jejich ukončení 
 je nutné uživateli znova zobrazit spouštěč.
 
-Spouštění aplikace se díky systémového protokolu \texttt{steam://} stává
+Spouštění aplikace se díky systémovému protokolu \texttt{steam://} stává
 velmi jednoduchým úkonem. Úryvek z dokumentace \autocite{protocoldocs} odhaluje příkaz
 systémového protokolu \texttt{steam} a činnosti \texttt{run}, kterou lze
 pro účel spouštěče použít:
 
-\begin{quote}
-\texttt{steam://run/\textless{}id\textgreater{}}\\
+\begin{minted}{text}
+steam://run/\textless{}id\textgreater{}\\
 Runs an application. It will be installed if necessary.
-\end{quote}
+\end{minted}
 
 Z popsaného chování plyne, že se tímto příkazem spustí aplikace, a pokud je
 to nutné, spustí se instalační proces. 
@@ -302,7 +298,7 @@ používat pro seskupování objektů.
 
 Ve scéně aplikace hrají velkou roli dva druhy objektů: tzv.
 \textbf{Rigs} (skupiny objektů) a \textbf{Managers} (manažeři). Rigs
-slouží k seskupení objektů se společným účelem. Managers jsou pak
+slouží k seskupení objektů se společným účelem. Managers jsou 
 objekty se skripty, které řídí určitou část aplikace.
 
 \paragraph{TutorialRig}\label{tutorialrig}
@@ -375,8 +371,8 @@ Vlastnosti třídy \texttt{ScenarioCue} jsou následující:
 
 Časové vlastnosti jsou určeny pro pozicování a časování úseků.
 Identifikátor zvukového úseku určuje, která zvuková část mluveného textu má být ve
-chvíli průchodu úsekem přehrávána. Text úseku je pak přepisem toho, co
-lze ve zvukovém úseku slyšet. Skupina úseku je pak čistě organizační
+chvíli průchodu úsekem přehrávána. Text úseku je přepisem toho, co
+lze ve zvukovém úseku slyšet. Skupina úseku je čistě organizační
 záležitostí pro přehlednost \emph{STXT} souboru.
 
 K popsanému účelu mohlo být využito existujícího formátu \emph{SubRip} \autocite{subrip},
@@ -453,7 +449,7 @@ aplikace, na kterém lze snadněji vidět jeho praktické použití.
 
 \newpage
 
-Činnosti jsou, narozdíl od textů a časování, pevně určené, protože jsou
+Činnosti jsou, na rozdíl od textů a časování, pevně určené, protože jsou
 daleko komplexnější a mnohem méně parametrizovatelné. Pro referenci je
 tak uvedena kompletní tabulka všech použitelných činností.
 
