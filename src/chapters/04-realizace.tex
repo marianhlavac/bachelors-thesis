@@ -122,7 +122,7 @@ službami, je snadno přístupným zdrojem informací, které jsou
 nutné pro splnění požadavku. \autocite{steamwebapi} Rozhraní disponuje několika endpointy,
 nabízejícími různá data. Pro nás zajímavým endpointem je
 \texttt{GetOwnedGames-v0001}, který vrací seznam všech her, které
-vlastní určitý účet platformy Steam. \autocite{swadocs}
+vlastní určitý účet platformy Steam.
 
 Situace se komplikuje ve dvou bodech -- viditelností dat a
 autentizací:
@@ -147,7 +147,7 @@ herna nabízí.
 Další, tentokrát už mnohem méně závažnější komplikací, je způsob
 autentizace. Steam nabízí dva způsoby
 -- vygenerování statického klíče na svých stránkách a jeho použití
-při vytváření požadavků na API, nebo implementaci OpenID přihlašování. \autocite{swadocs}
+při vytváření požadavků na API, nebo implementaci OpenID přihlašování.
 
 Vzhledem k tomu, že je aplikace z podstaty zadání učená pro použití
 (resp. konfiguraci) jedním subjektem (či malým počtem subjektů),
@@ -162,7 +162,7 @@ zda jsou na systému nainstalovány a připraveny ke spuštění.
 
 Pokud na chvíli nahlédneme do následující kapitoly zabývající se
 spouštěním aplikací, zjistíme, že lze aplikace spouštět výhodně a jednoduše pomocí systémového protokolu \texttt{steam://} a jeho akce
-\texttt{steam://run/\textless{}appid\textgreater{}}. Tato akce se chová
+\texttt{steam://run/<appid>}. Tato akce se chová
 tak, že pokud je v systému aplikace nainstalovaná, provede její
 spuštění. V opačném případě se zahájí proces instalace a provede
 uživatele procesem stažení a nainstalování chtěné aplikace. 
@@ -205,7 +205,7 @@ systémového protokolu \texttt{steam} a činnosti \texttt{run}, kterou lze
 pro účel spouštěče použít:
 
 \begin{minted}{text}
-steam://run/\textless{}id\textgreater{}\\
+steam://run/<id>\\
 Runs an application. It will be installed if necessary.
 \end{minted}
 
@@ -256,12 +256,6 @@ jakým způsobem se vytvářel voice-over výuky.
 Není tam však ze zřejmých důvodů popsán kompletní postup
 implementace. Nezbytnou součástí, která stojí alespoň za zmínku, je
 tvorba vizuálu a 3D modelů prostředí, ve kterém se výuka odehrává.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=12cm]{src/assets/result.png}
-\caption{Snímek výsledné podoby aplikace}
-\end{figure}
 
 \subsection{Struktura scény}\label{struktura-scuxe9ny}
 
@@ -409,7 +403,8 @@ není nutné oddělovat prázdnými řádky. Podporuje to však čitelnost soubo
 
 Významy bloků jsou uvedeny v tabulce:
 
-\begin{longtabu}{XX}
+
+\extrarowsep=4pt\begin{longtabu}{XX}
 \toprule
 Název bloku & Funkce bloku\tabularnewline
 \midrule

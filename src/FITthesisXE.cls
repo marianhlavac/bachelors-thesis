@@ -356,7 +356,7 @@
 \DeclareRobustCommand {\thesistype} {%
 	\if@thesistypedefined
 		\if\@thesistype B%
-			\if@langczech {Bakalářská práce} \else {Bachelor's thesis} \fi
+			\if@langczech {Bakalářská práce}\else {Bachelor's thesis}\fi
 		\else
 			\if\@thesistype M%
 				\if@langczech {Diplomová práce} \else {Master's thesis} \fi
