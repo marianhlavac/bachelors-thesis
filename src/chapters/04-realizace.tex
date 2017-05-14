@@ -1,7 +1,7 @@
 \chapter{Realizace}\label{realizace}
 
 Pro realizaci aplikace byl použit herní engine \emph{Unity}.
-\emph{Unity} je multi-platformní herní engine napsaný v~C a~C++, určený
+\emph{Unity} je multi-platformní herní engine napsaný v~\emph{C} a~\emph{C++}, určený
 k~vývoji her pro PC, konzole a~mobilní zařízení. Je to v~současnosti
 jeden z~nejvhodnějších a~nejpopulárnějších nástrojů na vývoj her pro
 virtuální realitu. \autocite{unitypopularity}
@@ -34,22 +34,22 @@ následující doporučení, týkající se výběru jazyka pro \emph{Unity}. \a
 \item
   Záleží na předchozích zkušenostech s~jazykem.
 \item
-  JavaScript, resp. UnityScript není totožný s~webovým JavaScriptem. Jde
-  spíše o~JavaScript-like syntaxi.
+  \emph{JavaScript}, resp. \emph{UnityScript} není totožný s~webovým \emph{JavaScriptem}. Jde
+  spíše o~\emph{JavaScript}-like syntaxi.
 \item
-  JavaScript je ve srovnání s~C\# méně ,,upovídaný''.
+  \emph{JavaScript} je ve srovnání s~\emph{C\#} méně ,,upovídaný''.
 \item
-  JavaScript za vývojáře řeší na pozadí více věcí, než C\#. Jde tak
+  \emph{JavaScript} za vývojáře řeší na pozadí více věcí, než \emph{C\#}. Jde tak
 o~jednodušší jazyk.
 \item
-  C\# používá majorita Unity vývojářů. Je tak snazší vyhledat pomoc při
+  \emph{C\#} používá majorita Unity vývojářů. Je tak snazší vyhledat pomoc při
   problémech.
 \item
-  C\# má kvalitní MSDN dokumentaci.
+  \emph{C\#} má kvalitní MSDN dokumentaci.
 \item
-  C\# je rychlejší, než JavaScript, ale ne znatelně.
+  \emph{C\#} je rychlejší, než \emph{JavaScript}, ale ne znatelně.
 \item
-  Boo se nedoporučuje, používá jej pouze malý zlomek vývojářů.
+  \emph{Boo} se nedoporučuje, používá jej pouze malý zlomek vývojářů.
 \end{itemize}
 
 Jako jazyk implementace byl zvolen jazyk \emph{C\#}, z~důvodu zkušeností, majority komunity, která může poskytnout pomoc
@@ -100,13 +100,13 @@ informace:
 \end{itemize}
 
 Mezi informace nepatří navržené krátké video z~VR aplikace, či popis úrovně
-intenzity, jelikož platforma Steam není zdrojem těchto dat. Tyto
+intenzity, jelikož platforma \emph{Steam} není zdrojem těchto dat. Tyto
 informace bude nutné do aplikace dodávat ručně z~vlastního zdroje.
 
-Steam nabízí více API rozhraní pro komunikaci, která jsou specifická pro různá
+\emph{Steam} nabízí více API rozhraní pro komunikaci, která jsou specifická pro různá
 použití. Příkladem je partnerský program \emph{Steamworks} a~jeho API rozhraní, 
 které by dávalo smysl použít, jelikož je
-běžně používáno pro aplikace a~hry distribuované skrz platformu Steam,
+běžně používáno pro aplikace a~hry distribuované skrz platformu \emph{Steam},
 které jsou s~platformou integrovány a~pracují s~ní, což je podobný příklad, jako aplikace této práce (minimálně splňuje podmínku práce
 s~platformou Steam). \autocite{steamworks}
 
@@ -122,7 +122,7 @@ službami, je snadno přístupným zdrojem informací, které jsou
 nutné pro splnění požadavku. \autocite{steamwebapi} Rozhraní disponuje několika endpointy,
 nabízejícími různá data. Pro nás zajímavým endpointem je
 \texttt{GetOwnedGames-v0001}, který vrací seznam všech her, které
-vlastní určitý účet platformy Steam.
+vlastní určitý účet platformy \emph{Steam}.
 
 Situace se komplikuje ve dvou bodech --- viditelností dat a
 autentizací:
@@ -134,9 +134,9 @@ předpokladu, že herna nemá důvod chtít skrývat seznam aplikací, který vl
 na svých účtech. 
 
 V~případě, že herna z~libovolného důvodu nebude chtít
-zveřejnit svůj seznam aplikací na platformě Steam, tento postup  selhává a
+zveřejnit svůj seznam aplikací na platformě \emph{Steam}, tento postup  selhává a
 není možné herně nabídnout navrhovanou aplikaci, aniž by se využilo
-jiného API rozhraní služby Steam. 
+jiného API rozhraní služby \emph{Steam}. 
 
 Tomuto problému však není přikládána
 vážnost, protože se obecně dá předpokládat, že herna svůj účet zveřejní.
@@ -145,9 +145,9 @@ na svých webových stránkách, aby zákazníci mohli vidět, jaké tituly
 herna nabízí.
 
 Další, tentokrát už mnohem méně závažnější komplikací, je způsob
-autentizace. Steam nabízí dva způsoby
+autentizace. \emph{Steam} nabízí dva způsoby
 --- vygenerování statického klíče na svých stránkách a~jeho použití
-při vytváření požadavků na API, nebo implementaci OpenID přihlašování.
+při vytváření požadavků na API, nebo implementaci \emph{OpenID} přihlašování.
 
 Vzhledem k~tomu, že je aplikace z~podstaty zadání učená pro použití
 (resp. konfiguraci) jedním subjektem (či malým počtem subjektů),
@@ -186,7 +186,7 @@ označí takovou hru jako nenainstalovanou i přesto, že nainstalovaná je.
 
 Jiné řešení však podle dostupných zdrojů neexistuje. Nabízí se tak
 motivace přidat do konfigurace aplikace možnost zobrazení všech titulů
-ve spouštěči a~obsluha herny pak bude zodpovědná za udržení všech VR aplikací 
+ve spouštěči a~obsluha herny pak bude zodpovědná za udržení všech VR~aplikací 
 nainstalovaných a~připravených ke spuštění. Což dává v~herně smysl ---
 herna bude chtít svým zákazníkům nabídnout všechny aplikace, které
 zakoupila. Neměl by z~toho tak plynout žádný zásadní problém.
@@ -219,7 +219,7 @@ komunikaci se systémem virtuální reality, je koncipovaná tak,
 aby vykreslovala pouze jednu hlavní scénu. Po spuštění jiné VR aplikace 
 je ta původní automaticky ukončena.
 
-Vhodným řešením tohoto problému se jeví použití OpenVR knihovny, která
+Vhodným řešením tohoto problému se jeví použití \emph{OpenVR} knihovny, která
 dovoluje pracovat s~událostmi, kterým můžeme naslouchat a~reagovat na
 ně. Z~dokumentace \autocite{openvrdocs} je patrné, že k~tomuto účelu slouží událost s~názvem
 \texttt{VREvent\_SceneApplicationChanged}. 
@@ -244,7 +244,7 @@ rozhraní určené pro obsluhu, které je psáno pomocí knihovny WPF.
 Uživatelské rozhraní nabízí tlačítko určené ke spuštění a~zastavení celé
 aplikace (pokud bude zastavena, přestane se tak i automaticky zapínat
 spouštěč) a~přehlednou informaci o~aktuálním stavu agenta a úspěšnosti
-připojení k~OpenVR systému.
+připojení k~\emph{OpenVR} systému.
 
 \section{Implementace}\label{implementace}
 
@@ -259,12 +259,12 @@ tvorba vizuálu a~3D modelů prostředí, ve kterém se výuka odehrává.
 
 \subsection{Struktura scény}\label{struktura-scuxe9ny}
 
-Herní engine Unity podporuje strukturizaci aplikace do scén. Scény mohou
+Herní engine \emph{Unity} podporuje strukturizaci aplikace do scén. Scény mohou
 obsahovat herní objekty (třída \texttt{GameObject}) na které jsou
 ,,zavěšeny'' komponenty. \autocite{unityscenes} Může jít o~komponenty pracující s~herním
 světem, fyzikálními vlastnostmi objektů a~nebo o~nejobecnější a
 nejmocnější komponentu --- komponentu skriptu. Ta umožňuje k~objektu
-připojit vlastní skript v~jazyce C\#, JavaScript či Boo, a~naprogramovat
+připojit vlastní skript v~jazyce \emph{C\#}, \emph{JavaScript} či \emph{Boo}, a~naprogramovat
 tak logiku daného herního objektu.
 
 Aplikace je strukturována pouze do jedné scény. Ač by na první pohled
@@ -276,7 +276,7 @@ změnit, je stále nežádoucí, aby v~přechodu mezi výukou a~spouštěčem
 byla prodleva. Je tak jednodušší obě části spojit do jedné scény a
 důkladněji pak strukturovat jednu hlavní scénu.
 
-Herní objekty v~enginu Unity disponují velmi důležitou a~užitečnou
+Herní objekty v~enginu \emph{Unity} disponují velmi důležitou a~užitečnou
 funkcí --- mohou být do sebe zanořovány a~může jít o~prázdné objekty
 pouze s~komponentou \texttt{Transform}, která se stará o~pozicování
 v~herním světě. Objekty tak lze sestavovat z~jiných objektů, nebo je
@@ -311,9 +311,9 @@ vykreslení mřížky dostupných aplikací.
 
 \paragraph{SteamVRRig}\label{steamvrrig}
 
-\texttt{SteamVRRig} je předpřipravenou součástí Steam VR Pluginu pro
+\texttt{SteamVRRig} je předpřipravenou součástí \emph{SteamVR Pluginu} pro
 \emph{Unity}. Obsahuje objekty reprezentující oba ovladače a~headset.
-Steam VR Plugin pak zařídí synchronizaci těchto objektů se snímáním
+\emph{SteamVR Plugin} pak zařídí synchronizaci těchto objektů se snímáním
 systému virtuální reality. Tyto objekty jsou aktualizovány o~svou
 přesnou polohu a~rotaci ve fyzickém světě a~díky tomu jsou velmi přesně
 promítány do herního světa a~lze s~nimi tak velmi jednoduše pracovat.
